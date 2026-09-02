@@ -23,7 +23,7 @@ Global design constants (apply to every section unless otherwise noted):
 - **H1 (headline):**
   > You already have years of progress in your camera roll.
 - **Subhead:**
-  > Recomp pulls your physique photos, aligns them, and lets you compare any two — side by side, dated, honest.
+  > Import a Photos album in one tap. Recomp dates them and lets you compare any two — side by side, honest.
 - **Primary CTA:** the Apple "Download on the App Store" badge.
 - **Micro-copy under the CTA:**
   > Free to start · Import your existing photos in seconds
@@ -123,7 +123,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Two ways to s
   > Two ways to start.
 - **Left card:**
   - **Title:** I've been taking photos.
-  - **Body:** Import your camera roll. Recomp finds the physique photos, aligns them, and shows you the compare — in minutes.
+  - **Body:** Group your progress photos into an iOS Photos album and import the whole album in one tap. Recomp dates them and hands you the compare — in minutes.
   - **CTA:** Apple "Download on the App Store" badge.
 - **Right card:**
   - **Title:** I'm starting fresh.
@@ -158,7 +158,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Two ways to s
   1. **Compare any two check-ins.**
      Pick any two dates. Side by side, same scale, honest.
   2. **Import the photos you already have.**
-     Point Recomp at your camera roll. It'll pull the physique photos and organize them by date.
+     Group your progress shots into an iOS Photos album, then bring the whole album into Recomp in one tap. Or pick photos one at a time.
   3. **A real timeline, not a photo grid.**
      Every check-in in one scroll — with dates, weights, and notes.
   4. **Your photos never leave your phone unless you say so.**

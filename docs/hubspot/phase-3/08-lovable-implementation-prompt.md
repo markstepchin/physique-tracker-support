@@ -3,7 +3,7 @@
 **Phase:** [3 — Visual Implementation](../README.md)  
 **Purpose:** Generate a complete landing page in Lovable with your copy and visual style.
 
-Fill in the hex codes from your [visual style guide](../phase-2/04-visual-style-guide-prompt.md), then paste the landing page structure.
+Fill in the hex codes from your [visual style guide](../phase-2/04-visual-style-guide.md), then paste the landing page structure.
 
 ```
 I'd like you to build a landing page based on the following structure and copy. Please apply a clean, modern design style that follows these principles:

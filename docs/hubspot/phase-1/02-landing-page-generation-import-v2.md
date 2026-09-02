@@ -1,8 +1,9 @@
-# Recomp Landing Page — Generated Structure & Copy (Import variant)
+# Recomp Landing Page — Generated Structure & Copy (Import variant, v2)
 
 **Phase:** [1 — Deep Research & Strategy](../README.md)
 **Source prompt:** [02-landing-page-generation-prompt.md](02-landing-page-generation-prompt.md)
 **Variant:** Import-focused, pre-release
+**Revision:** v2 — adds Section 2 (Where Recomp Fits), the four-row stack that places Recomp alongside MyFitnessPal, Whoop, and Hevy / Strong rather than against them. See research doc [§0b](01-deep-research.md) (stack model) and [§5](01-deep-research.md) (Where it sits). Subsequent sections renumbered accordingly.
 
 This is the **import-forward, pre-release** variant of the Recomp landing page. The thesis: the visitor already has hundreds or thousands of physique photos scattered in their camera roll; Recomp turns that pile into a coherent, comparable, dated physique history in minutes. Because Recomp is not yet on the App Store, every install CTA is replaced with an email waitlist / early access capture — never an App Store badge. Every section provides purpose, full ship-ready copy, visual guidance, CTA placement, and implementation notes citing the deep research doc.
 
@@ -54,7 +55,54 @@ Global design constants (apply to every section unless otherwise noted):
 
 ---
 
-## Section 2 — Problem / Agitation
+## Section 2 — Where Recomp Fits (Category Placement)
+
+**Purpose.** Before agitation starts, place Recomp in the visitor's mental stack: the lifter already runs MyFitnessPal (or Cronometer, MacroFactor) for calories, Whoop (or Oura, Apple Watch) for sleep and recovery, and Hevy (or Strong, StrongLifts) for the workout log — leaving the *visual outcome* of all of that in an ad-hoc slot of Photos + Notes. Recomp fills that fourth slot. This section is category placement, not persuasion. Quiet, high, short — one screen of vertical, no CTA, no accent fill. If the visitor leaves this section thinking *"oh — it's the progress-tracking slot,"* the section has done its job.
+
+**Full copy.**
+
+- **Section H2 (small, understated):**
+  > Where it sits.
+- **Four-row stack** (logo left, two-word job right; row 4 muted):
+
+  | | |
+  | --- | --- |
+  | **MyFitnessPal** | Cal tracking |
+  | **Whoop** | Sleep & recovery |
+  | **Hevy** | Workout log |
+  | **Photos + Notes** | Progress tracking *(previously)* |
+
+- **Closer (one line, under the list):**
+  > That's the slot Recomp fills.
+
+**Visual guidance.**
+
+- A dense four-row list, single column, centered, max-width ~420px on desktop; full-width with comfortable left/right padding on mobile. Hairline row separators in the grid's opacity. High density — this should read in under two seconds.
+- **Rows 1–3:** full-contrast recognizable marks (or wordmarks as placeholder until brand-guideline-approved marks are used), two-word job labels in body-regular type. Representative brands only — Cronometer / Oura / Strong are valid substitutions; the persona reads specific brands as *"they know the space."*
+- **Row 4:** Photos + Notes icons (or wordmarks), same two-word job pattern, but muted / lower contrast. Small *"previously"* in micro type to the right of the job label. This row is the incumbent, not a joke — no strikethrough, no red X, no sarcasm.
+- **Whoop's job is Sleep & recovery, not "exercise."** Hevy already owns the workout row; putting "exercise" on Whoop makes the two rows compete.
+- **Two words per row, not a sentence.** The labels name the *job of the slot*, not the product. That is not talking down — it is the entire point of the section.
+- The section sits transparently over the grid — no elevated card, no accent fill, no motion.
+- Do not put Recomp's mark in the list. The closer line is the product.
+
+**CTA placement.** No CTA in this section. This is category placement — a comprehension beat, not a conversion beat. The visitor files Recomp into a category, then keeps scrolling into Problem.
+
+**Implementation notes.**
+
+- This section is deliberately quiet and high — per research §5: its calmness is a feature. Between the hero (what it does) and Problem (why row four failed), the visitor needs a moment to file the product into a slot before agitation starts.
+- Do not put this in the hero — per research §5: the compare-view visual and the waitlist form already compete for six seconds. First scroll is the right altitude.
+- Do not put Recomp as a fifth peer tile — per research §5: that frame reads as *"add another app."* The correct frame is *"replace the ad-hoc slot."* Recomp is the *replacement* for row four, not a peer beside Hevy.
+- Do not compare features across rows — no checkmarks, no *"Recomp has X that Hevy doesn't."* Per research §0b: the page never disparages an adjacent tool; the target lifter probably uses at least one of MFP / Whoop / Hevy and identifies with the choice.
+- Do not explain what MFP / Whoop / Hevy do beyond the two-word job — per research §5: two words name the slot; a sentence talks down.
+- Do not add a fifth or sixth row. Four slots. That is the model.
+- Do not use disparaging treatment for Photos + Notes — muted contrast plus *"previously"* is enough. The persona still uses those apps; the point is that the visual-outcome slot has been ad-hoc, not that Photos and Notes are bad tools.
+- Real MFP / Whoop / Hevy / Photos / Notes marks come later per each brand's presentation guidelines — ship the first pass with placeholder wordmarks or generic logo tiles rather than uploading marks you don't have rights to use.
+- Accessibility: the four rows render as an unordered list with `role="list"` (or as a definition list with `<dl>` / `<dt>` / `<dd>` — either is valid); each brand mark has meaningful alt text ("MyFitnessPal — calorie tracking"). The *"previously"* qualifier on row 4 is text content, not a decorative badge, so screen readers announce it.
+- **Do not omit this section on the pre-release variant.** Unlike a Flow B cold-traffic page (see research §5, anti-patterns), the import variant assumes a visitor who already runs the stack — that is the whole persona for whom "you already have years of progress in your camera roll" lands. Four logos will not bounce this visitor; they will confirm the page understands them.
+
+---
+
+## Section 3 — Problem / Agitation
 
 **Purpose.** Recognition, sharpened to one specific pain: *the camera roll has the evidence, and I can't read it.* Show the visitor we know the specific version of the problem they have, then hand them off — without moralising — to the import solution.
 
@@ -84,7 +132,7 @@ The through-line across every layer: the evidence exists, and nothing the person
   > Your progress photos are buried in your camera roll — hundreds of them, sometimes thousands, mixed in with screenshots, receipts, and last year's Halloween. April is somewhere near a boarding pass. October is next to a meme. The physique shot from the morning after your last deload is three swipes past a photo of your dog.
   >
   > You've done the work. The record of it is right there in your hand. You just can't lay it out. And what you can't lay out, you can't see — so the doubt starts. *Is the diet working? Was the cut worth it? Did I actually gain anything back?* Doubt is what ends programs early. Not lack of discipline.
-- **Handoff line into Section 3:**
+- **Handoff line into Section 4:**
   > **Recomp reads the record you already built. Bring in your Photos album and it lays it out.**
 
 **Visual guidance.** Two annotated workaround screenshots — one per attempt the persona actually made — sitting as equal-weight cards over the grid. The frames pick up the middle of the stack (album, collage) that the copy deliberately doesn't narrate; the annotations name each workaround's specific failure in the visitor's own register.
@@ -101,7 +149,7 @@ The through-line across every layer: the evidence exists, and nothing the person
 - Desktop: two frames side by side, 24–32px gutter. Mobile: stacked vertically, full-width; annotations move below their referent so pointer lines stay short.
 - Both screenshots must be instantly legible as their specific thing. Real iOS Photos chrome for Frame 1. Real collage-app edit chrome for Frame 2 — canvas edges, project title bar, export affordance. No abstract icons standing in for either.
 
-**CTA placement.** No CTA in this section. Momentum carries the visitor into Section 3.
+**CTA placement.** No CTA in this section. Momentum carries the visitor into Section 4.
 
 **Implementation notes.**
 
@@ -117,13 +165,13 @@ The through-line across every layer: the evidence exists, and nothing the person
 
 ---
 
-## Section 3 — Solution / Benefits
+## Section 4 — Solution / Benefits
 
 **Purpose.** Confirm — not teach — the visitor that the import loop is short, obvious, and delivers value inside a single sitting. Then show the aha visually and hand them a way to start that assumes they already have a library. Then show the supporting feature set with import promoted to the top.
 
-This section runs in four sub-blocks: **3a How it works** → **3b Bring your camera roll** → **3c The aha moment** → **3d Everything else it does**.
+This section runs in four sub-blocks: **4a How it works** → **4b Bring your camera roll** → **4c The aha moment** → **4d Everything else it does**.
 
-### 3a — How it works
+### 4a — How it works
 
 **Full copy.**
 
@@ -143,7 +191,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 **Implementation notes.** Steps describe the *user's* action, not the app's mechanics — per research. The closer is not optional — it does the entire "we're not another generic fitness tracker" work of the page in one sentence, and adds the import-specific reassurance ("no start fresh required"). Do not say "AI" — per research: the persona bounces on the word, and naming the real mechanic (album → one-tap import → dated timeline) is more concrete and more honest anyway.
 
-### 3b — Bring your camera roll (single card)
+### 4b — Bring your camera roll (single card)
 
 **Full copy.**
 
@@ -164,7 +212,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 - The card's CTA feeds the same waitlist as the hero — per research: the value is recognition, not routing.
 - Do not implement the muted link as a toggle/tab — per research: toggles hide half the value and the point here is to send a small minority elsewhere, not to negotiate the choice inline.
 
-### 3c — The aha moment
+### 4c — The aha moment
 
 **Full copy.**
 
@@ -178,7 +226,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 **Implementation notes.** This is the emotional peak of the page — per research: if a visitor takes only one image away, this should be it. The caption is rewritten to reinforce that the compare came *from* an imported library, not from a fresh forward-tracking cadence — that's the import thesis rendered in one line. Full-bleed accent treatment is allowed here as one of the ≤2 accent moments on the page (final CTA gets the other), but a transparent grid treatment also works and is safer.
 
-### 3d — Everything else it does (feature strip)
+### 4d — Everything else it does (feature strip)
 
 **Full copy.**
 
@@ -204,7 +252,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 ---
 
-## Section 4 — Social Proof & Trust
+## Section 5 — Social Proof & Trust
 
 **Purpose.** Convert the mid-page moment of maximum consideration into permission to sign up, using one dominant, checkable story proof plus honest pre-release density signals. At pre-release the founder's own 150-check-in imported library *is* the proof — no fabricated ratings.
 
@@ -214,7 +262,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
   > Made by a lifter · Built on 150+ real check-ins imported from one camera roll · Early access opens this fall
 - **Section H2 (above the story proof block):**
   > Real check-ins. Real camera roll.
-- **Founder story proof (uses the same visual asset as Section 3c, but framed as proof rather than aha):**
+- **Founder story proof (uses the same visual asset as Section 4c, but framed as proof rather than aha):**
   > **Two years. 150 check-ins. All imported from my camera roll.**
   > I built Recomp because I couldn't find a tracker that respected the compare view — and because I already had the record, sitting on my phone, unreadable. This is what mine looks like once it's imported and laid out.
   > — Mark, founder
@@ -239,7 +287,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 ---
 
-## Section 5 — Differentiation
+## Section 6 — Differentiation
 
 **Purpose.** Give the persona the one-glance reason Recomp is not another generic fitness tracker, in the register they respect: understated, precise, and stated by omission as much as by claim. On this variant, add one explicit row about import so the differentiation reinforces the page's thesis.
 
@@ -278,7 +326,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 ---
 
-## Section 6 — FAQ (Addressing Potential Objections)
+## Section 7 — FAQ (Addressing Potential Objections)
 
 **Purpose.** Name the specific things stopping a persona-fit visitor from signing up to a pre-release waitlist, defuse each in 2–4 sentences, and earn trust through honesty (about the timeline, about how import actually works, about pricing).
 
@@ -334,7 +382,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 ---
 
-## Section 7 — Final Call-to-Action
+## Section 8 — Final Call-to-Action
 
 **Purpose.** The visitors who reach this section are the highest-intent segment on the page. Give them one clean, unmissable waitlist path and nothing to trip on.
 
@@ -354,14 +402,14 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 
 **Implementation notes.**
 
-- CTA copy varies across the page: hero says **Get early access** with the micro-line "Early access opens in weeks · Import your camera roll first"; section 3b says **Notify me at launch**; the final says **Send me the link when it drops**. Same form, different framing — same pattern as the release version's badge-with-varied-microcopy rule.
+- CTA copy varies across the page: hero says **Get early access** with the micro-line "Early access opens in weeks · Import your camera roll first"; section 4b says **Notify me at launch**; the final says **Send me the link when it drops**. Same form, different framing — same pattern as the release version's badge-with-varied-microcopy rule.
 - Full-bleed accent is the only section where the grid is fully covered — per research: overusing full-bleed erodes the grid's foundational role.
 - Do not put a pricing block or a "Compare plans" table here — per research: introduces last-minute cognitive load right when the visitor should be acting on emotion + evidence.
 - Do not stack "email me + follow us on X" here. The waitlist is the whole funnel at pre-release; social follows belong in the footer, muted.
 
 ---
 
-## Section 8 — Footer (Minimal)
+## Section 9 — Footer (Minimal)
 
 **Purpose.** Legal completeness, mode control, and identity — nothing else. Every non-legal link is a leak.
 
@@ -380,7 +428,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Bring your ca
 **Implementation notes.**
 
 - Mode toggle persists to `localStorage` and defaults to `prefers-color-scheme` — per research: the persona expects mode-following.
-- Legal links only — per research (Gardner Attention Ratio): no product links, no blog, no press page, no "about us" (the founder story already lives in Section 4).
+- Legal links only — per research (Gardner Attention Ratio): no product links, no blog, no press page, no "about us" (the founder story already lives in Section 5).
 - No App Store icon in the footer socials for the pre-release page — per the variant spec: nothing on the page pretends the App Store listing exists.
 - Social icons are muted and small — per research: social follows are a leak; they belong here, not near a CTA, and never above it.
 - The waitlist form has already appeared three times above; the footer does *not* repeat it — per research: repeating the primary conversion in the footer trains the eye to ignore it above.

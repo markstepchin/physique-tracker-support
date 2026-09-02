@@ -3,7 +3,7 @@
 **Phase:** [3 — Visual Implementation](../README.md)  
 **Purpose:** Generate a complete landing page mockup using Claude.
 
-Paste your landing page structure (from [prompt #2](../phase-1/02-landing-page-generation-prompt.md) or [prompt #3](../phase-2/03-copy-optimization-prompt.md)) and the [visual style guide](../phase-2/04-visual-style-guide-prompt.md) below.
+Paste your landing page structure (from [prompt #2](../phase-1/02-landing-page-generation-prompt.md) or [prompt #3](../phase-2/03-copy-optimization-prompt.md)) and the [visual style guide](../phase-2/04-visual-style-guide.md) below.
 
 ```
 Using the following landing page structure and visual style guide, please create a complete landing page mockup:

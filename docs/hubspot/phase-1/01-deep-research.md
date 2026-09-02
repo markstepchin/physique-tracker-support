@@ -23,10 +23,47 @@ The prompt this doc answers asks for a *reference*, not a first draft of copy. S
 
 **And two primary user flows** that shape copy throughout, regardless of pre-release vs. release:
 
-- **Flow A — Import (primary, first customers).** The experienced lifter who already has hundreds of photos in their camera roll. The pitch is: *"You already have years of progress. Recomp organizes it."* The aha is instant — pull photos, align them, compare. Zero-wait.
+- **Flow A — Import (primary, first customers).** The experienced lifter who already has hundreds of photos in their camera roll. The pitch is: *"You already have years of progress. Recomp organizes it."* The aha is fast — group photos into a Photos album, one-tap import, compare. Minutes, not weeks.
 - **Flow B — Track from scratch.** The lifter who doesn't have a photo history yet, or wants to start a fresh chapter (post-injury comeback, new program, first real cut). The pitch is: *"Start now, and every check-in makes the compare view stronger."* The aha builds over 3–6 weeks.
 
 Flow A is the dominant flow for the launch page because the first customers have existing photos. Flow B is addressed as a secondary path (see §6.5). Both flows share the same core aha — compare view — but arrive at it differently.
+
+**And two comprehension beats** that the first two sections of the page exist to deliver, in this order:
+
+1. **Hero — what it does.** A short motion asset (before/after compare, scroll the timeline, align) plus the promise and the CTA. See §4.
+2. **Stack — where it sits.** Four rows: MyFitnessPal, Whoop, Hevy, Photos + Notes. See §5.
+
+Everything after those two is persuasion. A visitor who still thinks this is another workout or calorie app will misread every sentence below.
+
+---
+
+## 0a. Product constraint — how import actually works (must not be misrepresented)
+
+Recomp does **not** auto-detect, scan, identify, or sort physique photos in the user's camera roll. There is no "find my progress photos" feature and there will not be one at launch. Import happens in exactly two ways:
+
+1. **Album import (recommended for many photos).** The user pre-organizes their progress photos into an iOS Photos album, then imports the whole album into Recomp in one tap. This is the streamlined path for anyone bringing hundreds of photos in — the organizing work happens once, in Photos, before the import.
+2. **Individual selection.** The user picks photos out of the camera roll one at a time. Good for small imports or top-ups.
+
+Copy anywhere on the site — every hero, feature, FAQ, wireframe, and downstream prompt — must respect this. Do **not** write *"Recomp finds your physique photos"*, *"Point Recomp at your camera roll and it pulls the physique shots"*, *"scans for physique photos"*, *"identifies your progress photos"*, *"auto-sorts your camera roll"*, or any variant that implies auto-detection or magic sorting. The honest framing is: *the user brings the photos in — via an album or a manual selection — and Recomp turns those photos into a dated, comparable timeline*. The value is in the timeline and the compare view, not in the import mechanism.
+
+The updates in this revision fold this constraint into §4.2 (V2 hero subhead), §6.4 (Loop A step 1), §8 (feature strip), and the wireframe. If a residual auto-detection phrase surfaces elsewhere in this document or in a downstream deliverable, treat it as an oversight to fix rather than a variant to preserve.
+
+## 0b. Where Recomp sits in the lifter's tech stack — complements, not competitors
+
+The target lifter already runs a small stack of specialized tools, one per training input:
+
+- **MyFitnessPal** (or Cronometer, MacroFactor) — cal tracking.
+- **Whoop** (or Oura, Apple Watch) — sleep & recovery.
+- **Hevy** (or Strong, StrongLifts, a notebook) — workout log.
+- **Photos + Notes** — progress tracking, previously. The ad-hoc slot for the *visual outcome* of everything above. Progress photos in the camera roll, weight in a Notes doc, sometimes a spreadsheet.
+
+That fourth slot is where Recomp lives. Recomp is not a workout logger, not a nutrition tracker, not a recovery monitor — it is the visual-progress layer the persona has been improvising with photos and notes. This mental model has three consequences that show up everywhere else in this doc:
+
+1. **The competitor is the camera roll, not any of these apps.** The persona's disorganized Photos library plus a scattering of Notes/Health entries is the incumbent Recomp is displacing. Hevy, MFP, and Whoop are peers on the same shelf — respected tools that solve different problems. (See also §1 principle 3.)
+2. **The page never disparages an adjacent tool.** The target lifter probably uses at least one of MFP/Whoop/Hevy and identifies with the choice. Copy that punches at them reads as tribal and low-signal. The right frame is *"you've built the stack; here's the missing pillar,"* not *"switch from X."*
+3. **Feature scope is bounded by the model.** Anything that drifts into workout logging, macro tracking, HRV analysis, or a general-fitness feed is out of scope. The persona will read scope discipline as respect for the stack they've already assembled.
+
+Downstream sections apply the model directly: §5 makes the stack visible as the first section after the hero (four rows: MFP, Whoop, Hevy, Photos + Notes — Recomp replaces row four, it does not sit beside Hevy as a fifth logo), §5b then zooms into why that fourth slot failed, §8 uses feature omissions to signal scope, and §9 answers the *"do I need to replace X?"* objection with a short *"no, different jobs"* rather than competitive framing.
 
 ---
 
@@ -38,7 +75,7 @@ Eight things matter more than everything else on this page.
 
 **2. Lead with the outcome, not the mechanism.** The prompt says it and the context file says it: users care about seeing results, not about tracking. So the headline is "See the progress you've been working for," not "The best physique tracker." Joanna Wiebe's rule — *"Enter the conversation already happening in your prospect's head"* — puts the lifter's real question ("Am I actually changing?") at the top of the page, then answers it. This is also how you differentiate against generic fitness trackers without ever naming them.
 
-**3. Position against the camera roll, not against competitors.** The competitor is not Hevy or MacroFactor. The competitor is the user's own iPhone camera roll — 800 disorganized physique photos they already own. That is the star of the competitor set. Weight scattered across Apple Notes, spreadsheets, or Apple Health is a *supplemental* fragment of the same problem — worth naming to expand recognition, but never at the cost of dethroning the camera-roll frame. The camera roll is the strongest because it's where the persona's most emotionally-loaded evidence already lives; unlocking value in what they already have is the strongest reason to install now. (See §5 for the convergence diagram that anchors this framing on the page — camera roll dominant, other sources supporting.)
+**3. Position against the camera roll, not against competitors.** The competitor is not Hevy or MacroFactor. The competitor is the user's own iPhone camera roll — 800 disorganized physique photos they already own. That is the star of the competitor set. Weight scattered across Apple Notes, spreadsheets, or Apple Health is a *supplemental* fragment of the same problem — worth naming to expand recognition, but never at the cost of dethroning the camera-roll frame. The camera roll is the strongest because it's where the persona's most emotionally-loaded evidence already lives; unlocking value in what they already have is the strongest reason to install now. (See §0b for the stack model that grounds this positioning, §5 for the four-row stack on the page, and §5b for the convergence diagram — camera roll dominant, other sources supporting.)
 
 **4. Speak to the science-based lifter, not to everyone.** The persona is the Jeff Nippard / Renaissance Periodization viewer: already motivated, deliberate, evidence-oriented, allergic to fluff. That dictates the tone (precise, understated, no motivational clichés), the vocabulary (recomp, cut, bulk, progressive overload, longitudinal), and the visual identity (Apple-native, high-contrast, scientific, minimal). A page that would work for the broad fitness market will underperform for this user because it will feel generic.
 
@@ -48,7 +85,7 @@ Eight things matter more than everything else on this page.
 
 **7. Mobile is not a variant of desktop — it's the primary surface.** ~70% of App Store landing page traffic in 2025–2026 is mobile, and for a fitness app the number is closer to 85%. Every design decision below is written mobile-first. Desktop is the responsive extension, not the reverse.
 
-**8. For the pre-release page: reframe the ask. Access is a privilege; testing is an obligation.** A pre-release page with a "join the waitlist" CTA and no social proof is a categorically different persuasion problem from a launched-app page. The naive framing — *"try our new app!"* — inverts the actual value exchange. The visitor is being asked to spend attention and time testing an unproven product; the founder is offering something rare — early access, direct influence on the product, and a personal relationship with the person building it. The pre-release page should make that inversion explicit: **early access is a privilege granted to a small number of lifters; downloading and testing an unproven app is an obligation.** This reframe (see §4b) turns a low-signal "join waitlist" into a high-signal *"apply to be one of the first N."* It also sets up the release page to inherit a stronger social proof base — because your first users won't feel like test subjects; they'll feel like founding members.
+**8. For the pre-release page: same hero, different CTA — access is a privilege, expressed through the ask, not the headline.** The pre-release hero uses *the same headline, subhead, and compare-view visual as the release hero.* Only the CTA changes: "Request early access" instead of the App Store badge, backed by honest scarcity micro-copy ("42 spots left · reviewed in 48 hours") and a real 4-field application form. This applies the *"access is a privilege, testing an unproven app is an obligation"* reframe at the CTA layer rather than the headline layer, which is stronger because the visitor experiences the reframe as *what happens when they click*, not as a lecture at the top. It also preserves message continuity into the release version — a returning visitor sees the same pitch, only the button behavior evolves. And it sets up the release page to inherit a stronger social proof base — your first users feel like founding members, not test subjects. (See §4b.)
 
 Everything that follows is an elaboration of these eight.
 
@@ -82,22 +119,25 @@ The strongest social proof — a real, credible, checkable transformation — sh
 
 Auto-playing hero videos, animated gradients, parallax scrolling, and hero carousels are the four biggest conversion killers Unbounce identified in their 2024 study. They compete with the CTA for the visitor's attention budget. The only motion that earns its place on this page is motion that *teaches* the product — the compare view sliding, a photo dropping into a timeline, a check-in creating itself. If motion isn't showing the product working, it's noise.
 
+A silent 6–10 second product clip *inside the device frame* (compare → scroll → align) is teaching motion, not a hero video. Brand reels, talking-head explainers, and gym b-roll are hero videos. Ship the former; cut the latter. See §4 and §12.6.
+
 ---
 
 ## 3. Section-by-Section Breakdown
 
-The page has eight sections. In order:
+The page has two comprehension beats, then persuasion. Nine sections, in scroll order:
 
-1. Hero (the promise + the demo + the install)
-2. Problem / agitation (the "you see yourself every day" beat)
-3. Solution / how it works (the compare view + the 3-step loop)
-4. Aha moment (one hero comparison, dominant on the page)
-5. Feature strip (the supporting cast — check-ins, timeline, weight, notes)
-6. Social proof (density + story)
-7. Objection handling (the FAQ)
-8. Final CTA (repeat the hero promise, repeat the install)
+1. Hero (the promise + the motion demo + the install) — beat 1: what it does. See §4.
+2. Where Recomp fits (four-row stack — logo left, two-word job right) — beat 2: what slot it fills. See §5.
+3. Problem / agitation (why the Photos + Notes slot failed — elaboration of row four). See §5b.
+4. Solution / how it works (the compare view + the 3-step loop)
+5. Aha moment (one hero comparison, dominant on the page)
+6. Feature strip (the supporting cast — check-ins, timeline, weight, notes)
+7. Social proof (density + story)
+8. Objection handling (the FAQ)
+9. Final CTA (repeat the hero promise, repeat the install)
 
-Sections 4 (aha), 5 (features), and 6 (social proof) can shuffle order based on test results — see §14. Sections 1, 2, 3, 7, 8 hold their positions.
+Section 2 is deliberately short — one screen, category placement, not persuasion. It sits immediately after the hero so the visitor can file Recomp into a mental slot before Problem asks them to feel anything about photos. Omit section 2 on Flow B / cold-traffic variants. Sections 5 (aha), 6 (features), and 7 (social proof) can shuffle order based on test results — see §14. Sections 1, 2, 3, 4, 8, 9 hold their positions.
 
 ---
 
@@ -134,7 +174,7 @@ Or, once you have real numbers:
 
 > Free to start · 4.8 on the App Store · Built by a lifter
 
-Cal AI's "Loved by 5M users · ⭐ 4.9" is the pattern. Moody's "One-time payment. Trusted by 3,000+ professionals" is the pattern. Density signal + one credibility marker + one persona marker. If you don't have credible numbers yet, lean on the persona marker alone — "Made by a lifter, for lifters" is more honest and more persuasive than fabricated review counts.
+Cal AI's "Loved by 5M users - 4.9 rating" is the pattern. Moody's "One-time payment. Trusted by 3,000+ professionals" is the pattern. Density signal + one credibility marker + one persona marker. If you don't have credible numbers yet, lean on the persona marker alone — "Made by a lifter, for lifters" is more honest and more persuasive than fabricated review counts.
 
 **Primary CTA — the Apple badge, not a custom button:**
 
@@ -150,7 +190,11 @@ Place the badge *inline with the copy* on desktop (right of or below the headlin
 
 This is the single most important image on the page. Here's what it should be, and what it should not be.
 
-**Should be:** A device frame (iPhone) showing the actual compare view — two photos of the same person, taken 8–12 weeks apart, side by side, with dates and (optionally) weight overlaid the way the app renders them. The compare view is the product; the hero should *be* the product. If you can animate it subtly (the second photo fading in, a slider revealing the second photo, a subtle scale on hover), do that — but only if it teaches the compare interaction. Static is fine. Motion that doesn't teach is noise (§2.6).
+**Should be:** A short motion asset inside a device frame (iPhone). This is comprehension beat 1 — *what it does.* The clip should teach three interactions, in this order: a before/after compare, a scroll through the photo timeline, then an align. Keep it short (6–10 seconds, looping). Dates and (optionally) weight overlay the way the app renders them. The compare view is the product; the hero should *be* the product.
+
+If motion isn't ready, a static compare view is an acceptable fallback — two photos of the same person, 8–12 weeks apart, side by side. A slider reveal of photo B under photo A is the next-best motion if the full clip isn't done. Motion that doesn't teach is noise (§2.6).
+
+Do not also try to explain *where it sits* in the hero. That is beat 2, and it is the entire next section (§5). The fold has a promise, a demo, and a CTA. Adding the four-row stack here splits those six seconds.
 
 **Should not be:**
 - A photo of a person at the gym.
@@ -193,7 +237,7 @@ Given that Flow A (import) is the first-customer flow, **V2 becomes the recommen
 
 **V2 — Camera-roll-first (RECOMMENDED default for release):**
 > **You already have years of progress in your camera roll.**
-> Recomp pulls your physique photos, aligns them, and lets you compare any two — side by side, dated, honest.
+> Import a Photos album in one tap. Recomp dates them and lets you compare any two — side by side, honest.
 > [Download on the App Store]
 > *Free to start · Import your existing photos in seconds*
 
@@ -215,55 +259,47 @@ Ship V2 first (matches the first-customer flow). Test V1 second (more universal,
 
 ## 4b. Section 1 — Hero (Pre-Release / Waitlist Version)
 
-The pre-release version of the page has a fundamentally different job. Almost everything else in this document still applies (structure, visual system, tone, mobile rules), but the hero and CTA logic change materially.
+**The pre-release hero uses the same copy as the release hero.** Same H1, same subhead, same visual. The only things that change are the CTA button, the micro-copy under the CTA, and (optionally) a small "early access" badge on the device frame. This is deliberate:
 
-### The reframe
+- **The pitch does not change based on whether the app is live or a week away.** The camera-roll positioning, the promise, and the mechanism sentence are identical either way. Rewriting the headline for pre-release would be a self-imposed conversion tax.
+- **Message continuity from pre-release to release matters.** A visitor who lands on the pre-release page, sees Version A of the hero, and comes back four weeks later to a re-launched page with the same hero has a stronger recognition and trust signal than one who is met by two different pitches.
+- **The reframe still lives on the page** — just at the CTA and its supporting micro-copy, where the actual behavior differs, not at the headline. Applying "access is a privilege" via a plain "Request early access" button plus honest scarcity is more powerful than announcing the reframe in the headline. The visitor experiences the reframe as *what happens when they click*, not as a lecture at the top.
 
-Naive framing: *"Sign up for early access to our new physique tracker."* → Low-signal, low-conversion. Waitlist as a marketing gimmick.
+### The reframe (positioning behind the CTA, not the headline)
 
-Better framing: *"Early access is a privilege — we're letting a small number of lifters into the private beta because your feedback will shape the product before broader release. Downloading and testing an unproven app is real work, not a favor."*
+Naive framing: *"Sign up for early access to our new physique tracker."* → Low-signal, low-conversion.
 
-This is the psychological equivalent of a good invite-only club: value asymmetry inverted. What you're offering is not "get the product early." What you're offering is *"help us build the product, and get in before everyone else as a thank-you."*
+Better framing: *"Early access is a privilege — we're letting a small number of lifters into the private beta because your feedback will shape the product. Downloading and testing an unproven app is real work, not a favor."*
 
-Three concrete consequences for the hero:
+Three concrete consequences — all applied at the CTA + micro-copy layer, not the headline:
 
-1. **The CTA is application, not signup.** "Request access" or "Apply for early access," not "Join waitlist."
-2. **Scarcity is real, not manufactured.** State the cohort size honestly. "First 100 lifters" is better than a vague "join the waitlist." "Currently accepting requests, 42 spots left in the first cohort" is best.
-3. **The persona bar is stated.** "For serious lifters" or "For lifters who take physique seriously" filters — and the filter makes acceptance feel earned.
+1. **The CTA is application, not signup.** "Request early access," not "Join waitlist."
+2. **Scarcity is real, not manufactured.** State the cohort size honestly. "Currently accepting requests, 42 spots left in the first cohort" is stronger than any headline reframe could be.
+3. **The application flow filters.** A real 4-field micro-form (see below) filters for the persona and creates a small commitment moment that makes acceptance feel earned.
 
-### The pre-release hero copy formula
+### What changes vs. the release hero
 
-**Headline — the invitation, not the promise:**
+Everything in the hero except three elements is identical to §4:
 
-> **Recomp is in early access. Get in before the crowd.**
+**1. The CTA button.** Recommended labels (in order of strength):
 
-Or, leaning into the founder-driven feedback loop:
+- **"Request early access"** (safest default; ships)
+- **"Apply for the beta"** (strongest reframe; slightly higher friction — worth testing)
+- **"Get on the invite list"** (softer, closer to a signup — fallback if the application language feels too heavy)
 
-> **We're building the physique tracker serious lifters actually want. Come help us finish it.**
+Do *not* use the App Store badge here. The badge implies the app is one tap from installing, and it isn't yet.
 
-Or, the strongest and most reframe-explicit:
-
-> **Early access is invite-only. Testing an unproven app is real work — the first 100 lifters get in.**
-
-**Subhead — the value exchange, one sentence, no adjectives:**
-
-> Get the app 4–8 weeks before public release. Give us direct feedback. Shape what ships.
-
-**Micro-copy under the CTA — the specificity of scarcity:**
+**2. The micro-copy under the CTA.** This is where the reframe surfaces. Honest scarcity, real cohort status, a real review commitment.
 
 > Currently accepting requests · [N] spots left in the first cohort · Reviewed within 48 hours
 
-The "reviewed within 48 hours" line is important — it signals that this is a real application, not an auto-approved list. It also creates a small window of anticipation that increases perceived value.
+The "reviewed within 48 hours" line is important — it signals a real application, not an auto-approved list, and it creates a small window of anticipation that increases perceived value.
 
-**Primary CTA — application-style, not signup-style:**
+**3. An optional "in early access" badge on the device frame.** Small, muted, top-right corner of the phone frame. Signals *"this is a real product, in a real state, mid-development"* — which is the whole positioning. Skip if it competes visually with the compare view.
 
-Recommended labels (in order of strength for the reframe):
+Everything else — headline (V2 camera-roll default), subhead, device frame with the compare view, graph-paper grid background — stays exactly as specified in §4.
 
-- **"Request early access"** (safest default)
-- **"Apply for the beta"** (strongest reframe; slightly higher friction)
-- **"Get on the invite list"** (softer, closer to a signup — use if the application language feels too heavy)
-
-The CTA opens either a short form (2–4 questions max — see below) or a Typeform / Tally. Keep it short but *make it real*. The form itself is a filter *and* it's your first VoC (Voice of Customer) data source.
+The CTA opens either a short form (below) or a Typeform / Tally. Keep it short but *make it real*. The form itself is a filter *and* it's your first VoC (Voice of Customer) data source.
 
 ### The pre-release micro-form
 
@@ -276,34 +312,30 @@ A well-designed request-access form does three things: filters for the persona, 
 
 That's the whole form. Any longer and conversion tanks; any shorter and the reframe collapses back into "waitlist."
 
-### The pre-release hero visual
+### The pre-release hero — final composite
 
-Same rules as the release hero — the compare view is the visual — but with two adjustments:
+Putting it together: the pre-release hero is the release hero from §4, with only the CTA area swapped.
 
-1. **Add a subtle "in early access" badge in the corner of the device frame** (small, muted, not visually competing). Signals *"this is a real product, in a real state, mid-development"* — which is the whole positioning.
-2. **The compare view can and probably should be the founder's own** (yours, Mark). At pre-release, before you have any user compares, the founder's transformation is the *only* credible visual proof point. Once real users are in the beta, add their compares to the release version.
-
-### Pre-release hero copy examples
-
-**Pre-V1 — Reframe-explicit (RECOMMENDED for pre-release):**
-> **Early access is invite-only. Testing an unproven app is real work — the first 100 lifters get in.**
-> Recomp is a physique tracker built around the compare view. We're 4–8 weeks from public release. Get in early, help shape what ships.
+> **You've been taking the photos. You just can't see the progress.** *(same H1 as release Version A)*
+>
+> Your camera roll has hundreds of physique photos, and no way to line them up. Recomp organizes what you already have — and shows you the compare, side by side. *(subhead, same as release)*
+>
 > [Request early access]
 > *Currently accepting requests · 78 spots left · Reviewed within 48 hours*
 
-**Pre-V2 — Invitation-tone (softer, still credible):**
-> **We're building the physique tracker serious lifters actually want.**
-> Turn the photos you already have into a timeline you can actually see. Get in during early access, before public launch.
-> [Request early access]
-> *Free during beta · Reviewed within 48 hours*
+Device frame carries the compare view (as in §4). Optionally: small "in early access" badge on the frame corner.
 
-**Pre-V3 — Founder-driven (leans hardest on the personal angle):**
-> **I've taken 450 progress photos over two years. I built the tracker I wished existed.**
-> Recomp is in private beta. If you take physique seriously and want to help shape it before public release, request access below.
-> — Mark, founder
+**Note on the compare view for pre-release:** at pre-release, before any real user compares exist, the compare view in the device frame *must* be the founder's own (yours, Mark). It's the only credible visual proof point available. Once beta users generate their own compares, the release version can rotate them in.
+
+### Alternative hero copy — the reframe-explicit variant
+
+Only worth testing if the standard hero underperforms. This variant surfaces the "access is a privilege" reframe in the headline itself rather than the CTA.
+
+> **Early access is invite-only. Testing an unproven app is real work — the first 100 lifters get in.**
+> Recomp is a physique tracker built around the compare view. Get in early, help shape what ships.
 > [Request early access]
 
-Ship Pre-V1 first. It leans hardest on the privilege/obligation reframe, which is the strongest positioning move available at pre-release. Pre-V2 is the fallback if Pre-V1 tests as too aggressive. Pre-V3 is the strongest for the specific segment of visitors who arrive via founder-led TikTok content — the person watching *your* transformation is more inclined to trust *your* product.
+This is more polarizing and more filtering. It also breaks the message continuity into the release version. Ship the standard hero (§4 copy with the CTA swap) first; test the reframe-explicit variant only if week-2 signup rate is below expectations.
 
 ### Pre-release anti-patterns
 
@@ -326,45 +358,186 @@ This is why the pre-release strategy is worth the effort even for a small waitli
 
 ---
 
-## 5. Section 2 — Problem / Agitation
+## 5. Section 2 — Where Recomp Fits
 
 ### The job
 
-Establish that the visitor has a specific problem, that Recomp knows it precisely, and that the problem is worth solving. This section builds the emotional case; the next section (solution) closes it.
+The hero answered *what it does* (compare, scroll, align). This section answers *what it is not* — not a calorie tracker, not a recovery wearable, not a workout logger. Category placement, immediately, before Problem asks the visitor to feel anything about photos.
 
-For the science-based lifter, agitation has to be handled carefully. This user *doesn't need to be sold on lifting* and will pattern-match aggressive gym-bro agitation ("Sick of not seeing gains?") as low-quality marketing. The tone is: *"You already know this. We know you know. Here's the specific version of the problem we solve."*
+This is comprehension beat 2. Together with the hero, these two sections are the whole explanation of the product:
+
+1. Hero motion — before/after compare, scroll the timeline, align. (See §4.)
+2. This section — four rows: the stack the visitor already runs, plus the ad-hoc slot Recomp replaces.
+
+Keep it short — one visual, one closer. One screen height on mobile. No CTA, no motion, no accent fill. If the visitor leaves this section thinking *"oh — it's the progress-tracking slot,"* the section has done its job. Persuasion starts in §5b.
 
 ### The copy formula
 
-Four-beat structure. The extra beat vs. the classic three-beat PAS is the *scattered-data* beat — the persona has evidence of their progress spread across several apps, not just their camera roll, and naming that specifically is what earns the "they get it" recognition.
+**Section headline (small, understated):**
 
-**Beat 1 — Name the phenomenon.**
-The lifter's actual problem is not lack of progress; it's inability to *perceive* progress. Name that.
+> **Where it sits.**
+
+Or:
+
+> **The slot you've been filling with Photos and Notes.**
+
+No supporting paragraph. The four rows carry the argument. A headline plus the list is the whole copy load.
+
+**Closer (one line, under the list):**
+
+> That's the slot Recomp fills.
+
+Not "the missing fourth tool" as a peer tile — Recomp is the replacement for row four, not a fifth logo.
+
+### Visual pattern
+
+A dense four-row list. Logo (or two logos) on the left, two-word job on the right. No tiles, no feature matrix, no sentences explaining what each app does.
+
+```
+[MyFitnessPal]              Cal tracking
+[Whoop]                     Sleep & recovery
+[Hevy]                      Workout log
+[Photos] + [Notes]          Progress tracking    ← muted, "previously"
+```
+
+Then the closer underneath.
+
+Row treatment:
+
+- **Rows 1–3:** full-contrast recognizable marks, two-word job labels. Representative brands — Cronometer / Oura / Strong are valid substitutions; the persona reads specific brands as *"they know the space."*
+- **Row 4:** Photos + Notes icons, same two-word job pattern, but muted / lower contrast. Optional small *"previously"* in micro type to the right of the job label. This row is the incumbent, not a joke — no strikethrough, no red X, no sarcasm.
+- **Whoop's job is Sleep & recovery, not "exercise."** Hevy already owns the workout row; putting "exercise" on Whoop makes the two rows compete.
+- **Two words, not a sentence.** The labels name the *job of the slot*, not the product. That is not talking down — it is the entire point of the section.
+
+Layout:
+
+- **Desktop:** single column, centered, max-width ~420px. Logo left, job right, hairline row separators. High density — this should read in under two seconds.
+- **Mobile:** same single column, full-width with comfortable left/right padding. Do not go two-by-two; the vertical list *is* the stack.
+
+Do not put Recomp's mark in the list. The closer line is the product.
+
+### Anti-patterns
+
+- **Do not put this in the hero.** The compare-view motion and the App Store badge already compete for six seconds. First scroll is the right altitude.
+- **Do not put Recomp as a fourth or fifth peer tile.** That frame says *"add another app."* The correct frame is *"replace the ad-hoc slot."*
+- **Do not compare features across rows.** No checkmarks, no *"Recomp has X that Hevy doesn't."*
+- **Do not explain what MFP / Whoop / Hevy do** beyond the two-word job. Two words name the slot; a sentence talks down.
+- **Do not add a fifth or sixth row.** Four slots. That's the model.
+- **Do not include this section on a Flow B / cold-traffic variant.** Someone without this stack will bounce on four logos. Omit, or swap for a one-liner (*"The record of what everything else is for."*).
+- **Do not use disparaging treatment for Photos + Notes.** Muted contrast and *"previously"* are enough. The persona still uses those apps.
+
+### Placement note
+
+This section is deliberately quiet and high. It sits between the hero (what it does) and Problem (why row four failed). Its calmness is a feature: the visitor files the product into a category before agitation starts. Do not accent-fill, do not use motion, do not add a CTA.
+
+### Downstream references
+
+Prompt #2 (page generation) should produce this section from the four-row spec above and the wireframe (§15A). Prompt #7 (Claude mockup) should render placeholder brand marks — the actual MFP / Whoop / Hevy / Photos / Notes marks come later per Apple/App Store presentation guidelines.
+
+---
+
+## 5b. Section 3 — Problem / Agitation
+
+### The job
+
+The visitor has just seen the stack. They know Recomp is the progress-tracking slot. This section zooms into *why row four failed* — Photos + Notes as an ad-hoc stand-in for a real progress tool — and makes that failure feel specific enough to be worth solving. It builds the emotional case; the next section (solution) closes it.
+
+For the science-based lifter, agitation has to be handled carefully. This user *doesn't need to be sold on lifting* and will pattern-match aggressive gym-bro agitation ("Sick of not seeing gains?") as low-quality marketing. The tone is: *"You already know this. We know you know. Here's the specific version of the problem we solve."*
+
+Do not re-explain MyFitnessPal, Whoop, or Hevy here. §5 already placed those. This section is an elaboration of row four, not a second pass at the whole stack.
+
+### The reframe — problem-as-gap, not problem-as-mess
+
+The stack in §5 already told the visitor they've systemized every input. This section names the consequence of leaving the output in Photos and Notes. It is not agitating a personal-disorganization problem ("your photos are a mess"); it is naming a *structural gap in an otherwise complete system* ("that fourth slot is still ad-hoc"). Both copy versions below inherit this frame without repeating the brand list.
+
+**Do not add a preamble sentence above the H2 that restates MFP / Whoop / Hevy.** That copy now lives in §5. Repeating it here makes Problem do two jobs and competes with the H2.
+
+**On Flow B / cold-traffic variants:** §5 is omitted (the visitor may not have that stack). Version B copy therefore cannot lean on it. The bridge beat ("The camera-roll problem catches everyone. It just catches starters later.") stays intact and does the framing work on its own.
+
+### The copy formula — two versions, one per flow
+
+The problem the experienced lifter faces is not the same problem the starting-fresh lifter faces. Writing one problem statement that tries to cover both makes both weaker. The right move is two parallel versions — Flow A (import, primary, first customers) and Flow B (track from scratch, secondary) — that share a root cause (day-to-day perception normalizes gradual change) but manifest differently.
+
+**Structural recommendation for the page:**
+- **Launch with Version A on the release page** (matches the first-customer segment and the camera-roll positioning).
+- **Ship Version B as a page variant** for traffic sources that skew earlier-stage (e.g., a TikTok video whose hook is "before you start your first cut, take this photo"). Route via a UTM parameter to a page variant that swaps only the problem section.
+- **Do not attempt to combine both on one page.** A single hybrid statement dilutes recognition for both.
+
+Both versions use a four-beat structure. Beat 1 names the phenomenon; Beat 2 names the specific evidence or absence of it; Beat 3 names the stakes; Beat 4 is a soft handoff into the solution section.
+
+---
+
+#### Version A — For lifters who already take photos (PRIMARY, matches Flow A)
+
+The problem is not that they don't have photos. They know photos matter — they've been taking them for months or years. The problem is that the evidence they already own is **unusable** — scattered, unaligned, uncomparable. The frame is *"you did the work; you just can't see it."*
+
+**Beat 1A — Name the phenomenon (evidence-they-can't-use).**
+
+> **You've been taking the photos. You just can't see the progress.**
+
+Not "you can't see progress" (implies no progress). Not "you haven't been tracking" (insulting to a lifter who has been). The frame is precise: the evidence exists, the compare doesn't.
+
+**Beat 2A — Show the specific evidence, camera-roll dominant.**
+
+> Your camera roll has hundreds of physique photos — mixed in with screenshots, receipts, and last year's Halloween. Different angles, different lighting, different weeks. No way to line them up. Your weight and notes are somewhere else again — a Notes doc, an old spreadsheet, Apple Health. You've done the work. You just don't have a way to *see* it.
+
+Why camera-roll-dominant matters here:
+- **The camera roll is the highest-signal recognition trigger.** Every physique-serious lifter has this exact camera roll. The line lands instantly.
+- **The camera roll is Recomp's primary competitor.** The install-now argument is *"you already have the raw material — Recomp unlocks it."* Keep it starring; let the notes/health fragment do supporting work.
+- **The multi-source sentence still plants the convergence thesis** without dethroning the primary frame.
+
+**Beat 3A — Raise the stakes.**
+
+The stakes for the experienced lifter are motivation and continuity. Never guilt-trip.
+
+> When the change isn't obvious, the doubt creeps in — *"is the diet working? am I actually gaining muscle? was the deload worth it?"* — and doubt is what ends cuts, bulks, and programs early. Not lack of discipline.
+
+**Beat 4A — Soft handoff.**
+
+> **Recomp organizes what you already have. Weight and notes come along for the ride.**
+
+---
+
+#### Version B — For lifters starting fresh (SECONDARY, matches Flow B)
+
+The starting-fresh lifter doesn't have an unusable-evidence problem yet — they have an *invisible-progress-about-to-happen* problem. Their doubt spiral hasn't started because they don't yet have a compare view to disappoint them. What they need to hear is: *if you don't start recording deliberately now, you'll be in the same spot as the guy with 800 disorganized photos in six months — except you won't have the photos either.*
+
+**Beat 1B — Name the phenomenon (invisible-progress).**
 
 > **You see yourself every day. So the person in the mirror never seems to change.**
 
-**Beat 2 — Show the specific evidence, camera-roll first.**
-Lead with the camera roll — it's the emotionally strongest evidence and the star of the competitor set. The Notes / Excel / Apple Health fragment is a *supporting sentence*, not a co-equal beat. It expands recognition without dethroning the primary frame.
+This is the more traditional PAS opener and still lands hardest for the starting-fresh persona because they *don't* yet have the compare view that would prove them wrong.
 
-> Your progress photos are buried in your camera roll — hundreds of them, mixed in with screenshots, receipts, and last year's Halloween. Your weight and notes are somewhere else again — a Notes doc, an old spreadsheet, Apple Health. You've done the work. You just can't see it laid out.
+**Beat 2B — Show what happens without deliberate recording.**
 
-Why camera-roll-primary matters:
+> A photo here, a random selfie there, one from last month you can't find. Six months in, you're in the same spot as the lifter with 800 disorganized photos — except you have fifteen, and none of them line up. The camera-roll problem catches everyone. It just catches starters later.
 
-1. **The camera roll is the highest-signal recognition trigger.** Every physique-serious lifter has some version of this camera roll. The line lands instantly. Weight-scattered-in-Notes is real but secondary — it lands for a subset, and it lands *after* the camera-roll beat has already earned the recognition.
+The move here is to *use the experienced-lifter's problem as the future you're avoiding*. Turns "start now" into a specific, tangible warning rather than a generic productivity nudge.
 
-2. **The camera roll is Recomp's primary competitor.** Recomp's install-now argument is *"you already have the raw material in your camera roll — Recomp unlocks it."* Making the scattered-notes problem co-equal would dilute that install-now argument. Keep the camera roll starring; let the notes/health fragment do supporting work.
+**Beat 3B — Raise the stakes.**
 
-3. **The supplemental sentence still plants the convergence thesis** — enough to earn the multi-source convergence diagram in the visual, and enough to justify the direction toward Apple HealthKit later — without over-promising features that don't yet exist.
+The stakes for the starting-fresh lifter are program adherence. The doubt spiral hits harder here because there's no historical record to consult.
 
-**Beat 3 — Raise the stakes without moralizing.**
-The stakes here are motivation and continuity, not shame. Never guilt-trip a lifter about not tracking.
+> Change is slow. You'll go through weeks where the mirror lies. And without a record from before, you have nothing to compare against. Most first cuts, first bulks, first real programs end there — not from lack of effort, from lack of proof.
 
-> When the change isn't obvious, the doubt creeps in — *"is the diet working? am I actually gaining muscle? was the deload worth it?"* — and doubt is the thing that ends cuts, bulks, and programs early.
+**Beat 4B — Soft handoff.**
 
-**Beat 4 (optional) — Name the resolution one line before showing it.**
-This is a soft handoff into the solution section. Optional; ship if the section feels like it ends abruptly.
+> **Start the record now. Recomp turns your first photo into the anchor every future compare gets built on.**
 
-> **Recomp brings your photos, your weight, and your check-ins into one place — so the compare view actually tells the story.**
+---
+
+### Anti-patterns for both versions
+
+- **Never tell an experienced lifter to "start taking progress photos."** They will bounce in 400ms. They've been taking them for years.
+- **Never tell a starting-fresh lifter their camera roll is a mess.** It isn't yet, and the frame confuses them.
+- **Do not mix the two versions in one paragraph.** "Whether you have 800 photos or none, Recomp..." reads as generic. Pick one, ship it, test the other as a variant.
+- **Never guilt-trip either version.** No "you'll regret not tracking." No "consistency is what separates good from great." Both are register-breaks the persona will smell.
+
+### Version-picking heuristic for prompt #2
+
+If the copy is being generated for the launch page or the founder's own audience (which skews experienced): **ship Version A.**
+If the copy is being generated for a page variant targeted at cold or early-stage traffic (e.g., "beginner physique tracking" search intent, TikTok hooks aimed at people considering their first serious cut): **ship Version B.**
+The visual (convergence diagram, §5b Option C) still applies to both — the diagram shows *what Recomp does*, which is the same either way. Only the copy differs.
 
 ### Visual pattern
 
@@ -437,21 +610,37 @@ Design notes for Option C:
 - **A stock photo of a discouraged person looking in a mirror.** Same reason. Persona reads this as low-effort marketing.
 - **Over-quantification.** "The average lifter loses 40% of motivation in month 3" is invented data. Don't fabricate stats. If you have real numbers from your own tracking history (150 check-ins is a lot of data), use those; otherwise, use qualitative language.
 
-### Recomp-specific example (final draft)
+### Recomp-specific example (final drafts, both versions)
 
-> **You see yourself every day. So the person in the mirror never seems to change.**
+**Version A — final draft (Flow A / experienced lifter / PRIMARY):**
+
+> **You've been taking the photos. You just can't see the progress.**
 >
-> Your progress photos are buried in your camera roll — hundreds of them, mixed in with screenshots, receipts, and last year's Halloween. Your weight and notes are somewhere else again — a Notes doc, an old spreadsheet, Apple Health. You've done the work. You just can't see it laid out.
+> Your camera roll has hundreds of physique photos — mixed in with screenshots, receipts, and last year's Halloween. Different angles, different lighting, different weeks. No way to line them up. Your weight and notes are somewhere else again — a Notes doc, an old spreadsheet, Apple Health. You've done the work. You just don't have a way to see it.
 >
 > That's the moment the doubt starts. *Is the diet working? Am I actually gaining muscle? Was the deload worth it?* And doubt is what ends cuts, bulks, and programs early — not lack of discipline.
 >
-> **Recomp starts with the photos you already have. Weight and notes come along for the ride.**
+> **Recomp organizes what you already have. Weight and notes come along for the ride.**
 
-Word count: ~105 words. The final handoff line preserves the camera-roll-primary framing while acknowledging the supporting sources — matches the visual hierarchy in the diagram above.
+Word count: ~115 words. Camera-roll dominant. Handoff line reinforces the "unlock the value you already have" install argument.
 
 ---
 
-## 6. Section 3 — Solution / How It Works
+**Version B — final draft (Flow B / starting-fresh lifter / SECONDARY variant):**
+
+> **You see yourself every day. So the person in the mirror never seems to change.**
+>
+> A photo here, a random selfie there, one from last month you can't find. Six months in, you're in the same spot as the lifter with 800 disorganized photos — except you have fifteen, and none of them line up. The camera-roll problem catches everyone. It just catches starters later.
+>
+> Change is slow. You'll go through weeks where the mirror lies. And without a record from before, you have nothing to compare against. Most first cuts, first bulks, first real programs end there — not from lack of effort, from lack of proof.
+>
+> **Start the record now. Recomp turns your first photo into the anchor every future compare gets built on.**
+
+Word count: ~130 words. Slightly longer than A because Beat 2 needs to build the "camera roll problem catches everyone" bridge from the future-facing frame back to the same convergence-diagram visual. Handoff line establishes urgency (start now) without being pushy.
+
+---
+
+## 6. Section 4 — Solution / How It Works
 
 ### The job
 
@@ -459,40 +648,101 @@ Turn the doubt from the previous section into confidence by showing the product'
 
 The persona rule for this section: *the science-based lifter doesn't want to be taught; they want to be confirmed.* Show them the loop is short, obvious, and doesn't ask them to change their behavior. They already take photos; you just organize them.
 
-### The copy formula
+### The copy formula — two loop variations, one per flow
 
-**Section headline — the promise of simplicity:**
-> **Three steps. That's the whole loop.**
+The loop is not the same for both users. The experienced lifter (Flow A) starts with import — the aha is instant, and weekly check-ins are optional continuation, not the primary habit. The starting-fresh lifter (Flow B) starts with the first check-in, and the aha compounds over 3–6 weeks.
 
-Or, if you want to lean into the "you already do this" angle:
-> **You already take the photos. Recomp does the rest.**
+Show both. Label them clearly. Match each to its persona.
 
-**Three steps, numbered, each with a title and one line:**
+**Section headline — pitched at the promise of simplicity:**
 
-1. **Take a weekly check-in.**
-Same pose, same light, same time of day. Recomp reminds you.
+> **Three steps. Different starting points.**
 
-2. **Recomp builds your timeline.**
-Every check-in slots in by date, next to the last one, next to the one from three months ago.
+Or, if you want a single-line pitch that covers both loops:
+
+> **However you start, Recomp gets you to the compare view fast.**
+
+---
+
+#### Loop A — For lifters with an existing camera roll (PRIMARY, matches Flow A)
+
+The aha is *instant*. Import → align → compare, in minutes, not weeks. Weekly check-ins are optional maintenance, not the point of the app.
+
+1. **Import an album (or pick shots one at a time).**
+Group your progress photos into an iOS Photos album, then bring the whole album into Recomp in one tap. For smaller imports, pick photos out of the camera roll one at a time.
+
+2. **Recomp aligns and organizes them.**
+Every photo tagged by date, laid into a timeline. You end up with a clean history of the last two years in under a minute.
+
+3. **Compare any two — instantly.**
+Pick a photo from last month and one from a year ago. Side by side, same scale, the aha you've been missing.
+
+*Weekly check-ins keep the timeline growing forward. But if you'd rather use Recomp as the archive of what you already have, that works too. There's no streak to break.*
+
+The italic note at the end matters. It preserves optionality for the experienced lifter — some will want to keep taking weekly check-ins (great, the compare view keeps improving), and some will use Recomp mostly as an organizational tool for existing evidence (also great, that's still the compare view). Not forcing a weekly habit onto a user whose value is *already unlocked at step 3* respects their situation.
+
+---
+
+#### Loop B — For lifters starting fresh (SECONDARY, matches Flow B)
+
+No existing archive to import. The aha is *deferred* — the first compare doesn't get powerful until check-in #4 or #5.
+
+1. **Take your first check-in.**
+Same pose, same light, same time of day. Save. That's the anchor for every future compare.
+
+2. **Come back weekly.**
+Recomp reminds you at your usual time. Each check-in slots into the timeline next to the last one.
 
 3. **Compare, side by side.**
-Pick any two check-ins. See the actual difference — the one your day-to-day view hides.
+By check-in 4–6 (about three to six weeks in), the first compare view starts telling a real story. Every week after that, it tells more.
 
-**One-sentence closer, right below the three steps:**
+*Honest note: visible change usually takes 3–6 weeks. The first few check-ins will look the same. That's normal — and that's why the compare view gets more powerful every week you use it.*
+
+The honest note is a Peep Laja credibility play — acknowledging a known tradeoff before the visitor thinks of it increases trust more than any positive claim. It also filters for the right user: the person who bounces at "3–6 weeks" wasn't going to become a long-term user anyway. The persona will read this as respect for their intelligence.
+
+---
+
+**One-sentence closer, positioned right below both loops:**
+
 > That's it. No streaks. No workouts to log. No macros to enter. Just the photos, the timeline, and the comparison.
 
-The closer earns the differentiation. It names three things Recomp *doesn't* do (streaks, workouts, macros) and by naming them, positions against the entire generic-fitness-tracker category without ever attacking a specific competitor. This is a Peep Laja tactic — *say what you're not, so what you are becomes sharper.*
+This is the shared closer — it works for both loops and earns Recomp's differentiation against the generic-fitness-tracker category by naming three things Recomp *doesn't* do. This is a Peep Laja tactic — *say what you're not, so what you are becomes sharper.*
 
 ### Visual pattern
 
-The strongest pattern for this section is what Moody uses: a horizontal three-column layout on desktop (each column: numbered step, small screenshot, one-line description), collapsing to a vertical scroll on mobile.
+Two viable layouts. Pick based on how much vertical space you want to give this section.
 
-The three screenshots should be:
-1. The check-in creation flow (photo captured, weight entered, save button).
-2. The timeline view showing 6–12 check-ins in a vertical scroll.
-3. The compare view (the aha shot — same one from the hero, or a different real transformation to avoid repetition).
+**Layout 1 — Stacked, one loop above the other (RECOMMENDED for launch).**
 
-Design detail: make step 3's screenshot visually dominant. Bigger, or with a subtle highlight, or the only one in color while 1 and 2 are muted. The compare view is the destination; the steps are the road. Let the destination look like the destination.
+Loop A on top, Loop B below. Each rendered as a horizontal three-column layout on desktop (each column: numbered step, small screenshot, one-line description), collapsing to a vertical scroll on mobile. Between them, a soft divider or a small label:
+
+> *Just starting?*
+
+...introducing Loop B. Persona-relevant labels reinforce the two paths without a visual toggle.
+
+Why this is recommended: it shows both loops explicitly and respects the launch-page principle that the persona should be able to skim and self-identify. Experienced lifters see Loop A first and stop reading; starting-fresh lifters read past Loop A and land on Loop B. Nobody has to click a tab.
+
+**Layout 2 — Side-by-side, two columns on desktop.**
+
+Loop A on the left, Loop B on the right, each with the same three-step structure. Stronger visual symmetry, more premium-feeling, but risks compressing each loop's steps too small to read on smaller desktops. Use only if your desktop min-width is generous (~1200px content).
+
+**Do not use a tab toggle.** Toggles hide half the value from every visitor and defeat scannability. This applies here for the same reason it applied in §6.5's two-flow split.
+
+### Screenshots — six total across both loops
+
+The screenshots do the persuasion work; the copy just labels them.
+
+**Loop A screenshots:**
+- **A1 — Import screen.** The iOS album picker (or the Photos-library multi-select) with the user selecting the album that holds their progress shots. Show the moment right before the one-tap import fires — it signals *the user is in control, and the import happens in one action.*
+- **A2 — Timeline view populated with imported photos.** Show 8–12 check-ins in a vertical scroll, dated. Make the timeline look *dense* — it visually rewards the import.
+- **A3 — Compare view.** The aha screenshot. Same one from the hero or a different real transformation to avoid repetition.
+
+**Loop B screenshots:**
+- **B1 — Check-in creation flow.** Photo captured, weight entered (optional), save button. Clean, minimal.
+- **B2 — Timeline view with just 3–4 check-ins.** A shorter, earlier-stage timeline. Deliberately sparser than A2 — it teaches the honest expectation that the timeline grows over time.
+- **B3 — Compare view.** Ideally a *different* real transformation than A3, showing a shorter timespan (e.g., 6-week compare vs A3's 6-month compare). This visually reinforces that Loop B's aha compounds.
+
+Design detail across both: **make each loop's third screenshot (A3, B3) visually dominant.** Bigger, or the only one in full color while 1 and 2 are muted. The compare view is the destination; the steps are the road. Let the destination look like the destination.
 
 ### Anti-patterns
 
@@ -501,71 +751,31 @@ Design detail: make step 3's screenshot visually dominant. Bigger, or with a sub
 - **Skipping the closer.** The "no streaks, no workouts, no macros" line is the reason the science-based lifter will pattern-match this as *not another generic fitness app*. Do not cut it.
 - **Marketing the historical import here.** Historical import is a strong feature, but if you introduce it in the "how it works" section it complicates the loop. Save it for the feature strip (§8) where it's a *bonus* rather than a *step*.
 
-### Optional fourth beat — the honest bit
+### 6.5 Why the two loops replace the earlier "split card" pattern
 
-You could add a fourth beat *below* the three steps that names the honest tradeoff of the product:
+Earlier drafts of this document handled the two flows with a single three-step "how it works" section followed by a small side card that offered *"I've been taking photos / I'm starting fresh."* That pattern is now superseded by the two labeled loops in the section above.
 
-> **Note:** Visible change usually takes 3–6 weeks. The first few check-ins will look the same. That's normal. The compare view gets more powerful every week you use it.
+Reasons:
 
-This is a *credibility play* — Peep Laja's data on this is that acknowledging a known tradeoff *before* the visitor thinks of it increases trust more than any positive claim. It also filters for the right user: the person who bounces at "3–6 weeks" wasn't going to become a long-term user anyway. The persona (science-based lifter) will read this as respect for their intelligence.
+1. **The loop is fundamentally different for the two flows.** Loop A is import-first; Loop B is check-in-first. Squeezing that difference into a side card and pretending the primary loop is universal understates the divergence and confuses experienced lifters (who read "take a weekly check-in" as step 1 and either bounce or misunderstand).
 
-Test it as a variant (§14).
+2. **Weekly check-ins are optional for Loop A.** The experienced lifter's aha happens at step 3 of the import loop. Presenting weekly check-ins as *the* habit for that user overstates the ongoing commitment and misses that many of them will use Recomp as an organized archive rather than a new tracking habit. Loop A's italic note ("Weekly check-ins keep the timeline growing forward. But if you'd rather use Recomp as the archive of what you already have, that works too. There's no streak to break.") makes that optionality explicit.
 
-### 6.5 The two-flow split
+3. **The two-loop layout scans better.** Every visitor sees the loop for their situation without clicking anything. Experienced lifters read Loop A and can stop; starting-fresh lifters scroll to Loop B. The earlier split card required the visitor to read a generic loop first and *then* find their situation — one extra step of cognitive load.
 
-Recomp has two real user flows, and the "how it works" section is where a visitor self-identifies with one of them. Handling both explicitly (rather than pretending one is universal) makes the section stronger.
+4. **Loop B absorbs the "honest bit" beat.** The 3–6 week honest expectation, previously a floating optional fourth beat, now lives inside Loop B where it belongs (the starting-fresh user needs the honest expectation set; the import user doesn't, because their aha is already delivered).
 
-**Flow A — Import (the first-customer flow):**
-The experienced lifter has years of photos. Their "how it works" is:
-1. Import your camera roll.
-2. Recomp finds and aligns the physique photos.
-3. Compare any two — instant aha.
+**Do not** re-add the split-card pattern below the two loops. It becomes redundant. The two-loop layout is the whole two-flow strategy in this section.
 
-The value delivery is *immediate*. The aha happens the first time they use the app. This is the strongest possible activation moment and should be the *default* how-it-works path on the launch page.
-
-**Flow B — Track from scratch:**
-The lifter without a photo history. Their "how it works" is:
-1. Take a weekly check-in.
-2. Recomp builds the timeline.
-3. Compare — the aha compounds over 3–6 weeks.
-
-Value delivery is *deferred*. Requires more trust up front.
-
-### Handling the two flows on the page
-
-Three viable patterns, in order of recommendation:
-
-**Pattern 1 — Split card (RECOMMENDED).**
-Immediately after the standard three-step "how it works" section, drop a small two-card split:
-
-> **Two ways to start:**
->
-> | I've been taking photos | I'm starting fresh |
-> | --- | --- |
-> | Import your camera roll. Recomp finds the physique photos, aligns them, and shows you the compare — in minutes. | Take your first check-in tonight. Recomp builds the timeline from your first photo forward. Compares get powerful in 3–6 weeks. |
-
-Both cards can link into the same App Store CTA. The value is *recognition* — every visitor sees the card that matches their situation and thinks *"they know I exist."*
-
-**Pattern 2 — Sequenced beats.**
-Write the "how it works" section as one three-step flow, then follow it with two short paragraphs:
-
-> **If you already have photos:** Import them and compare in minutes.
-> **If you're starting fresh:** Take your first check-in and let the timeline build.
-
-Less visual but tighter. Good for a very short page.
-
-**Pattern 3 — Toggle.**
-A tab-style toggle at the top of the "how it works" section: [I have photos] [I'm starting fresh]. Toggling reveals a different three-step flow.
-
-*Do not use Pattern 3.* Interactive toggles hide half the value from every visitor, add complexity, and reduce scannability. Pattern 1 (split card) is stronger on every dimension.
+**Do not use a tab toggle** ([I have photos] [I'm starting fresh]) — toggles hide half the value from every visitor, add complexity, and defeat scannability. Both loops visible, always.
 
 ### Copy implication
 
-The dominant hero variant (V2, camera-roll-first) matches Flow A. The split card in §6.5 catches Flow B visitors and gives them their own path forward without derailing the main pitch. That's the whole two-flow strategy — lead with A, catch B in the middle.
+The dominant hero variant (V2, camera-roll-first) matches Loop A. The problem statement's Version A also matches Loop A. The how-it-works section maintains that alignment by leading with Loop A. Starting-fresh visitors read past Loop A and land on Loop B — which mirrors the problem-statement Version B in phrasing and pace. The whole page reads as one coherent Flow A pitch, with Loop B and Version B available as page variants and as parallel sections for Flow B traffic.
 
 ---
 
-## 7. Section 4 — Social Proof
+## 7. Section 7 — Social Proof
 
 Because this section does a lot of work for a paid app targeting a discerning niche, it gets its own extended treatment. Read §7.1–7.4 in order — each layer stacks on the previous.
 
@@ -593,7 +803,7 @@ Why this works:
 - **Category education.** The founder-transformation shows what the product does *and* what the product is for, in a single image.
 - **Persona resonance.** The science-based lifter respects founders who ship products in categories they personally practice. You have skin in the game and the photos to prove it.
 
-This becomes the aha section (§4 in the section order) and the emotional peak of the page.
+This becomes the aha section (§5 in the section order) and the emotional peak of the page.
 
 ### 7.3 Building out story proof over time
 
@@ -639,7 +849,7 @@ For Recomp, this is a *later addition*. Don't fabricate it. But once you have an
 
 ---
 
-## 8. Section 5 — Feature / Benefit
+## 8. Section 6 — Feature / Benefit
 
 ### The job
 
@@ -674,7 +884,7 @@ The features to include, in priority order:
 
 3. **Historical photo import.**
 > *"Import the photos you already have."*
-> Point Recomp at your camera roll. It'll pull the physique photos and organize them by date.
+> Group your progress shots into an iOS Photos album, then bring the whole album into Recomp in one tap. Or pick photos one at a time.
 
 4. **A real timeline, not a photo grid.**
 > *"Every check-in in one scroll."*
@@ -704,7 +914,7 @@ Start with alternating rows. This is what Hevy uses in its middle-of-page featur
 
 ### What to explicitly *not* include
 
-The context doc is clear about what Recomp is not. Reinforce that by not putting these in the feature grid:
+The stack model in §0b — plus the context doc — makes it clear what Recomp is not. Reinforce that by not putting these in the feature grid:
 
 - **Streaks, XP, badges.** Would signal generic-fitness-tracker.
 - **Social feed / friends / leaderboards.** Actively opposite of the positioning.
@@ -712,7 +922,7 @@ The context doc is clear about what Recomp is not. Reinforce that by not putting
 - **Calorie tracking.** Same.
 - **HealthKit integration.** *Maybe* worth mentioning eventually, but the context doc places this as future / supporting-context, not current feature.
 
-The absence of these is a persuasion tool. The persona will notice, and it will read as *finally, an app that respects what physique tracking is actually about.*
+The absence of these is a persuasion tool. The persona will notice, and it will read as *finally, an app that respects what physique tracking is actually about* — and, per §0b, as respect for the stack they've already assembled. Every one of these features would push Recomp into a slot that MFP, Whoop, or Hevy already occupy.
 
 ### Anti-patterns
 
@@ -723,11 +933,11 @@ The absence of these is a persuasion tool. The persona will notice, and it will 
 
 ---
 
-## 9. Section 6 — Objection Handling
+## 9. Section 8 — Objection Handling
 
 ### The job
 
-The visitor at this point has scrolled through the hero, the problem, the solution, the aha moment, and the feature strip. They understand what Recomp is. If they haven't installed, it's because something specific is stopping them. This section names and defuses the specific objections.
+The visitor at this point has scrolled through the hero, the stack, the problem, the solution, the aha moment, and the feature strip. They understand what Recomp is. If they haven't installed, it's because something specific is stopping them. This section names and defuses the specific objections.
 
 For Recomp targeting the science-based lifter, the objections are predictable. In order of frequency, they are:
 
@@ -769,7 +979,7 @@ Suggested launch set:
 4. **"How much does it cost?"** — Free up to 30 photos. Paid after. State the pricing when it exists; don't hide it. (Once the paid tier is live, this becomes: *"Free to try. Paid once you're serious — a one-time-per-month cost less than a gym membership."* — but land the actual number.)
 5. **"Are my photos private?"** — Yes. Details on where they live (device, iCloud, whatever the actual answer is).
 6. **"I don't have years of photos. Does this still work?"** — Start now. Recomp gets more powerful every week. Realistic expectation: 3–6 weeks to first meaningful compare.
-7. **"I already use [tracker]. Do I need this?"** — Recomp doesn't replace training or nutrition trackers; it's the missing piece those tools skip: the visual outcome.
+7. **"I already use [tracker]. Do I need this?"** — Recomp doesn't replace training or nutrition trackers — different jobs. It's the progress-tracking slot in the stack, the one Photos and Notes have been filling. Most visitors have already absorbed this framing from §5 by the time they reach the FAQ, so keep this answer to two sentences.
 
 ### Visual pattern
 
@@ -790,7 +1000,7 @@ Do *not* pre-expand any of them. Pre-expanded FAQs create visual clutter and def
 
 ---
 
-## 10. Section 7 — Final CTA
+## 10. Section 9 — Final CTA
 
 ### The job
 
@@ -875,13 +1085,14 @@ The hero headline should feel like it *finishes* that thought, not starts a new 
 
 ### 11.2 The PAS formula (Problem → Agitation → Solution)
 
-The oldest and most reliable structure for a landing page. The section-by-section breakdown above is essentially PAS:
+The oldest and most reliable structure for a landing page. The section-by-section breakdown above is essentially two comprehension beats, then PAS:
 
-- **P (Problem):** Section 2 — you can't perceive your progress.
-- **A (Agitation):** Section 2 — and the doubt kills programs early.
-- **S (Solution):** Sections 3–5 — Recomp turns your photos into a compare view.
+- **Comprehension:** Section 1 (hero motion — what it does) + Section 2 (stack — where it sits).
+- **P (Problem):** Section 3 — row four failed: you can't perceive your progress.
+- **A (Agitation):** Section 3 — and the doubt kills programs early.
+- **S (Solution):** Sections 4–6 — Recomp turns your photos into a compare view.
 
-The classical mistake is to skip Agitation. Without it, the visitor doesn't feel the problem is worth solving *right now*. With it, the solution feels urgent. For Recomp, agitation is soft (this is a discerning persona, not a desperate one), but it must exist.
+The classical mistake is to skip Agitation. Without it, the visitor doesn't feel the problem is worth solving *right now*. With it, the solution feels urgent. For Recomp, agitation is soft (this is a discerning persona, not a desperate one), but it must exist. Another mistake, specific to this page: running PAS before the visitor knows which slot Recomp occupies. That is why the stack sits above Problem.
 
 ### 11.3 Gardner's Attention Ratio
 
@@ -976,7 +1187,7 @@ This is the *strongest available design move* for this persona, and the way to u
 
 Why the foundation approach works:
 
-- It creates a single unified surface. The visitor scrolls through eight sections and never leaves the same background. That continuity does a lot of quiet work — the page feels like *one thing*, not a stack of unrelated blocks.
+- It creates a single unified surface. The visitor scrolls through nine sections and never leaves the same background. That continuity does a lot of quiet work — the page feels like *one thing*, not a stack of unrelated blocks.
 - It's low-attention by design. At the recommended opacity (0.05 dark / 0.06 light), the grid registers as texture, not information. The eye doesn't parse individual lines; it reads *"measured surface"* as a single ambient signal.
 - Layering over it becomes the design language. Elevated cards, solid section fills, and screenshots all get to visually *rest on* the grid — the grid becomes the ground, everything else becomes figure. That figure/ground relationship is what makes considered design read as considered.
 - It matches what the persona already trusts: Desmos, graph-paper notebooks, math class, engineering paper. Signals *measured, precise, scientific, evidence-based* — everything the positioning asks for.
@@ -1102,11 +1313,13 @@ Recommend Stack A. The persona will recognize the SF rendering as "made by someo
 
 The rule from §2.6 applies: only motion that teaches earns its place. Concrete allowances:
 
-- **Compare view slider on hover/tap:** The user drags a slider to reveal photo B under photo A. Teaches the compare interaction. Ship.
+- **Hero product clip (comprehension beat 1):** A short silent loop (6–10 seconds) inside the device frame that teaches three interactions in order: before/after compare, scroll the timeline, align. This is the preferred hero visual. Ship. Respect `prefers-reduced-motion` with a static compare fallback.
+- **Compare view slider on hover/tap:** The user drags a slider to reveal photo B under photo A. Teaches the compare interaction. Acceptable fallback if the full clip isn't ready.
 - **Photo drop into timeline:** When the "how it works" section scrolls into view, a photo animates into the timeline. Teaches the timeline. Consider.
 - **Ambient parallax on hero:** Ship-killing distraction. Cut.
-- **Auto-playing hero video:** Same. Cut. If you want a video, autoplay on tap, not on load.
+- **Auto-playing brand video:** Cut. A teaching product clip in the device frame is not a brand video; a founder talking-head or gym b-roll is.
 - **Reveal-on-scroll fade-ins:** Fine if subtle (opacity 0 → 1, 200ms). Avoid slide-up-and-fade combinations that feel sluggish.
+- **Stack section:** No motion. The four-row list is static on purpose.
 
 ### 12.7 Both modes, system-following by default
 
@@ -1167,10 +1380,10 @@ Concrete implication: when a design decision creates tension between desktop and
 
 Consider a slightly different section order on mobile than on desktop. Specifically:
 
-- On desktop: hero → problem → solution → aha → features → social proof → objections → CTA.
-- On mobile: hero → aha → problem → solution → features → social proof → objections → CTA.
+- On desktop: hero → stack → problem → solution → aha → features → social proof → objections → CTA.
+- On mobile: hero → stack → aha → problem → solution → features → social proof → objections → CTA.
 
-Rationale: mobile visitors are more likely to bounce fast. Front-loading the aha moment right after the hero (with less text between them) increases the odds that a visitor who's about to bounce sees the strongest emotional beat first.
+Rationale: mobile visitors are more likely to bounce fast. Front-loading the aha moment after the stack (with less text between them) increases the odds that a visitor who's about to bounce sees the strongest emotional beat first. Do not skip or delay the stack on mobile — it is comprehension beat 2, and it has to land before Problem copy.
 
 This is a *variant to test*, not a default. Ship the desktop order on mobile first, then A/B test the aha-early variant (§14).
 
@@ -1227,7 +1440,7 @@ Test in order of *expected impact × cost of running the test*. Rough priority:
 
 **Tier 1 (highest expected impact):**
 1. **Hero headline variants.** V1 (outcome), V2 (camera-roll), V3 (question). See §4 for exact copy.
-2. **Hero visual.** Static compare vs. animated (slider reveal) vs. video demo. Compare vs. timeline as the dominant image.
+2. **Hero visual.** Static compare vs. the teaching clip (compare → scroll → align) vs. slider reveal.
 3. **Section order.** Aha-early on mobile (§13.4) vs. current order.
 
 **Tier 2 (meaningful impact, lower cost):**
@@ -1305,22 +1518,55 @@ rests on, following the Moody reference.
 | SECTION 1 - HERO  [transparent - page-body grid shows through]          |
 |                                                                         |
 | H1: You already have years of progress in your camera roll.             |
-| Subhead: Recomp pulls your physique photos, aligns them, and lets you   |
-|          compare any two - side by side, dated, honest.                 |
+| Subhead: Import a Photos album in one tap. Recomp dates them and       |
+|          lets you compare any two - side by side, honest.               |
 |                                                                         |
 | [Download on the App Store]                                             |
 | Micro: Free to start . Import your existing photos in seconds           |
 |                                                                         |
 | [DEVICE FRAME - iPhone with the compare view]                           |
+|   Comprehension beat 1: short motion asset (6-10s loop) teaching        |
+|   before/after compare, then scroll the timeline, then align.           |
+|   Static compare is the fallback if motion isn't ready.                 |
 |   Two real photos, dated, ideally the founder's own transformation.     |
-|   Static or with a subtle slider affordance. Grid background inside     |
-|   the compare view visually rhymes with the page grid.                  |
+|   Grid background inside the compare view rhymes with the page grid.    |
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 2 - PROBLEM / AGITATION                                         |
+| SECTION 2 - WHERE RECOMP FITS (see §5)                                  |
 |                                                                         |
-| Visual: CONVERGENCE DIAGRAM, CAMERA-ROLL DOMINANT (see §5 Option C).    |
+| [transparent over page-body grid - deliberately quiet, no accent fill,  |
+|  no motion, no CTA. One screen height on mobile.]                       |
+|                                                                         |
+| H3 (small, understated):                                                |
+|     Where it sits.                                                      |
+|                                                                         |
+| [STACK LIST - four rows, logo left, two-word job right]                 |
+|   Single column, centered, max-width ~420px. Hairline separators.       |
+|   Same vertical list on mobile - do not go 2x2.                         |
+|                                                                         |
+|   [MyFitnessPal ]              Cal tracking                             |
+|   [Whoop        ]              Sleep & recovery                         |
+|   [Hevy         ]              Workout log                              |
+|   [Photos]+[Notes]             Progress tracking   muted, "previously"  |
+|                                                                         |
+|   Rows 1-3: full-contrast marks. Row 4: muted Photos + Notes icons.     |
+|   Brands are representative - Cronometer / Oura / Strong are valid      |
+|   subs. Whoop is Sleep & recovery, not exercise - Hevy owns workouts.   |
+|                                                                         |
+| Closer (one line under the list):                                       |
+|     That's the slot Recomp fills.                                       |
+|                                                                         |
+| DO NOT include: Recomp as a fourth/fifth peer tile, feature matrix,     |
+|   checkmarks, crossed-out logos, sentences explaining what MFP / Whoop  |
+|   / Hevy do, or more than four rows. DO NOT put this in the hero.       |
+|   DO NOT include this section on Flow B / cold-traffic variants.        |
+|                                                                         |
++-------------------------------------------------------------------------+
+|                                                                         |
+| SECTION 3 - PROBLEM / AGITATION  (elaboration of stack row 4; see §5b)  |
+|                                                                         |
+| Visual: CONVERGENCE DIAGRAM, CAMERA-ROLL DOMINANT (see §5b Option C).   |
 |   Left column, hierarchy encoded:                                       |
 |     - Camera roll photo grid - DOMINANT (top, ~50% of left weight)      |
 |     - Notes/Excel - small, supporting (bottom row)                      |
@@ -1336,49 +1582,72 @@ rests on, following the Moody reference.
 |   "Your camera roll has the evidence. Recomp lays it out - with your    |
 |    weight and notes alongside."                                         |
 |                                                                         |
-| H2: You see yourself every day. So the person in the mirror never       |
-|     seems to change.                                                    |
+| H2 (Version A - PRIMARY):                                               |
+|     You've been taking the photos. You just can't see the progress.     |
 |                                                                         |
-| Body (~4 sentences):                                                    |
-|   - Camera-roll beat (primary; leads).                                  |
+| Body A (~4 sentences):                                                  |
+|   - Camera-roll beat leads (hundreds of photos, no way to line up).     |
 |   - Weight/notes beat as supporting sentence, not co-equal.             |
 |   - The doubt beat.                                                     |
-|   - Handoff: "Recomp starts with the photos you already have.           |
-|     Weight and notes come along for the ride."                          |
+|   - Handoff: "Recomp organizes what you already have. Weight and        |
+|     notes come along for the ride."                                     |
+|                                                                         |
+| Alt H2 (Version B - variant for starting-fresh traffic):                |
+|     You see yourself every day. So the person in the mirror never       |
+|     seems to change.                                                    |
+|                                                                         |
+| Body B (~5 sentences):                                                  |
+|   - Invisible-progress beat (mirror doesn't change).                    |
+|   - "Camera-roll problem catches everyone, just catches starters        |
+|     later" beat (bridges to same visual).                               |
+|   - The doubt beat, tuned for no-history case.                          |
+|   - Handoff: "Start the record now. Recomp turns your first photo       |
+|     into the anchor every future compare gets built on."                |
+|                                                                         |
+| NOTE: Ship Version A on the release page. Route Version B via a         |
+| separate URL variant for cold / early-stage traffic sources. The        |
+| convergence diagram works unchanged for both. Do not restack            |
+| MFP / Whoop / Hevy copy here - that is Section 2.                       |
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 3 - HOW IT WORKS (SOLUTION)  [transparent over page-body grid]  |
+| SECTION 4 - HOW IT WORKS (SOLUTION)  [transparent over page-body grid]  |
 |                                                                         |
-| H2: Three steps. That's the whole loop.                                 |
+| H2: Three steps. Different starting points.                             |
 |                                                                         |
-| [Step 1]           [Step 2]           [Step 3]                         |
-| [Screenshot]       [Screenshot]       [Screenshot - LARGER]            |
-| Take a weekly      Recomp builds      Compare, side by side.           |
-| check-in.          your timeline.     See the actual difference.       |
+| ---- LOOP A (Flow A / experienced lifter / primary) ----                |
 |                                                                         |
-| Closer: "That's it. No streaks. No workouts to log. No macros to       |
-|          enter. Just the photos, the timeline, and the comparison."    |
+| [Step 1]           [Step 2]           [Step 3]                          |
+| [Screenshot A1]    [Screenshot A2]    [Screenshot A3 - LARGER]          |
+| Import your        Recomp aligns      Compare any two -                 |
+| camera roll.       and organizes.     instantly.                        |
+|                                                                         |
+| Italic note: "Weekly check-ins keep the timeline growing forward.       |
+|              But if you'd rather use Recomp as the archive of what      |
+|              you already have, that works too. There's no streak to     |
+|              break."                                                    |
+|                                                                         |
+| ---- soft divider or label: "Just starting?" ----                       |
+|                                                                         |
+| ---- LOOP B (Flow B / starting fresh / secondary) ----                  |
+|                                                                         |
+| [Step 1]           [Step 2]           [Step 3]                          |
+| [Screenshot B1]    [Screenshot B2]    [Screenshot B3 - LARGER]          |
+| Take your first    Come back          Compare, side by side.            |
+| check-in.          weekly.            Powerful by check-in 4-6.         |
+|                                                                         |
+| Italic note: "Visible change usually takes 3-6 weeks. The first few     |
+|              check-ins will look the same. That's normal - and that's   |
+|              why the compare view gets more powerful every week."       |
+|                                                                         |
+| ---- shared closer, below both loops ----                               |
+|                                                                         |
+| Closer: "That's it. No streaks. No workouts to log. No macros to        |
+|          enter. Just the photos, the timeline, and the comparison."     |
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 3b - TWO-FLOW SPLIT CARD                                        |
-|                                                                         |
-| H3: Two ways to start.                                                  |
-|                                                                         |
-| +-----------------------------+-----------------------------+           |
-| | I've been taking photos     | I'm starting fresh          |           |
-| | Import your camera roll.    | Take your first check-in    |           |
-| | Recomp finds the physique   | tonight. Recomp builds the  |           |
-| | photos, aligns them, and    | timeline from your first    |           |
-| | shows the compare in        | photo forward. Compares get |           |
-| | minutes.                    | powerful in 3-6 weeks.      |           |
-| | [Download on the App Store] | [Download on the App Store] |           |
-| +-----------------------------+-----------------------------+           |
-|                                                                         |
-+-------------------------------------------------------------------------+
-|                                                                         |
-| SECTION 4 - THE AHA MOMENT                                              |
+| SECTION 5 - THE AHA MOMENT                                              |
 |                                                                         |
 | H2: The moment you actually see it.                                     |
 |                                                                         |
@@ -1390,7 +1659,7 @@ rests on, following the Moody reference.
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 5 - FEATURE STRIP                                               |
+| SECTION 6 - FEATURE STRIP                                               |
 |                                                                         |
 | H2: Everything else your physique tracker should be.                    |
 |                                                                         |
@@ -1402,7 +1671,7 @@ rests on, following the Moody reference.
 |                                                                         |
 | Row 2 (screenshot RIGHT, copy LEFT):                                    |
 |   Import the photos you already have.                                   |
-|   Point Recomp at your camera roll. It'll pull the physique photos.     |
+|   Import a Photos album in one tap, or pick shots one at a time.        |
 |                                                                         |
 | Row 3 (screenshot LEFT, copy RIGHT):                                    |
 |   A real timeline, not a photo grid.                                    |
@@ -1414,7 +1683,7 @@ rests on, following the Moody reference.
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 6 - SOCIAL PROOF (density signals + secondary story proof)      |
+| SECTION 7 - SOCIAL PROOF (density signals + secondary story proof)      |
 |                                                                         |
 | [Density strip]: 4.8 stars on the App Store . 5,000 lifters tracking    |
 |                  . Featured in [logos as they accumulate]               |
@@ -1424,7 +1693,7 @@ rests on, following the Moody reference.
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 7 - OBJECTION HANDLING (FAQ)                                    |
+| SECTION 8 - OBJECTION HANDLING (FAQ)                                    |
 |                                                                         |
 | H2: Answers to what you're probably thinking.                           |
 |                                                                         |
@@ -1439,7 +1708,7 @@ rests on, following the Moody reference.
 |                                                                         |
 +-------------------------------------------------------------------------+
 |                                                                         |
-| SECTION 8 - FINAL CTA                                                   |
+| SECTION 9 - FINAL CTA                                                   |
 |                                                                         |
 | [full-bleed accent - covers the page-body grid; see §12.1a pattern 3]   |
 |                                                                         |
@@ -1464,31 +1733,31 @@ rests on, following the Moody reference.
 The pre-release wireframe is structurally identical to §15A with the following section-by-section deltas:
 
 **SECTION 1 (Hero):**
-- **H1** changes to a reframe-explicit headline (see §4b for the recommended default):
-  > *"Early access is invite-only. Testing an unproven app is real work — the first 100 lifters get in."*
-- **Subhead** describes the value exchange:
-  > *"Recomp is a physique tracker built around the compare view. We're 4–8 weeks from public release. Get in early, help shape what ships."*
-- **CTA** is `[Request early access]`, not the App Store badge.
-- **Micro-copy** is honest scarcity:
+- **H1, subhead, and device frame** are UNCHANGED from the release version. Same V2 camera-roll headline, same subhead, same motion-asset device frame (compare → scroll → align). Message continuity between pre-release and release is deliberate.
+- **CTA** is the only substantive change: `[Request early access]`, not the App Store badge.
+- **Micro-copy** under the CTA is swapped for honest scarcity:
   > *"Currently accepting requests · 78 spots left · Reviewed within 48 hours"*
-- **Device frame** gets a subtle "in early access" corner badge.
+- **Device frame** optionally gains a small "in early access" corner badge (skip if it competes visually with the compare view).
+- **Compare view MUST be the founder's own** at pre-release — the only credible visual proof asset available before beta users exist.
 
-**SECTION 3b (Two-flow split card):**
-- Both cards' CTAs become `[Request early access]` instead of the App Store badge.
-- The card copy stays the same — both flows apply to beta users too.
+**SECTION 2 (Stack):** Unchanged. Category placement is the same whether the CTA is a waitlist or an install.
 
-**SECTION 4 (Aha):**
+**SECTION 4 (How it works):**
+- Any CTAs in this section become `[Request early access]` instead of the App Store badge.
+- The loop copy stays the same — both flows apply to beta users too.
+
+**SECTION 5 (Aha):**
 - The founder compare view is *the only* social proof asset on the pre-release page (there are no user compares yet).
 - Caption changes tone slightly to emphasize the founder-led development:
   > *"I have 150 check-ins over two years. I'm building Recomp because I couldn't find a tracker that respected the compare view. — Mark"*
 
-**SECTION 6 (Social proof):**
+**SECTION 7 (Social proof):**
 - No density signals (no App Store rating yet, no install count).
 - Replace with a "how the beta works" panel:
   - What you get: early access, direct line to the founder, lifetime discount on the paid tier, credit as a founding-cohort user.
   - What we ask: real feedback, at least one week of daily check-ins, honest reactions.
 
-**SECTION 7 (FAQ):**
+**SECTION 8 (FAQ):**
 - Different objection set. Suggested:
   1. *"How do I get accepted?"* — First-come, priority to lifters with 500+ existing photos, lifters posting the persona-adjacent content on TikTok/YouTube. Not random.
   2. *"How much does it cost during the beta?"* — Free. Founding-cohort users get a lifetime discount on the paid tier at public launch.
@@ -1498,7 +1767,7 @@ The pre-release wireframe is structurally identical to §15A with the following 
   6. *"What kind of feedback do you actually want?"* — What's broken, what's missing, what's confusing, what made you stop using the app.
   7. *"Can I share it with my friends?"* — Not yet — the cohort is small on purpose. Point them to the waitlist.
 
-**SECTION 8 (Final CTA):**
+**SECTION 9 (Final CTA):**
 - Copy changes to a re-invitation (see §10 pre-release variant).
 - CTA is `[Request early access]`, not App Store badge.
 - Density signal is honest cohort status:
@@ -1508,19 +1777,21 @@ Everything else — graph-paper grid, both modes, mobile-first, typography, sect
 
 ### 15.1 Notes on the wireframe
 
-**Section count:** 8. If you find yourself adding a 9th, question hard. The pattern for high-converting consumer app pages is 6–9 sections total; more than 9 dilutes attention.
+**Section count:** 9. Section 2 is one screen — if it grows past that, it is overreaching. If you find yourself adding a 10th, question hard. The pattern for high-converting consumer app pages is 6–9 sections total; more than 9 dilutes attention.
 
 **Nav bar:** Optional. Simplest and most conversion-focused: no nav at all. The App Store badge in the hero *is* the nav. If you want a nav, keep it to logo + App Store badge and nothing else.
 
-**Section 4 (aha):** This is the emotional peak. Everything above builds toward it; everything below reinforces it. If a visitor takes only one image away from the page, this should be it.
+**Section 2 (stack):** Comprehension beat 2. Quiet, dense, immediately after the hero. Omit on Flow B / cold-traffic variants.
 
-**Section 5 (features):** Consider cutting to 3 rows for the launch page, adding rows 2 and 5 later. Shorter is stronger for launch.
+**Section 5 (aha):** This is the emotional peak. Everything above builds toward it; everything below reinforces it. If a visitor takes only one image away from the page, this should be it.
 
-**Section 6 (social proof):** Adjust based on what you actually have. On launch day, this section might just be the density strip + the founder compare view (which technically doubles up with section 4). That's fine. Add real user compares as you collect them.
+**Section 6 (features):** Consider cutting to 3 rows for the launch page, adding rows 2 and 5 later. Shorter is stronger for launch.
 
-**Section 7 (FAQ):** Ship all 7 objections from day 1. This is the section where honesty about the paid tier and about the 3–6 week honest timeline earns trust with the persona.
+**Section 7 (social proof):** Adjust based on what you actually have. On launch day, this section might just be the density strip + the founder compare view (which technically doubles up with section 5). That's fine. Add real user compares as you collect them.
 
-**Section 8 (final CTA):** Do not omit. Even if the page is short. The final CTA converts the highest-intent visitors on the page, and its removal is a common self-sabotage move.
+**Section 8 (FAQ):** Ship all 7 objections from day 1. This is the section where honesty about the paid tier and about the 3–6 week honest timeline earns trust with the persona.
+
+**Section 9 (final CTA):** Do not omit. Even if the page is short. The final CTA converts the highest-intent visitors on the page, and its removal is a common self-sabotage move.
 
 ### 15.2 What's *not* in the wireframe (deliberately)
 
@@ -1542,12 +1813,13 @@ Prompt #2 in this framework generates the page structure with complete copy. Han
 
 1. The wireframe above (§15).
 2. The messaging hierarchy from the context doc (§17 of context: emotional promise → problem → product solution → supporting features).
-3. The hero copy variants (§4.4 above).
-4. The specific feature-block copy (§8).
-5. The full FAQ set with draft answers (§9).
-6. The persona description (from context doc §5 + §15).
-7. The tone rules from §11 above (specificity, no jargon, Jeff-Nippard-style precision).
-8. The visual identity notes from §12 (Apple-native, dark-mode-first, iOS blue accent, SF Pro).
+3. The hero copy variants (§4).
+4. The stack four-row spec (§5).
+5. The specific feature-block copy (§8).
+6. The full FAQ set with draft answers (§9).
+7. The persona description (from context doc §5 + §15).
+8. The tone rules from §11 above (specificity, no jargon, Jeff-Nippard-style precision).
+9. The visual identity notes from §12 (Apple-native, dark-mode-first, iOS blue accent, SF Pro).
 
 That set gives prompt #2 everything it needs to produce a complete, opinionated, on-brand first draft — without any invention of tone, positioning, or persona details.
 
@@ -1585,18 +1857,20 @@ For quick reference. Print this. Everything else in this doc is elaboration.
 **Promise:** See the progress you've been working for.
 **Persona:** The science-based lifter. Already motivated. Wants proof, not motivation.
 **Competitor:** The user's own iPhone camera roll — 800 disorganized physique photos. Star competitor. Weight-scattered-across-Notes/Excel/Apple Health is supplemental to the same problem, worth naming for recognition but never dethroning the camera-roll frame.
-**Convergence:** Recomp's job is to unlock the value in the camera roll first, and pull in supporting sources (weight, notes today; Apple HealthKit as direction) into one compare view. Anchored on the page by the §5 convergence diagram, camera roll dominant, other sources supporting. No "coming soon" feature block.
+**Stack:** MyFitnessPal (cal tracking) / Whoop (sleep & recovery) / Hevy (workout log) / Photos + Notes (progress tracking, previously). Recomp replaces row four. On the page as Section 2, immediately after the hero — logo left, two-word job right. See §0b and §5.
+**Convergence:** Recomp's job is to unlock the value in the camera roll first, and pull in supporting sources (weight, notes today; Apple HealthKit as direction) into one compare view. Anchored on the page by the §5b convergence diagram, camera roll dominant, other sources supporting. No "coming soon" feature block.
 **Aha:** The compare view. Two photos, side by side, dated.
-**Two flows:** (A) Import existing camera roll → instant compare — the first-customer flow. (B) Track from scratch → compare compounds in 3–6 weeks. Hero leans A; split-card catches B mid-page.
+**Two flows:** (A) Import existing camera roll → instant compare — the first-customer flow. Weekly check-ins are optional continuation, not required. (B) Track from scratch → compare compounds in 3–6 weeks. Hero copy leans A; problem statement Version A leads; how-it-works shows both loops labeled explicitly (Loop A import-first, Loop B check-in-first) with a soft "Just starting?" divider between them.
 **Two page versions:** Pre-release (waitlist / request-access CTA; access-is-privilege reframe) → Release (App Store install CTA).
 **Primary CTA (release):** Apple App Store badge. Above the fold. Repeated at final CTA. Nowhere else.
-**Primary CTA (pre-release):** [Request early access]. Application-style. Honest scarcity ("42 spots left · reviewed in 48 hours").
+**Primary CTA (pre-release):** [Request early access]. Application-style. Honest scarcity ("42 spots left · reviewed in 48 hours"). Same hero copy as release — only the CTA and micro-copy change.
 **Tone:** Precise, understated, no motivational clichés. Closer to Moody than to StrongLifts.
 **Design:** Both modes (system-following default). SF Pro. iOS blue accent. Graph-paper grid background (§12.1a) as signature — 40px squares, 5% opacity dark / 6% light, faded edges. Apple-native visual identity.
-**Hero (release default):** V2 camera-roll headline + one-sentence mechanism subhead + Apple badge + compare view.
-**Structure:** Hero → Problem → How it works → Two-flow split → Aha → Features → Social proof → FAQ → Final CTA.
+**Hero (release default):** V2 camera-roll headline + one-sentence mechanism subhead + Apple badge + short motion asset (compare → scroll → align). Static compare is the fallback. Comprehension beat 1.
+**Problem statement:** Two versions matched to the two flows. Version A (PRIMARY): "You've been taking the photos. You just can't see the progress." — for experienced lifters with existing camera rolls. Version B (variant): "You see yourself every day..." — for starting-fresh traffic. Ship A; run B as a URL variant for cold/early-stage sources. Problem is Section 3 — an elaboration of stack row four, not a restatement of MFP / Whoop / Hevy.
+**Structure:** Hero → Stack (four-row list) → Problem (Version A) → How it works (two labeled loops: Loop A import-first, Loop B check-in-first) → Aha → Features → Social proof → FAQ → Final CTA. Omit the stack on Flow B / cold-traffic variants.
 **Social proof:** One dominant story (founder compare view — the *only* proof asset at pre-release) + ambient density signals (rating, install count) at release.
-**Mobile:** First. Always. CTA above the fold. 44px touch targets. < 1.5MB page weight.
+**Mobile:** First. Always. CTA above the fold. 44px touch targets. < 1.5MB page weight. Stack stays immediately after the hero on mobile; aha-early is a test variant, not a reason to delay the stack.
 **Cut:** Streaks, workouts, macros, feed, social, sharing, email capture (post-launch), second CTA, generic-fitness aesthetics, isometric grids.
 **Ship:** V2 headline first for release (camera-roll). Pre-V1 headline first for pre-release (reframe-explicit). A/B test hero visual, section order, and headline second.
 

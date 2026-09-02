@@ -170,7 +170,7 @@ This section runs in four sub-blocks: **3a How it works** → **3b Take your fir
   4. **Your photos never leave your phone unless you say so.**
      No feed. No sharing. Nothing public. Just your own record.
   5. **Import the photos you already have.**
-     Point Recomp at your camera roll and it'll pull in the physique photos you've been taking anyway. Optional, and covered in more detail on the [import version of this page](../import/).
+     Group your progress shots into an iOS Photos album and import the whole album in one tap. Optional, and covered in more detail on the [import version of this page](../import/).
   6. *(hold for later)* **Weight and notes when you want them. Never required.**
      Track what matters to you. Ignore what doesn't.
 
