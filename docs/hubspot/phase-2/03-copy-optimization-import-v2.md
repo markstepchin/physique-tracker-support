@@ -109,21 +109,19 @@ Concede-then-disqualify structure preserved on Frame 2.
 - **H2:**
   > Three steps. That's the whole import.
 - **Three steps:**
-  1. **Group your progress shots into a Photos album.**
-     You decide what belongs. The organizing work happens once, in Photos, before the import.
-  2. **Import the whole album in one tap.**
-     Recomp dates every photo and lays them into a timeline.
-  3. **Compare any two dates — side by side, aligned, honest.**
-     Two years of work in one view. The compare your camera roll couldn't give you.
+  1. **Import your data**
+     Photo album, weight from CSV or Apple Health
+  2. **Compare your progress**
+     Instantly compare any 2 dates side by side
+  3. **Track going forward**
+     Reminders for consistency
 - **Closer (right below the three steps):**
   > That's it. No workouts to log. No macros. No "start fresh." Just the photos you already took, finally laid out.
 
 **Copy diff & rationale.**
 
 - H2 unchanged — already optimal for a three-step teach.
-- Step 1: swapped order so the user's autonomy (*You decide what belongs*) leads. Reads as respect, not instruction.
-- Step 2: cut "ready to compare" tail — implied by Step 3.
-- Step 3: promoted the "side by side, aligned, honest" descriptors from the aha caption into the step line itself, so the promise arrives in the mechanic. Sub-line broken into two crisper sentences.
+- Steps rewritten as the full loop, not just the album import: **Import your data** (album, CSV, or Apple Health), **Compare your progress** (any two dates), **Track going forward** (reminders). Titles name the job; sub-lines name the input.
 - Closer: "No macros to enter" → "No macros" (three words saved). "No 'start fresh' required" → **"No 'start fresh.'"** Quotes make the phrase pop; the imperative form does the work of *required*.
 
 ### 4b — Bring your camera roll (single card)
@@ -161,34 +159,7 @@ Concede-then-disqualify structure preserved on Frame 2.
 
 ### 4d — Everything else it does (feature strip)
 
-**Full copy (optimized).**
-
-- **H2:**
-  > Everything else a physique tracker should be.
-- **Feature blocks** (alternating rows; ship four for launch — 1, 2, 3, 4 below):
-  1. **Import the photos you already have.**
-     One album, one tap. Recomp dates them and lays them out. A year of progress visible in the first minute.
-  2. **Compare any two check-ins.**
-     Pick two dates. Side by side, same scale, honest.
-  3. **A real timeline, not a photo grid.**
-     Every check-in in one scroll — dates, weights, notes on the photo.
-  4. **Works on the history you already have.**
-     Ten photos or ten thousand. Recomp lays out what's there. No restart.
-  5. *(hold for later)* **Your photos stay on your phone.**
-     No feed. No sharing. Nothing public. Your record only.
-  6. *(dropped from this variant)* **One check-in a week. That's the whole habit.**
-     Forward-tracking cadence belongs on the [track variant](../track/), not here.
-
-**Copy diff & rationale.**
-
-- H2: "your physique tracker should be" → "a physique tracker should be." Indefinite article on first meeting reads less presumptive; a returning visitor already owns the *your*.
-- Feature 1 body rebuilt around outcome. The source restated the how-it-works three-step; the optimized version references it (*One album, one tap*) then delivers the specific promise: **A year of progress visible in the first minute.**
-- Feature 2 unchanged — already crisp.
-- Feature 3: "with dates, weights, and notes" → "dates, weights, notes on the photo." The "on the photo" detail cashes the Section 3 layer 6 problem (*weight lives elsewhere*) — the visual and the number finally sit on the same object.
-- Feature 4: title cut from "Works on the history you already built. No minimum required." → "Works on the history you already have." Body absorbs the "no minimum" idea as "No restart." — two words carry it.
-- Feature 5: "Your photos never leave your phone unless you say so" → "Your photos stay on your phone." Active, six words shorter. The three-fragment absence list ("No feed. No sharing. Nothing public.") is preserved because it does the differentiation work in three beats.
-
-**Visual guidance, CTA placement, and implementation notes:** unchanged from source. Import stays at #1.
+**Dropped.** The new Section 4a loop (import → compare → track) already carries import, compare, and forward cadence. Repeating those as Import / Compare / Timeline / History rows restated the same jobs with empty device placeholders. Privacy and “no feed” still live in Section 6 and FAQ Item 7.
 
 ---
 

@@ -2,12 +2,14 @@
 <html lang="en" data-theme="system">
   <head>
     <meta charset="utf-8" />
-    <title>Recomp — See the progress you've been working for</title>
+    <title>Recomp — Your camera roll already holds years of progress</title>
     <meta
       name="description"
-      content="Turn your progress photos into a side-by-side timeline. See changes you'd miss day to day."
+      content="Import one Photos album. See two years of work, side by side, in minutes."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/recomp-app-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/recomp-app-icon.png" />
     <style>
       :root {
         --color-bg: #0a0a0b;
@@ -18,13 +20,10 @@
         --color-card: #141416;
         --color-card-border: rgba(255, 255, 255, 0.08);
         --color-placeholder: #1c1c1e;
-        --grid-size: 30px;
-        --grid-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M 30 0 L 0 0 0 30' fill='none' stroke='%232C2C2E' stroke-width='1'/%3E%3C/svg%3E");
-        --grid-mask: radial-gradient(
-          circle at 50% 20%,
-          #000 30%,
-          transparent 80%
-        );
+        --color-success: #30d158;
+        --color-error: #ff453a;
+        --grid-color: rgba(255, 255, 255, 0.05);
+        --grid-size: 24px;
         --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
           0 24px 48px rgba(0, 0, 0, 0.35);
         --radius-card: 20px;
@@ -33,6 +32,37 @@
         --section-padding-y: 72px;
         --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
           "SF Pro Display", system-ui, sans-serif;
+        --font-size-body: 17px;
+        --font-size-h1: clamp(2.25rem, 5vw, 4rem);
+        --font-size-h2: clamp(1.875rem, 3.5vw, 3rem);
+        --font-size-h3: clamp(1.125rem, 2vw, 1.5rem);
+        --font-size-lead: clamp(1.05rem, 2vw, 1.35rem);
+        --font-size-closer: 1.05rem;
+        --font-size-micro: 14px;
+        --font-size-caption: 14px;
+        --font-size-eyebrow: 13px;
+        --font-size-wordmark: 1.125rem;
+        --font-size-density: 14px;
+        --font-size-faq-summary: 17px;
+        --font-size-faq-answer: 17px;
+        --font-size-step-label: 14px;
+        --font-size-label: 14px;
+        --font-size-input: 17px;
+        --font-size-helper: 13px;
+        --line-height-h1: 1.08;
+        --line-height-h2: 1.12;
+        --line-height-h3: 1.25;
+        --line-height-lead: 1.45;
+        --line-height-body: 1.55;
+        --line-height-micro: 1.4;
+        --line-height-input: 1.4;
+        --tracking-h1: -0.03em;
+        --tracking-h2: -0.025em;
+        --tracking-h3: -0.015em;
+        --tracking-wordmark: -0.02em;
+        --measure-lead: 42rem;
+        --measure-body: 42rem;
+        --measure-cta: 40rem;
         --transition-theme: background-color 300ms ease, color 300ms ease,
           border-color 300ms ease;
       }
@@ -40,18 +70,26 @@
       @media (min-width: 768px) {
         :root {
           --section-padding-y: 112px;
+          --grid-size: 40px;
+        }
+      }
+
+      @media (min-width: 1600px) {
+        :root {
+          --grid-size: 48px;
         }
       }
 
       @media (prefers-color-scheme: light) {
         :root {
-          --color-bg: #f8fafc;
+          --color-bg: #fafaf9;
           --color-text: #0a0a0b;
           --color-text-secondary: #6b6b70;
           --color-card: #ffffff;
           --color-card-border: rgba(0, 0, 0, 0.08);
           --color-placeholder: #ececea;
-          --grid-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M 30 0 L 0 0 0 30' fill='none' stroke='%23E5E7EB' stroke-width='1'/%3E%3C/svg%3E");
+          --color-accent-tint: rgba(10, 132, 255, 0.1);
+          --grid-color: rgba(0, 0, 0, 0.06);
           --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.8) inset,
             0 16px 40px rgba(0, 0, 0, 0.08);
         }
@@ -65,20 +103,22 @@
         --color-card: #141416;
         --color-card-border: rgba(255, 255, 255, 0.08);
         --color-placeholder: #1c1c1e;
-        --grid-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M 30 0 L 0 0 0 30' fill='none' stroke='%232C2C2E' stroke-width='1'/%3E%3C/svg%3E");
+        --color-accent-tint: rgba(10, 132, 255, 0.12);
+        --grid-color: rgba(255, 255, 255, 0.05);
         --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
           0 24px 48px rgba(0, 0, 0, 0.35);
       }
 
       html[data-theme="light"] {
         color-scheme: light;
-        --color-bg: #f8fafc;
+        --color-bg: #fafaf9;
         --color-text: #0a0a0b;
         --color-text-secondary: #6b6b70;
         --color-card: #ffffff;
         --color-card-border: rgba(0, 0, 0, 0.08);
         --color-placeholder: #ececea;
-        --grid-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M 30 0 L 0 0 0 30' fill='none' stroke='%23E5E7EB' stroke-width='1'/%3E%3C/svg%3E");
+        --color-accent-tint: rgba(10, 132, 255, 0.1);
+        --grid-color: rgba(0, 0, 0, 0.06);
         --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.8) inset,
           0 16px 40px rgba(0, 0, 0, 0.08);
       }
@@ -108,36 +148,19 @@
       body {
         margin: 0;
         font-family: var(--font-sans);
-        font-size: 17px;
-        line-height: 1.55;
+        font-size: var(--font-size-body);
+        line-height: var(--line-height-body);
         color: var(--color-text);
         background-color: var(--color-bg);
-        transition: var(--transition-theme);
-      }
-
-      .page-grid {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        height: min(140vh, 1200px);
-        background-color: var(--color-bg);
-        background-image: var(--grid-pattern);
-        background-repeat: repeat;
-        background-position: top left;
+        background-image: linear-gradient(
+            to right,
+            var(--grid-color) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
         background-size: var(--grid-size) var(--grid-size);
-        -webkit-mask-image: var(--grid-mask),
-          linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
-        mask-image: var(--grid-mask),
-          linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
-        -webkit-mask-composite: source-in;
-        mask-composite: intersect;
-        transition: background-color 300ms ease;
-      }
-
-      .page-shell {
-        position: relative;
-        z-index: 1;
+        background-attachment: scroll;
+        transition: var(--transition-theme);
       }
 
       img {
@@ -148,10 +171,17 @@
 
       a {
         color: var(--color-accent);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
       }
 
       a:focus-visible,
-      button:focus-visible {
+      button:focus-visible,
+      input:focus-visible {
         outline: 2px solid var(--color-accent);
         outline-offset: 2px;
       }
@@ -163,6 +193,11 @@
 
       .container--hero {
         width: min(100% - 32px, var(--max-width-hero));
+      }
+
+      .container--narrow {
+        width: min(100% - 32px, 800px);
+        margin-inline: auto;
       }
 
       .section {
@@ -179,19 +214,6 @@
         border-block: 1px solid var(--color-card-border);
       }
 
-      .section--surface {
-        background-color: var(--color-bg);
-      }
-
-      .eyebrow {
-        margin: 0 0 12px;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: var(--color-text-secondary);
-      }
-
       h1,
       h2,
       h3,
@@ -200,37 +222,69 @@
       }
 
       h1 {
-        font-size: clamp(2.25rem, 5vw, 4rem);
-        line-height: 1.08;
+        font-size: var(--font-size-h1);
+        line-height: var(--line-height-h1);
         font-weight: 700;
-        letter-spacing: -0.03em;
+        letter-spacing: var(--tracking-h1);
+        text-wrap: balance;
       }
 
       h2 {
-        font-size: clamp(1.875rem, 3.5vw, 3rem);
-        line-height: 1.12;
+        font-size: var(--font-size-h2);
+        line-height: var(--line-height-h2);
         font-weight: 700;
-        letter-spacing: -0.025em;
+        letter-spacing: var(--tracking-h2);
+        text-wrap: balance;
       }
 
       h3 {
-        font-size: 1.25rem;
-        line-height: 1.25;
+        font-size: var(--font-size-h3);
+        line-height: var(--line-height-h3);
         font-weight: 700;
+        letter-spacing: var(--tracking-h3);
       }
 
       .lead {
         margin-top: 20px;
-        max-width: 42rem;
-        font-size: clamp(1.05rem, 2vw, 1.35rem);
-        line-height: 1.45;
+        max-width: var(--measure-lead);
+        font-size: var(--font-size-lead);
+        line-height: var(--line-height-lead);
         color: var(--color-text-secondary);
       }
 
       .micro {
         margin-top: 16px;
-        font-size: 14px;
+        font-size: var(--font-size-micro);
+        line-height: var(--line-height-micro);
         color: var(--color-text-secondary);
+      }
+
+      .caption {
+        margin-top: 16px;
+        font-size: var(--font-size-caption);
+        line-height: var(--line-height-micro);
+        color: var(--color-text-secondary);
+        text-align: center;
+      }
+
+      .closer {
+        margin-top: 32px;
+        font-size: var(--font-size-closer);
+        line-height: var(--line-height-body);
+        color: var(--color-text-secondary);
+        max-width: var(--measure-body);
+      }
+
+      .body-copy {
+        margin-top: 24px;
+        max-width: var(--measure-body);
+        font-size: var(--font-size-body);
+        line-height: var(--line-height-body);
+        color: var(--color-text-secondary);
+      }
+
+      .body-copy p + p {
+        margin-top: 16px;
       }
 
       .stack {
@@ -247,7 +301,9 @@
       }
 
       .text-center .lead,
-      .text-center .micro {
+      .text-center .micro,
+      .text-center .closer,
+      .text-center .body-copy {
         margin-inline: auto;
       }
 
@@ -270,31 +326,32 @@
       }
 
       .logo {
-        font-size: 1.125rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: var(--font-size-wordmark);
         font-weight: 700;
         color: var(--color-text);
         text-decoration: none;
-        letter-spacing: -0.02em;
+        letter-spacing: var(--tracking-wordmark);
+      }
+
+      .logo:hover,
+      .logo:focus-visible {
+        text-decoration: none;
+      }
+
+      .logo img {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid var(--color-card-border);
       }
 
       .nav__actions {
         display: flex;
         align-items: center;
         gap: 12px;
-      }
-
-      .app-store-badge {
-        display: inline-block;
-        line-height: 0;
-      }
-
-      .app-store-badge img {
-        width: 120px;
-        height: auto;
-      }
-
-      .app-store-badge--lg img {
-        width: 160px;
       }
 
       .theme-toggle {
@@ -313,15 +370,121 @@
         color: var(--color-text-secondary);
         font: inherit;
         font-size: 12px;
+        font-weight: 500;
         padding: 6px 10px;
         border-radius: 999px;
         cursor: pointer;
+        min-height: 32px;
         transition: background-color 200ms ease, color 200ms ease;
       }
 
       .theme-toggle button[aria-pressed="true"] {
         background: var(--color-accent);
         color: #fff;
+      }
+
+      /* Buttons & waitlist */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 14px 22px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--color-accent);
+        color: #fff;
+        font: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        background: color-mix(in srgb, var(--color-accent) 92%, white);
+        text-decoration: none;
+      }
+
+      .btn:active {
+        background: color-mix(in srgb, var(--color-accent) 92%, black);
+      }
+
+      .btn--sm {
+        min-height: 40px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .btn--block {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .waitlist {
+        display: grid;
+        gap: 8px;
+        width: min(100%, 420px);
+        text-align: left;
+      }
+
+      .waitlist--lg {
+        width: min(100%, 480px);
+        margin-inline: auto;
+      }
+
+      .waitlist__row {
+        display: grid;
+        gap: 12px;
+      }
+
+      .waitlist label {
+        font-size: var(--font-size-label);
+        font-weight: 500;
+        color: var(--color-text);
+      }
+
+      .waitlist input[type="email"] {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px 16px;
+        border: 1px solid var(--color-card-border);
+        border-radius: 12px;
+        background: var(--color-card);
+        color: var(--color-text);
+        font: inherit;
+        font-size: var(--font-size-input);
+        line-height: var(--line-height-input);
+      }
+
+      .waitlist input::placeholder {
+        color: var(--color-text-secondary);
+        opacity: 1;
+      }
+
+      .waitlist__status {
+        margin: 0;
+        font-size: var(--font-size-helper);
+        color: var(--color-text-secondary);
+        min-height: 1.2em;
+      }
+
+      .waitlist__status[data-state="error"] {
+        color: var(--color-error);
+        font-weight: 500;
+      }
+
+      .waitlist__status[data-state="success"] {
+        color: var(--color-success);
+      }
+
+      .waitlist.is-success label,
+      .waitlist.is-success .waitlist__row {
+        display: none;
       }
 
       /* Cards & placeholders */
@@ -352,26 +515,13 @@
         aspect-ratio: 16 / 9;
       }
 
-      /*
-        Simple iPhone 15 Pro Max frame.
-        Screen is 430×932 pt (1290×2796 px @3x). Drop screenshots or
-        screen recordings into .device__screen — they fill 1:1.
-      */
       .device {
         width: min(100%, 280px);
         margin: 0 auto;
       }
 
       .device--hero {
-        width: min(100%, 280px);
-      }
-
-      .device--md {
-        width: min(100%, 220px);
-      }
-
-      .device--sm {
-        width: min(100%, 148px);
+        width: min(42vw, 220px);
       }
 
       .device__frame {
@@ -402,16 +552,6 @@
         background: var(--color-placeholder);
       }
 
-      .device__screen > img,
-      .device__screen > video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-      }
-
       .device__placeholder {
         position: absolute;
         inset: 0;
@@ -423,9 +563,31 @@
         text-align: center;
       }
 
-      .device__screen:has(img) .device__placeholder,
-      .device__screen:has(video) .device__placeholder {
-        display: none;
+      .device__media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        pointer-events: none;
+      }
+
+      /* Video is 430×720; keep a real-phone island inset above the app chrome. */
+      .device--hero .device__screen {
+        aspect-ratio: 430 / 774;
+        background: #ffffff;
+      }
+
+      .device--hero .device__island {
+        top: calc(100% * 11.5 / 774);
+        height: calc(100% * 37.33 / 774);
+      }
+
+      .device--hero .device__media {
+        top: calc(100% * 54 / 774);
+        height: calc(100% * 720 / 774);
+        object-fit: cover;
       }
 
       .device__island {
@@ -458,7 +620,8 @@
       }
 
       .hero__copy .lead,
-      .hero__copy .micro {
+      .hero__copy .micro,
+      .hero__copy .waitlist {
         margin-inline: auto;
       }
 
@@ -480,54 +643,262 @@
         z-index: -1;
       }
 
-      /* Problem convergence diagram */
-      .convergence {
+      /* Category stack */
+      .fits {
+        max-width: 420px;
+        margin-inline: auto;
+      }
+
+      .fits h2 {
+        text-align: center;
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+      }
+
+      .stack-list {
+        list-style: none;
+        margin: 32px 0 0;
+        padding: 0;
+      }
+
+      .stack-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--color-card-border);
+      }
+
+      .stack-list li:first-child {
+        border-top: 1px solid var(--color-card-border);
+      }
+
+      .stack-list__brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+      }
+
+      .stack-list__mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--color-card);
+        border: 1px solid var(--color-card-border);
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-text);
+      }
+
+      .stack-list__job {
+        font-size: 15px;
+        color: var(--color-text-secondary);
+      }
+
+      .stack-list__job small {
+        font-size: 12px;
+        margin-left: 6px;
+      }
+
+      .stack-list li.is-muted {
+        opacity: 0.55;
+      }
+
+      .fits .closer {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      /* Problem frames */
+      .frames {
         display: grid;
         gap: 24px;
         margin-top: 40px;
       }
 
-      .convergence__sources {
+      .frame-card {
         display: grid;
-        gap: 16px;
+        gap: 12px;
       }
 
-      .convergence__camera-roll {
-        min-height: 240px;
+      .frame-card__label {
+        margin: 0;
+        font-size: var(--font-size-caption);
+        color: var(--color-text-secondary);
+        font-style: italic;
       }
 
-      .convergence__supporting {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+      .collage-app {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        padding-top: calc(100% * 54 / 430);
+        background: #fff;
+        color: #3a3a3c;
+        color-scheme: light;
       }
 
-      .convergence__arrow {
+      .collage-app__status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 18% 0 10%;
+        height: 4.2%;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: #1c1c1e;
+      }
+
+      .collage-app__status-right {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .collage-app__status-right svg {
         display: block;
-        font-size: 2rem;
+        width: 16px;
+        height: 10px;
+      }
+
+      .collage-app__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 2% 4% 1%;
+        color: #1c1c1e;
+      }
+
+      .collage-app__nav svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+      }
+
+      .collage-app__history {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: auto;
+        margin-left: 8px;
+        color: #c7c7cc;
+      }
+
+      .collage-app__actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .collage-app__ai {
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #ff2d55;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .collage-app__more {
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #f2f2f7;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1;
+      }
+
+      .collage-app__canvas {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        padding: 6% 7%;
+        min-height: 0;
+      }
+
+      .collage-app__sheet {
+        position: relative;
+        width: 100%;
+      }
+
+      .collage-app__sheet img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .collage-app__tools {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2px;
+        padding: 2% 3% 6%;
+        color: #6b6b70;
+      }
+
+      .collage-app__tool {
+        flex: 1;
+        display: grid;
+        justify-items: center;
+        gap: 4px;
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+
+      .collage-app__tool svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+      }
+
+      .collage-app__tool.is-current {
+        color: #1c1c1e;
+      }
+
+      .callouts {
+        display: grid;
+        gap: 8px;
+      }
+
+      .callout {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 12px;
+        line-height: 1.4;
         color: var(--color-text-secondary);
-        text-align: center;
       }
 
-      .convergence__result .placeholder {
-        min-height: 280px;
+      .callout::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        margin-top: 6px;
+        flex: 0 0 6px;
+        border-radius: 50%;
+        background: var(--color-text-secondary);
       }
 
-      .caption {
-        margin-top: 16px;
-        font-size: 14px;
-        color: var(--color-text-secondary);
-        text-align: center;
-      }
-
-      .body-copy {
-        margin-top: 24px;
-        max-width: 42rem;
-        color: var(--color-text-secondary);
-      }
-
-      .body-copy p + p {
-        margin-top: 16px;
+      .handoff {
+        margin-top: 32px;
+        max-width: var(--measure-body);
+        font-weight: 700;
+        color: var(--color-text);
       }
 
       /* Steps */
@@ -543,6 +914,10 @@
         align-content: start;
       }
 
+      .step p {
+        color: var(--color-text-secondary);
+      }
+
       .step__number {
         width: 32px;
         height: 32px;
@@ -551,49 +926,48 @@
         border-radius: 999px;
         background: var(--color-accent);
         color: #fff;
-        font-size: 14px;
+        font-size: var(--font-size-step-label);
         font-weight: 700;
+        line-height: 1;
       }
 
-      .step--featured .device {
+      .step .device {
         width: min(100%, 200px);
       }
 
-      .closer {
+      /* Import card */
+      .import-card {
+        max-width: 36rem;
+        margin-inline: auto;
         margin-top: 32px;
-        font-size: 1.05rem;
-        color: var(--color-text-secondary);
-        max-width: 42rem;
-      }
-
-      /* Two-flow split */
-      .split-cards {
-        display: grid;
-        gap: 24px;
-        margin-top: 32px;
-      }
-
-      .split-cards .card {
         display: grid;
         gap: 16px;
-        align-content: start;
       }
 
-      /* Feature rows */
-      .feature-row {
-        display: grid;
-        gap: 32px;
-        align-items: center;
-        padding-block: 32px;
+      .import-card .lead {
+        margin-top: 0;
       }
 
-      .feature-row__visual {
-        display: grid;
-        place-items: center;
+      .import-card .waitlist {
+        width: 100%;
       }
 
-      .feature-row + .feature-row {
-        border-top: 1px solid var(--color-card-border);
+      .escape-link {
+        margin-top: 16px;
+        text-align: center;
+        font-size: var(--font-size-micro);
+        color: var(--color-text-secondary);
+      }
+
+      .escape-link a {
+        color: var(--color-text-secondary);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .escape-link a:hover,
+      .escape-link a:focus-visible {
+        color: var(--color-text);
       }
 
       /* Social proof */
@@ -606,12 +980,57 @@
         border-radius: 999px;
         border: 1px solid var(--color-card-border);
         background: var(--color-card);
-        font-size: 14px;
+        font-size: var(--font-size-density);
+        line-height: var(--line-height-micro);
         color: var(--color-text-secondary);
       }
 
-      .testimonial {
+      .proof {
+        display: grid;
+        gap: 24px;
+        text-align: left;
+      }
+
+      .proof .lead {
+        margin-top: 12px;
+      }
+
+      /* Differentiation */
+      .diff {
+        display: grid;
+        gap: 16px;
         margin-top: 32px;
+      }
+
+      .diff__col {
+        border: 1px solid var(--color-card-border);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+      }
+
+      .diff__col--does {
+        background: var(--color-accent-tint);
+      }
+
+      .diff__col--doesnt {
+        background: var(--color-card);
+      }
+
+      .diff__col h3 {
+        padding: 16px 20px 12px;
+        font-size: 15px;
+      }
+
+      .diff__col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .diff__col li {
+        padding: 14px 20px;
+        border-top: 1px solid var(--color-card-border);
+        color: var(--color-text-secondary);
       }
 
       /* FAQ */
@@ -631,28 +1050,55 @@
       .faq summary {
         cursor: pointer;
         list-style: none;
-        padding: 18px 20px;
+        padding: 18px 48px 18px 20px;
+        font-size: var(--font-size-faq-summary);
         font-weight: 600;
+        line-height: var(--line-height-body);
+        color: var(--color-text);
+        position: relative;
       }
 
       .faq summary::-webkit-details-marker {
         display: none;
       }
 
+      .faq summary::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid var(--color-text-secondary);
+        border-bottom: 2px solid var(--color-text-secondary);
+        transform: translateY(-70%) rotate(45deg);
+      }
+
       .faq details[open] summary {
         border-bottom: 1px solid var(--color-card-border);
       }
 
+      .faq details[open] summary::after {
+        transform: translateY(-30%) rotate(225deg);
+      }
+
       .faq__answer {
         padding: 16px 20px 20px;
+        font-size: var(--font-size-faq-answer);
+        line-height: var(--line-height-body);
+        color: var(--color-text-secondary);
+      }
+
+      .faq-transition {
+        margin-top: 32px;
+        max-width: var(--measure-body);
         color: var(--color-text-secondary);
       }
 
       /* Footer */
       .footer {
         padding-block: 48px 64px;
-        border-top: 1px solid var(--color-card-border);
-        background-color: var(--color-bg);
+        background-color: transparent;
       }
 
       .footer__inner {
@@ -663,11 +1109,16 @@
         justify-content: space-between;
       }
 
+      .footer__brand {
+        display: grid;
+        gap: 4px;
+      }
+
       .footer__links {
         display: flex;
         flex-wrap: wrap;
         gap: 16px 24px;
-        font-size: 14px;
+        font-size: var(--font-size-micro);
       }
 
       .footer__links a {
@@ -675,8 +1126,10 @@
         text-decoration: none;
       }
 
-      .footer__links a:hover {
+      .footer__links a:hover,
+      .footer__links a:focus-visible {
         color: var(--color-text);
+        text-decoration: underline;
       }
 
       .footer__meta {
@@ -696,36 +1149,872 @@
         border: 0;
       }
 
-      @media (prefers-color-scheme: dark) {
-        html[data-theme="system"] .app-store-badge img {
-          filter: brightness(0) invert(1);
+      @media (min-width: 640px) {
+        .waitlist__row {
+          grid-template-columns: 1fr auto;
+          align-items: stretch;
+        }
+
+        .waitlist .btn {
+          width: auto;
+        }
+
+        .device--hero {
+          width: min(100%, 280px);
         }
       }
 
-      html[data-theme="dark"] .app-store-badge img {
-        filter: brightness(0) invert(1);
+      @media (min-width: 768px) {
+        .nav .logo img {
+          width: 36px;
+          height: 36px;
+        }
+
+        .card {
+          padding: 32px;
+        }
+
+        .steps {
+          grid-template-columns: repeat(3, 1fr);
+          align-items: start;
+        }
+
+        .frames {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+
+        .diff {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .proof {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: center;
+          gap: 48px;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .nav .btn--sm {
+          padding: 10px 14px;
+        }
+
+        .nav__cta-full {
+          display: none;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .nav__cta-short {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="page-grid" aria-hidden="true"></div>
     <div class="page-shell">
-    <header class="nav">
-      <div class="container nav__inner">
-        <a class="logo" href="/">Recomp</a>
-        <div class="nav__actions">
-          <a
-            class="app-store-badge"
-            href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
-            aria-label="Download on the App Store"
-          >
-            <img
-              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-              alt="Download on the App Store"
-              width="120"
-              height="40"
-            />
+      <header class="nav">
+        <div class="container nav__inner">
+          <a class="logo" href="/">
+            <img src="assets/recomp-app-icon.png" alt="" width="32" height="32" />
+            Recomp
           </a>
+          <div class="nav__actions">
+            <a class="btn btn--sm" href="#hero" aria-label="Join the waitlist">
+              <span class="nav__cta-full" aria-hidden="true">Join the waitlist</span>
+              <span class="nav__cta-short" aria-hidden="true">Join</span>
+            </a>
+            <div class="theme-toggle" role="group" aria-label="Color theme">
+              <button type="button" data-theme-choice="system" aria-pressed="true">
+                Auto
+              </button>
+              <button type="button" data-theme-choice="light" aria-pressed="false">
+                Light
+              </button>
+              <button type="button" data-theme-choice="dark" aria-pressed="false">
+                Dark
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- Section 1: Hero -->
+        <section class="section hero" id="hero" aria-labelledby="hero-heading">
+          <div class="container container--hero hero__grid">
+            <div class="hero__copy stack">
+              <h1 id="hero-heading">
+                Your camera roll already<br />
+                holds years of progress.
+              </h1>
+              <p class="lead">
+                Import one Photos album. See two years of work, side by side, in
+                minutes.
+              </p>
+              <form class="waitlist" data-waitlist>
+                <label for="waitlist-email-hero">Email</label>
+                <div class="waitlist__row">
+                  <input
+                    id="waitlist-email-hero"
+                    type="email"
+                    name="email"
+                    inputmode="email"
+                    autocomplete="email"
+                    required
+                    placeholder="you@email.com"
+                  />
+                  <button type="submit" class="btn">Get early access</button>
+                </div>
+                <p class="waitlist__status" role="status" aria-live="polite"></p>
+              </form>
+              <p class="micro">
+                Opens in weeks · One album, one tap · One email at launch, then
+                nothing.
+              </p>
+              <p class="micro">
+                Built by a lifter · 150+ real check-ins imported from one camera
+                roll.
+              </p>
+            </div>
+            <div class="hero__visual">
+              <div
+                class="device device--hero"
+                role="img"
+                aria-label="iPhone showing Recomp compare view with two dated physique photos side by side"
+              >
+                <div class="device__frame">
+                  <div class="device__screen">
+                    <video
+                      class="device__media"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      poster="assets/compare-preview-poster.png"
+                      aria-hidden="true"
+                    >
+                      <source src="assets/compare-preview.mp4" type="video/mp4" />
+                    </video>
+                    <div class="device__island" aria-hidden="true"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Where Recomp Fits -->
+        <section class="section" id="fits" aria-labelledby="fits-heading">
+          <div class="container fits">
+            <h2 id="fits-heading">Where it sits.</h2>
+            <ul class="stack-list" role="list">
+              <li>
+                <span class="stack-list__brand">
+                  <span class="stack-list__mark" aria-hidden="true">M</span>
+                  MyFitnessPal
+                </span>
+                <span class="stack-list__job">Cal tracking</span>
+              </li>
+              <li>
+                <span class="stack-list__brand">
+                  <span class="stack-list__mark" aria-hidden="true">W</span>
+                  Whoop
+                </span>
+                <span class="stack-list__job">Sleep &amp; recovery</span>
+              </li>
+              <li>
+                <span class="stack-list__brand">
+                  <span class="stack-list__mark" aria-hidden="true">H</span>
+                  Hevy
+                </span>
+                <span class="stack-list__job">Workout log</span>
+              </li>
+              <li>
+                <span class="stack-list__brand">
+                  <span class="stack-list__mark" aria-hidden="true">S</span>
+                  Strava
+                </span>
+                <span class="stack-list__job">Activity log</span>
+              </li>
+              <li class="is-muted">
+                <span class="stack-list__brand">
+                  <span class="stack-list__mark" aria-hidden="true">P</span>
+                  Photos + Notes
+                </span>
+                <span class="stack-list__job">
+                  Progress tracking <small>previously</small>
+                </span>
+              </li>
+            </ul>
+            <p class="closer">That's the slot Recomp fills.</p>
+          </div>
+        </section>
+
+        <!-- Section 3: Problem / Agitation -->
+        <section class="section" id="problem" aria-labelledby="problem-heading">
+          <div class="container">
+            <h2 id="problem-heading">
+              The proof is on your phone. You just can't read it.
+            </h2>
+            <div class="body-copy">
+              <p>
+                Your progress shots are buried — hundreds of them, sometimes
+                thousands — mixed in with screenshots, receipts, and last year's
+                Halloween. April sits next to a boarding pass. Your last deload
+                photo is three swipes past your dog.
+              </p>
+              <p>
+                You did the work. The record is in your hand. But you can't lay
+                it out, and what you can't lay out, you can't see.
+              </p>
+              <p>
+                That's when the doubt starts.
+                <em
+                  >Is the diet working? Was the cut worth it? Did I actually
+                  gain anything back?</em
+                >
+                Doubt ends programs. Not lack of discipline.
+              </p>
+            </div>
+            <p class="handoff">
+              Recomp reads the record. One album in, one compare out.
+            </p>
+
+            <div class="frames">
+              <figure class="frame-card">
+                <p class="frame-card__label">The album.</p>
+                <div
+                  class="device"
+                  role="img"
+                  aria-label="iPhone Photos album titled Progress Photos, 475 physique check-ins in a three-column grid"
+                >
+                  <div class="device__frame">
+                    <div class="device__screen">
+                      <img
+                        class="device__media"
+                        src="assets/progress-photos-album.jpg"
+                        alt=""
+                        width="472"
+                        height="1024"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="callouts">
+                  <p class="callout">Can't place two side by side.</p>
+                  <p class="callout">No date. No weight.</p>
+                </div>
+              </figure>
+              <figure class="frame-card">
+                <p class="frame-card__label">The collage.</p>
+                <div
+                  class="device"
+                  role="img"
+                  aria-label="Collage app with two physique photos side by side, layout tools, and a download button"
+                >
+                  <div class="device__frame">
+                    <div class="device__screen">
+                      <div class="collage-app" aria-hidden="true">
+                        <div class="collage-app__status">
+                          <span>2:13</span>
+                          <span class="collage-app__status-right">
+                            <svg viewBox="0 0 17 11" fill="currentColor">
+                              <rect x="0" y="7" width="3" height="4" rx="0.4" />
+                              <rect x="4.5" y="5" width="3" height="6" rx="0.4" />
+                              <rect x="9" y="2.5" width="3" height="8.5" rx="0.4" />
+                              <rect
+                                x="13.5"
+                                y="0"
+                                width="3"
+                                height="11"
+                                rx="0.4"
+                                opacity="0.35"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="collage-app__nav">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M15 5L8 12l7 7"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <span class="collage-app__history">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M8 8H4v4"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M5 12a7 7 0 1 0 1.6-4.5"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M16 8h4v4"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M19 12a7 7 0 1 1-1.6-4.5"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                          <span class="collage-app__actions">
+                            <span class="collage-app__ai">AI</span>
+                            <span class="collage-app__more">···</span>
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M12 4v11M7.5 11 12 16l4.5-5"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M5 19h14"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="collage-app__canvas">
+                          <div class="collage-app__sheet">
+                            <img
+                              src="assets/collage-pair.jpg"
+                              alt=""
+                              width="494"
+                              height="520"
+                            />
+                          </div>
+                        </div>
+                        <div class="collage-app__tools">
+                          <span class="collage-app__tool">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M7 3v13a2 2 0 0 0 2 2h13"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M3 7h13a2 2 0 0 1 2 2v13"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                            Trim
+                          </span>
+                          <span class="collage-app__tool">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <rect
+                                x="3.5"
+                                y="5.5"
+                                width="17"
+                                height="13"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                              />
+                              <circle
+                                cx="8.5"
+                                cy="10"
+                                r="1.3"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M4 16.5 8 13l3.5 2.5 3-2 5.5 4"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            Canvas
+                          </span>
+                          <span class="collage-app__tool is-current">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <rect
+                                x="3.5"
+                                y="4.5"
+                                width="7.5"
+                                height="15"
+                                rx="1.2"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                              />
+                              <rect
+                                x="13"
+                                y="4.5"
+                                width="7.5"
+                                height="15"
+                                rx="1.2"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                              />
+                            </svg>
+                            Layout
+                          </span>
+                          <span class="collage-app__tool">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M4 8h16M4 16h16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                              <circle cx="9" cy="8" r="2" fill="currentColor" />
+                              <circle
+                                cx="15"
+                                cy="16"
+                                r="2"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            Edit
+                          </span>
+                          <span class="collage-app__tool">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <rect
+                                x="4"
+                                y="4"
+                                width="16"
+                                height="16"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                              />
+                              <path
+                                d="M7 20 20 7M12 20 20 12M4 16 16 4"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                              />
+                            </svg>
+                            Background
+                          </span>
+                          <span class="collage-app__tool">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M6 6h12M12 6v13"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                            Text
+                          </span>
+                        </div>
+                      </div>
+                      <div class="device__island"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="callouts">
+                  <p class="callout">Fine for one.</p>
+                  <p class="callout">Every new pair, a new project.</p>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4a: How it works -->
+        <section class="section" id="how-it-works" aria-labelledby="how-heading">
+          <div class="container">
+            <h2 id="how-heading">Three steps. That's the whole import.</h2>
+            <div class="steps">
+              <article class="step card">
+                <div class="step__number" aria-hidden="true">1</div>
+                <h3>Import your data</h3>
+                <p>Photo album, weight from CSV or Apple Health</p>
+                <div
+                  class="device"
+                  role="img"
+                  aria-label="Recomp select-photos screen importing 475 photos from a Progress Photos album"
+                >
+                  <div class="device__frame">
+                    <div class="device__screen">
+                      <img
+                        class="device__media"
+                        src="assets/step-import.jpg"
+                        alt=""
+                        width="472"
+                        height="1024"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="step card">
+                <div class="step__number" aria-hidden="true">2</div>
+                <h3>Compare your progress</h3>
+                <p>Instantly compare any 2 dates side by side</p>
+                <div
+                  class="device"
+                  role="img"
+                  aria-label="Recomp compare view: front photos from May 2024 at 198 lb and August 2025 at 159.4 lb, with a weight graph"
+                >
+                  <div class="device__frame">
+                    <div class="device__screen">
+                      <img
+                        class="device__media"
+                        src="assets/step-compare.jpg"
+                        alt=""
+                        width="472"
+                        height="1024"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="step card">
+                <div class="step__number" aria-hidden="true">3</div>
+                <h3>Track going forward</h3>
+                <p>Reminders for consistency</p>
+                <div
+                  class="device"
+                  role="img"
+                  aria-label="Recomp add-a-log screen with weight 158.5 lb and front, side, and back photos for August 4, 2025"
+                >
+                  <div class="device__frame">
+                    <div class="device__screen">
+                      <img
+                        class="device__media"
+                        src="assets/step-track.png"
+                        alt=""
+                        width="472"
+                        height="1024"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p class="closer">
+              That's it. No workouts to log. No macros. No "start fresh." Just
+              the photos you already took, finally laid out.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4b: Bring your camera roll -->
+        <section class="section" id="import" aria-labelledby="import-heading">
+          <div class="container">
+            <h3 id="import-heading" class="text-center">Bring your camera roll.</h3>
+            <article class="card import-card">
+              <h3>I've been taking photos.</h3>
+              <p class="lead">
+                Group your progress shots into a Photos album. Import the whole
+                album in one tap. Recomp dates them and hands you the compare —
+                in minutes, not weeks.
+              </p>
+              <form class="waitlist" data-waitlist>
+                <label for="waitlist-email-import">Email</label>
+                <div class="waitlist__row">
+                  <input
+                    id="waitlist-email-import"
+                    type="email"
+                    name="email"
+                    inputmode="email"
+                    autocomplete="email"
+                    required
+                    placeholder="you@email.com"
+                  />
+                  <button type="submit" class="btn">Notify me at launch</button>
+                </div>
+                <p class="waitlist__status" role="status" aria-live="polite"></p>
+              </form>
+            </article>
+            <p class="escape-link">
+              No library yet?
+              <a href="track/">See the forward-tracking version →</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4c: The aha moment -->
+        <section class="section" id="aha" aria-labelledby="aha-heading">
+          <div class="container text-center stack stack--lg">
+            <h2 id="aha-heading">The moment you actually see it.</h2>
+            <div
+              class="placeholder placeholder--compare"
+              role="img"
+              aria-label="Two-panel compare view: physique on the left dated April 2024, on the right dated July 2024, imported from the founder's camera roll. Weight: 195 lb to 182 lb."
+            >
+              Founder compare view
+            </div>
+            <p class="caption">
+              150 check-ins, imported from my camera roll. Two years of lifting,
+              in one view.<br />
+              — Mark, founder of Recomp
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 5: Social Proof -->
+        <section class="section" id="social-proof" aria-labelledby="proof-heading">
+          <div class="container stack stack--lg">
+            <div class="density-strip">
+              <span>Built by a lifter</span>
+              <span>150+ check-ins from one camera roll</span>
+              <span>Early access opens this fall</span>
+            </div>
+            <h2 id="proof-heading" class="text-center">
+              Real check-ins. Real camera roll.
+            </h2>
+            <article class="card proof">
+              <div
+                class="placeholder placeholder--compare"
+                role="img"
+                aria-label="Two-panel compare view: physique on the left dated April 2024, on the right dated July 2024, imported from the founder's camera roll. Weight: 195 lb to 182 lb."
+              >
+                Founder compare view
+              </div>
+              <div>
+                <h3>Two years. 150 check-ins. All from my camera roll.</h3>
+                <p class="lead">
+                  I built Recomp because no tracker respected the compare view —
+                  and because the record was already on my phone, unreadable.
+                  This is what mine looks like, imported and laid out.
+                </p>
+                <p class="micro">— Mark, founder</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Section 6: Differentiation -->
+        <section
+          class="section"
+          id="differentiation"
+          aria-labelledby="diff-heading"
+        >
+          <div class="container">
+            <h2 id="diff-heading">
+              Not a fitness tracker. A tracker for what fitness is for.
+            </h2>
+            <p class="lead">
+              Recomp does one thing: makes the visual outcome of your training
+              visible — including the outcome you've already lived through.
+              Everything the app does builds toward the compare. Everything it
+              doesn't do is a decision.
+            </p>
+            <div class="diff">
+              <div class="diff__col diff__col--does">
+                <h3>What Recomp does</h3>
+                <ul>
+                  <li>Works on the years of photos you already have</li>
+                  <li>Turn your existing photos into a dated timeline</li>
+                  <li>Compare any two dates, side by side, aligned</li>
+                  <li>Weekly check-ins with photo, weight, notes</li>
+                  <li>Keep everything on your phone by default</li>
+                  <li>Rhyme with your training — precise, quiet, honest</li>
+                </ul>
+              </div>
+              <div class="diff__col diff__col--doesnt">
+                <h3>What Recomp doesn't do</h3>
+                <ul>
+                  <li>Require you to start over</li>
+                  <li>Log workouts, sets, reps</li>
+                  <li>Track macros or calories</li>
+                  <li>Award streaks, XP, or badges</li>
+                  <li>Publish a feed, or add friends</li>
+                  <li>Sell you motivation</li>
+                </ul>
+              </div>
+            </div>
+            <p class="closer">
+              If you already track training, nutrition, and lifts elsewhere,
+              Recomp is the piece those tools skip. It reads the record you
+              already built.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 7: FAQ -->
+        <section class="section" id="faq" aria-labelledby="faq-heading">
+          <div class="container container--narrow">
+            <h2 id="faq-heading">Answers to what you're probably thinking.</h2>
+            <div class="faq">
+              <details>
+                <summary>When can I use it?</summary>
+                <div class="faq__answer">
+                  Early access opens this fall, in waves. Waitlist first. We'll
+                  email you a TestFlight link when it's your turn — you're not
+                  obligated to accept. Two emails total: one when your invite is
+                  ready, one at launch. No drip.
+                </div>
+              </details>
+              <details>
+                <summary>
+                  How does the import work? Will it grab photos I don't want it
+                  to?
+                </summary>
+                <div class="faq__answer">
+                  Two ways, both on your terms. Lots of photos: group them into
+                  a Photos album, then import the whole album in one tap. A few
+                  photos: pick them out of your camera roll one at a time.
+                  Recomp doesn't scan or auto-detect anything — you decide what
+                  belongs. Nothing leaves your phone.
+                </div>
+              </details>
+              <details>
+                <summary>
+                  What if my old photos aren't consistent — different poses,
+                  lighting, distance?
+                </summary>
+                <div class="faq__answer">
+                  That's most people's camera roll, and it's fine. The compare
+                  view has alignment tools — nudge, scale, match reference
+                  points — so the delta reads honestly. Recomp doesn't fix bad
+                  inputs. It makes uneven inputs comparable in a way a bare
+                  album never will.
+                </div>
+              </details>
+              <details>
+                <summary>Isn't this just an iPhone album?</summary>
+                <div class="faq__answer">
+                  An album is a folder. Recomp is a timeline. The difference is
+                  compare — any two dates, aligned and dated, side by side, no
+                  hunting. Try it once on your imported library. The gap is
+                  obvious.
+                </div>
+              </details>
+              <details>
+                <summary>Do I have to track weight, workouts, or macros?</summary>
+                <div class="faq__answer">
+                  No. Weight and notes are optional on every check-in. Workouts
+                  and macros aren't in Recomp — those tools already exist and
+                  are good. Recomp handles the piece they skip.
+                </div>
+              </details>
+              <details>
+                <summary>How much will it cost?</summary>
+                <div class="faq__answer">
+                  Free to start. Importing your camera roll and the first
+                  stretch of compares cost nothing. Paid once you're serious —
+                  less than a month of gym coffee. Waitlist members see pricing
+                  before anything charges.
+                </div>
+              </details>
+              <details>
+                <summary>Where do my photos live? Are they private?</summary>
+                <div class="faq__answer">
+                  On your phone. Recomp doesn't upload, doesn't share, doesn't
+                  publish a feed. Import and alignment happen on-device. If you
+                  back up to iCloud Photos, they go where your other photos go.
+                  Nothing else.
+                </div>
+              </details>
+              <details>
+                <summary>Do I need to keep taking photos after the import?</summary>
+                <div class="faq__answer">
+                  No — the import alone is worth it. Your existing library
+                  becomes a proper timeline. Most people keep the cadence going
+                  once they've seen the compare; the
+                  <a href="track/">track variant</a> covers the weekly ritual.
+                </div>
+              </details>
+              <details>
+                <summary>
+                  I already use Hevy / MacroFactor / a spreadsheet. Do I need
+                  this?
+                </summary>
+                <div class="faq__answer">
+                  Probably yes — for a different reason. Those tools track
+                  inputs: training, food, numbers. Recomp tracks the outcome:
+                  the physique itself, over time. Missing piece, not a
+                  replacement.
+                </div>
+              </details>
+              <details>
+                <summary>iOS only?</summary>
+                <div class="faq__answer">
+                  For now, yes. Recomp is iOS-native — Photos, HealthKit, the
+                  Apple design system — because that's where our first users are
+                  and where the years of camera-roll history live. Android comes
+                  once iOS is where it needs to be.
+                </div>
+              </details>
+            </div>
+            <p class="faq-transition">
+              Still on the fence? Get on the list. The first compare from your
+              own camera roll is what convinces you.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 8: Final CTA -->
+        <section
+          class="section section--accent text-center"
+          id="final-cta"
+          aria-labelledby="final-cta-heading"
+        >
+          <div class="container stack">
+            <h2 id="final-cta-heading">Import your camera roll first.</h2>
+            <p class="lead">
+              Early access opens in weeks. Get the link the day it drops —
+              before the public list.
+            </p>
+            <form class="waitlist waitlist--lg" data-waitlist>
+              <label for="waitlist-email-final">Email</label>
+              <div class="waitlist__row">
+                <input
+                  id="waitlist-email-final"
+                  type="email"
+                  name="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@email.com"
+                />
+                <button type="submit" class="btn">
+                  Send me the link when it drops
+                </button>
+              </div>
+              <p class="waitlist__status" role="status" aria-live="polite"></p>
+            </form>
+            <p class="micro">
+              Two emails total · Unsubscribe in one tap · No drip
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__brand">
+            <a class="logo" href="/">
+              <img src="assets/recomp-app-icon.png" alt="" width="24" height="24" />
+              Recomp
+            </a>
+            <p class="footer__meta">© 2026 Recomp. Made by a lifter.</p>
+          </div>
+          <nav class="footer__links" aria-label="Footer">
+            <a href="privacy.html">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="support/">Support</a>
+          </nav>
           <div class="theme-toggle" role="group" aria-label="Color theme">
             <button type="button" data-theme-choice="system" aria-pressed="true">
               Auto
@@ -738,459 +2027,7 @@
             </button>
           </div>
         </div>
-      </div>
-    </header>
-
-    <main>
-      <!-- Section 1: Hero -->
-      <section class="section hero" id="hero" aria-labelledby="hero-heading">
-        <div class="container container--hero hero__grid">
-          <div class="hero__copy stack">
-            <h1 id="hero-heading">
-              You already have years of progress in your camera roll.
-            </h1>
-            <p class="lead">
-              Recomp pulls your physique photos, aligns them, and lets you
-              compare any two — side by side, dated, honest.
-            </p>
-            <div>
-              <a
-                class="app-store-badge app-store-badge--lg"
-                href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
-              >
-                <img
-                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                  alt="Download on the App Store"
-                  width="160"
-                  height="53"
-                />
-              </a>
-              <p class="micro">
-                Free to start · Import your existing photos in seconds
-              </p>
-            </div>
-          </div>
-          <div class="hero__visual">
-            <div
-              class="device device--hero"
-              role="img"
-              aria-label="iPhone 15 Pro Max showing Recomp compare view with two dated physique photos side by side"
-            >
-              <div class="device__frame">
-                <div class="device__screen">
-                  <!-- 430×932 pt / 1290×2796 px — iPhone 15 Pro Max -->
-                  <span class="device__placeholder">Compare view screenshot</span>
-                  <div class="device__island" aria-hidden="true"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Problem / Agitation -->
-      <section class="section" id="problem" aria-labelledby="problem-heading">
-        <div class="container stack stack--lg">
-          <div class="convergence" aria-label="Convergence diagram">
-            <div class="convergence__sources">
-              <div
-                class="placeholder convergence__camera-roll"
-                role="img"
-                aria-label="Camera roll photo grid with mixed physique shots, screenshots, and junk photos"
-              >
-                Camera roll (dominant)
-              </div>
-              <div class="convergence__supporting">
-                <div class="placeholder" aria-hidden="true">Notes / Excel</div>
-                <div class="placeholder" aria-hidden="true">Apple Health</div>
-              </div>
-            </div>
-            <div class="convergence__arrow" aria-hidden="true">↓</div>
-            <div class="convergence__result">
-              <div
-                class="device device--md"
-                role="img"
-                aria-label="Recomp compare view with photos, weight overlay, and timeline"
-              >
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Recomp compare panel</span>
-                    <div class="device__island" aria-hidden="true"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="caption">
-            Your camera roll has the evidence. Recomp lays it out — with your
-            weight and notes alongside.
-          </p>
-
-          <div>
-            <h2 id="problem-heading">
-              You see yourself every day. So the person in the mirror never
-              seems to change.
-            </h2>
-            <div class="body-copy">
-              <p>
-                Hundreds of progress photos live in your camera roll — mixed in
-                with receipts, screenshots, and everything else.
-              </p>
-              <p>
-                Weight is scattered across Notes, spreadsheets, or Apple Health.
-              </p>
-              <p>
-                The doubt creeps in anyway: am I actually changing, or just
-                spinning my wheels?
-              </p>
-              <p>
-                Recomp starts with the photos you already have. Weight and notes
-                come along for the ride.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 3: How It Works -->
-      <section class="section" id="how-it-works" aria-labelledby="how-heading">
-        <div class="container">
-          <h2 id="how-heading">Three steps. That's the whole loop.</h2>
-          <div class="steps">
-            <article class="step card">
-              <div class="step__number" aria-hidden="true">1</div>
-              <h3>Take a weekly check-in.</h3>
-              <div class="device device--sm" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="step card">
-              <div class="step__number" aria-hidden="true">2</div>
-              <h3>Recomp builds your timeline.</h3>
-              <div class="device device--sm" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="step step--featured card">
-              <div class="step__number" aria-hidden="true">3</div>
-              <h3>Compare, side by side. See the actual difference.</h3>
-              <div class="device device--md" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Compare screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-          <p class="closer">
-            That's it. No streaks. No workouts to log. No macros to enter. Just
-            the photos, the timeline, and the comparison.
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3b: Two-Flow Split -->
-      <section class="section" id="two-flows" aria-labelledby="flows-heading">
-        <div class="container">
-          <h2 id="flows-heading">Two ways to start.</h2>
-          <div class="split-cards">
-            <article class="card">
-              <h3>I've been taking photos</h3>
-              <p class="lead">
-                Import your camera roll. Recomp finds the physique photos,
-                aligns them, and shows the compare in minutes.
-              </p>
-              <a
-                class="app-store-badge"
-                href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
-              >
-                <img
-                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                  alt="Download on the App Store"
-                  width="120"
-                  height="40"
-                />
-              </a>
-            </article>
-            <article class="card">
-              <h3>I'm starting fresh</h3>
-              <p class="lead">
-                Take your first check-in tonight. Recomp builds the timeline
-                from your first photo forward. Compares get powerful in 3–6
-                weeks.
-              </p>
-              <a
-                class="app-store-badge"
-                href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
-              >
-                <img
-                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                  alt="Download on the App Store"
-                  width="120"
-                  height="40"
-                />
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 4: Aha Moment -->
-      <section class="section" id="aha" aria-labelledby="aha-heading">
-        <div class="container text-center stack stack--lg">
-          <h2 id="aha-heading">The moment you actually see it.</h2>
-          <div
-            class="placeholder placeholder--compare"
-            role="img"
-            aria-label="Full-width compare view: physique on the left dated April 2024, on the right dated July 2024. Weight: 195 lb to 182 lb over 14 weeks."
-          >
-            Founder compare view
-          </div>
-          <p class="micro">
-            150 check-ins. Two years of lifting. Here's what the compare view
-            shows. — Mark, founder of Recomp
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 5: Feature Strip -->
-      <section class="section" id="features" aria-labelledby="features-heading">
-        <div class="container">
-          <h2 id="features-heading">
-            Everything else your physique tracker should be.
-          </h2>
-
-          <article class="feature-row">
-            <div class="feature-row__visual">
-              <div class="device device--md" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feature-row__copy">
-              <h3>Compare any two check-ins.</h3>
-              <p class="lead">
-                Pick any two dates. Side by side, same scale, honest.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-row feature-row--reverse">
-            <div class="feature-row__visual">
-              <div class="device device--md" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feature-row__copy">
-              <h3>Import the photos you already have.</h3>
-              <p class="lead">
-                Point Recomp at your camera roll. It'll pull the physique
-                photos.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-row">
-            <div class="feature-row__visual">
-              <div class="device device--md" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feature-row__copy">
-              <h3>A real timeline, not a photo grid.</h3>
-              <p class="lead">
-                Every check-in in one scroll, with dates, weights, and notes.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-row feature-row--reverse">
-            <div class="feature-row__visual">
-              <div class="device device--md" aria-hidden="true">
-                <div class="device__frame">
-                  <div class="device__screen">
-                    <span class="device__placeholder">Screenshot</span>
-                    <div class="device__island"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feature-row__copy">
-              <h3>Your photos never leave your phone unless you say so.</h3>
-              <p class="lead">
-                No feed. No sharing. Nothing public. Just your own record.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Section 6: Social Proof -->
-      <section class="section section--surface" id="social-proof" aria-labelledby="proof-heading">
-        <div class="container stack stack--lg text-center">
-          <h2 id="proof-heading" class="visually-hidden">Social proof</h2>
-          <div class="density-strip">
-            <span>4.8 stars on the App Store</span>
-            <span>5,000 lifters tracking</span>
-            <span>Featured in [logos]</span>
-          </div>
-          <article class="card testimonial text-center">
-            <div
-              class="placeholder placeholder--compare"
-              aria-hidden="true"
-              style="margin-bottom: 20px"
-            >
-              User compare view
-            </div>
-            <p class="lead">
-              "I finally saw what eight weeks of cutting actually looked like —
-              not what I felt in the mirror."
-            </p>
-            <p class="micro">— Beta user quote placeholder</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Section 7: FAQ -->
-      <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
-        <div class="container">
-          <h2 id="faq-heading">Answers to what you're probably thinking.</h2>
-          <div class="faq">
-            <details>
-              <summary>Isn't this just an iPhone album?</summary>
-              <div class="faq__answer">
-                Albums don't align poses, date check-ins, or let you compare any
-                two photos side by side with weight context. Recomp is built
-                around the compare view.
-              </div>
-            </details>
-            <details>
-              <summary>How do I make the compares honest?</summary>
-              <div class="faq__answer">
-                Same pose, same lighting, same time of day. Recomp's alignment
-                grid helps you match framing week to week.
-              </div>
-            </details>
-            <details>
-              <summary>Do I have to track weight, workouts, or macros?</summary>
-              <div class="faq__answer">
-                No. Photos are the core. Weight and notes are optional
-                supporting context.
-              </div>
-            </details>
-            <details>
-              <summary>How much does it cost?</summary>
-              <div class="faq__answer">
-                Free to start. Paid tier details at launch — honest pricing in
-                the App Store listing.
-              </div>
-            </details>
-            <details>
-              <summary>Are my photos private?</summary>
-              <div class="faq__answer">
-                Yes. No feed, no sharing, nothing public. Your photos stay on
-                your device unless you choose to export.
-              </div>
-            </details>
-            <details>
-              <summary>
-                I don't have years of photos. Does this still work?
-              </summary>
-              <div class="faq__answer">
-                Start tonight. The timeline compounds — meaningful compares in
-                3–6 weeks of consistent check-ins.
-              </div>
-            </details>
-            <details>
-              <summary>I already use [tracker]. Do I need this?</summary>
-              <div class="faq__answer">
-                If you already take progress photos, Recomp organizes what you
-                have. It's not a workout log or macro tracker.
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 8: Final CTA -->
-      <section
-        class="section section--accent text-center"
-        id="final-cta"
-        aria-labelledby="final-cta-heading"
-      >
-        <div class="container stack">
-          <h2 id="final-cta-heading">
-            See the progress you've been working for.
-          </h2>
-          <p class="lead">Free to start. Take your first check-in tonight.</p>
-          <div>
-            <a
-              class="app-store-badge app-store-badge--lg"
-              href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
-            >
-              <img
-                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                alt="Download on the App Store"
-                width="160"
-                height="53"
-              />
-            </a>
-            <p class="micro">
-              4.8 stars · App Store · 5,000 lifters and counting
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <a class="logo" href="/">Recomp</a>
-        <nav class="footer__links" aria-label="Footer">
-          <a href="privacy.html">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="support/">Contact</a>
-        </nav>
-        <div class="footer__meta">© 2026 Recomp</div>
-        <div class="theme-toggle" role="group" aria-label="Color theme">
-          <button type="button" data-theme-choice="system" aria-pressed="true">
-            Auto
-          </button>
-          <button type="button" data-theme-choice="light" aria-pressed="false">
-            Light
-          </button>
-          <button type="button" data-theme-choice="dark" aria-pressed="false">
-            Dark
-          </button>
-        </div>
-      </div>
-    </footer>
+      </footer>
     </div>
 
     <script>
@@ -1219,6 +2056,71 @@
             const choice = button.dataset.themeChoice;
             localStorage.setItem(storageKey, choice);
             applyTheme(choice);
+          });
+        });
+
+        const heroVideo = document.querySelector(".device--hero .device__media");
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        function syncHeroVideoMotion(shouldReduce) {
+          if (!heroVideo) return;
+          if (shouldReduce) {
+            heroVideo.pause();
+            heroVideo.removeAttribute("autoplay");
+            return;
+          }
+          heroVideo.setAttribute("autoplay", "");
+          const playAttempt = heroVideo.play();
+          if (playAttempt && typeof playAttempt.catch === "function") {
+            playAttempt.catch(() => {});
+          }
+        }
+
+        if (heroVideo) {
+          heroVideo.addEventListener("canplay", () => {
+            syncHeroVideoMotion(motionQuery.matches);
+          });
+        }
+
+        syncHeroVideoMotion(motionQuery.matches);
+        if (typeof motionQuery.addEventListener === "function") {
+          motionQuery.addEventListener("change", (event) => {
+            syncHeroVideoMotion(event.matches);
+          });
+        }
+
+        function setFormState(form, state, message) {
+          const status = form.querySelector(".waitlist__status");
+          status.dataset.state = state;
+          status.textContent = message;
+          form.classList.toggle("is-success", state === "success");
+        }
+
+        function markJoined(email) {
+          document.querySelectorAll("[data-waitlist]").forEach((form) => {
+            const input = form.querySelector('input[type="email"]');
+            if (input) input.value = email;
+            setFormState(
+              form,
+              "success",
+              "You're on the list. We'll email you when your invite is ready."
+            );
+          });
+        }
+
+        document.querySelectorAll("[data-waitlist]").forEach((form) => {
+          form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const input = form.querySelector('input[type="email"]');
+            const email = (input.value || "").trim();
+
+            if (!input.checkValidity()) {
+              setFormState(form, "error", "Enter a valid email.");
+              input.focus();
+              return;
+            }
+
+            markJoined(email);
           });
         });
       })();
