@@ -61,7 +61,7 @@
 }
 
 :root {
-  --grid-color: rgba(255, 255, 255, 0.05);
+  --grid-color: rgba(255, 255, 255, 0.16);
   --grid-size: 30px;
   --max-width: 1200px;
   --max-width-hero: 1400px;
@@ -111,7 +111,7 @@ html[data-theme="dark"] {
   --color-card-border: rgba(255, 255, 255, 0.08);
   --color-placeholder: #1c1c1e;
   --color-accent-tint: rgba(10, 132, 255, 0.12);
-  --grid-color: rgba(255, 255, 255, 0.05);
+  --grid-color: rgba(255, 255, 255, 0.16);
   --shadow-card:
     0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 24px 48px rgba(0, 0, 0, 0.35);
 }
@@ -331,6 +331,32 @@ html[data-theme="light"] .app-store-badge__img--black {
     var(--color-bg) var(--how-device-h),
     var(--color-bg) 100%
   );
+}
+
+/* Step 1's screenshot already includes the iPhone home-indicator band.
+   Steps 2–4 sit flush to the bezel, so reserve the same 34pt of 932. */
+.how-visual .steps article:not(:first-child) .device__screen {
+  background: #fff;
+}
+
+.how-visual .steps article:not(:first-child) .device__media {
+  bottom: calc(100% * 34 / 932);
+  height: calc(100% * 898 / 932);
+}
+
+.how-visual .steps article:not(:first-child) .device__screen::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: calc(100% * 10 / 932);
+  width: calc(100% * 128 / 430);
+  height: calc(100% * 5 / 932);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+  opacity: 0.28;
+  pointer-events: none;
 }
 
 @media (max-width: 1023px) {

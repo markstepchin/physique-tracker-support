@@ -25,15 +25,15 @@
     />
     <meta
       property="og:image"
-      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.png"
+      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.jpg?v=3"
     />
     <meta
       property="og:image:alt"
-      content="Recomp compare view with two dated physique photos side by side"
+      content="Recomp compare screen with two dated physique photos side by side"
     />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="2603" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Recomp: progress photo tracker" />
     <meta
@@ -42,7 +42,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.png"
+      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.jpg?v=3"
     />
     <link rel="icon" href="assets/recomp-app-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/recomp-app-icon.png" />
@@ -73,8 +73,7 @@
                 <p
                   class="mx-auto max-w-[var(--measure-lead)] text-lead text-muted pb-16"
                 >
-                  A side-by-side timeline of your photos, with your
-                  weight on every shot.
+                  A side-by-side timeline of your photos, weight, and more
                 </p>
                 <!--
                 <button
@@ -88,7 +87,7 @@
                 </button>
                 -->
                 <a
-                  class="app-store-badge mb-3 justify-self-center"
+                  class="app-store-badge mb-2 justify-self-center"
                   href="https://apps.apple.com/us/app/recomp-your-physique-tracker/id6760444125"
                   aria-label="Download on the App Store"
                 >
@@ -108,11 +107,11 @@
                   />
                 </a>
                 <p class="mx-auto text-center text-micro text-muted">
-                  By Lifters, For Lifters
+                  By lifters, for lifters
                 </p>
               </div>
               <div
-                class="relative w-full before:pointer-events-none before:absolute before:inset-[10%_5%_-8%] before:-z-1 before:bg-[radial-gradient(circle_at_50%_50%,rgba(10,132,255,0.18),transparent_70%)] before:blur-xl"
+                class="relative w-full before:pointer-events-none before:absolute before:inset-[10%_5%_-8%] before:-z-1 before:bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.18),transparent_70%)] before:blur-xl"
               >
                 <div
                   class="device device--hero mx-auto w-[calc(80vw-2rem)] md:w-[min(100%,280px)]"
@@ -195,7 +194,7 @@
                     >
                       <div class="flex items-center gap-2">
                         <div
-                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-fg text-[10px] font-bold leading-none text-bg"
                           aria-hidden="true"
                         >
                           1
@@ -235,7 +234,7 @@
                     >
                       <div class="flex items-center gap-2">
                         <div
-                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-fg text-[10px] font-bold leading-none text-bg"
                           aria-hidden="true"
                         >
                           2
@@ -274,7 +273,7 @@
                     >
                       <div class="flex items-center gap-2">
                         <div
-                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-fg text-[10px] font-bold leading-none text-bg"
                           aria-hidden="true"
                         >
                           3
@@ -283,7 +282,7 @@
                           Align your photos
                         </h4>
                       </div>
-                      <p class="text-muted text-sm">Line up stance and scale</p>
+                      <p class="text-muted text-sm">Pan, zoom, and rotate</p>
                     </div>
                   </article>
                   <article
@@ -311,7 +310,7 @@
                     >
                       <div class="flex items-center gap-2">
                         <div
-                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-fg text-[10px] font-bold leading-none text-bg"
                           aria-hidden="true"
                         >
                           4
@@ -346,107 +345,71 @@
             </h1>
             <div class="faq mt-10 grid gap-3">
               <details>
-                <summary>When can I use it?</summary>
+                <summary>Is my data private?</summary>
                 <div class="faq__answer">
-                  Early access opens this fall, in waves. Waitlist first. We'll
-                  email you a TestFlight link when it's your turn — you're not
-                  obligated to accept. Two emails total: one when your invite is
-                  ready, one at launch. No drip.
+                  Your data never leaves your device. Recomp doesn't upload or
+                  share your data
+                </div>
+              </details>
+
+              <details>
+                <summary>Can I track my macros or workouts?</summary>
+                <div class="faq__answer">
+                  No, there many great alternatives for workout and calorie
+                  tracking. This is a no fluff tool focused on 1 job and 1 job
+                  only: Visually track your results over time.
+                </div>
+              </details>
+
+              <details>
+                <summary>How does the import work?</summary>
+                <div class="faq__answer">
+                  While you can add photos 1 check-in at a time, you can also
+                  select many photos at the same time. The app will
+                  automatically group them by data. <br /><br />For a large
+                  number of photos, we recommend that you group your photos into
+                  a Photos Collection. You can then import the entire collection
+                  with 1 tap. <br /><br />Note: The app doesn't scan or do any
+                  auto-detection.
+                </div>
+              </details>
+              <details>
+                <summary>What if my old photos aren't consistent?</summary>
+                <div class="faq__answer">
+                  You can align photos in the app, straight from the compare
+                  view. We support panning side to side, resizing, and rotating
+                </div>
+              </details>
+              <details>
+                <summary>Why not simply use a Photos Collection?</summary>
+                <div class="faq__answer">
+                  Your photos are associated to your weight, notes, and more.
+                  This is especially useful to see what your body composition
+                  was in the past at the same weight.
                 </div>
               </details>
               <details>
                 <summary>
-                  How does the import work? Will it grab photos I don't want it
-                  to?
+                  Why not simply use a Collage app, or a tool like Canva or
+                  Photoshop?
                 </summary>
                 <div class="faq__answer">
-                  Two ways, both on your terms. Lots of photos: group them into
-                  a Photos album, then import the whole album in one tap. A few
-                  photos: pick them out of your camera roll one at a time.
-                  Recomp doesn't scan or auto-detect anything — you decide what
-                  belongs. Nothing leaves your phone.
+                  While these tools are much more powerful for showing a single
+                  comparison between 2 photos, they're a poor fit for comparing
+                  hundreds of photos and their associated weights and other
+                  measurements.
                 </div>
               </details>
-              <details>
-                <summary>
-                  What if my old photos aren't consistent — different poses,
-                  lighting, distance?
-                </summary>
-                <div class="faq__answer">
-                  That's most people's camera roll, and it's fine. The compare
-                  view has alignment tools — nudge, scale, match reference
-                  points — so the delta reads honestly. Recomp doesn't fix bad
-                  inputs. It makes uneven inputs comparable in a way a bare
-                  album never will.
-                </div>
-              </details>
-              <details>
-                <summary>Isn't this just an iPhone album?</summary>
-                <div class="faq__answer">
-                  An album is a folder. Recomp is a timeline. The difference is
-                  compare — any two dates, aligned and dated, side by side, no
-                  hunting. Try it once on your imported library. The gap is
-                  obvious.
-                </div>
-              </details>
-              <details>
-                <summary>
-                  Do I have to track weight, workouts, or macros?
-                </summary>
-                <div class="faq__answer">
-                  No. Weight and notes are optional on every check-in. Workouts
-                  and macros aren't in Recomp — those tools already exist and
-                  are good. Recomp handles the piece they skip.
-                </div>
-              </details>
+
               <details>
                 <summary>How much will it cost?</summary>
-                <div class="faq__answer">
-                  Free to start. Importing your camera roll and the first
-                  stretch of compares cost nothing. Paid once you're serious —
-                  less than a month of gym coffee. Waitlist members see pricing
-                  before anything charges.
-                </div>
+                <div class="faq__answer">Completely free forever</div>
               </details>
+
               <details>
-                <summary>Where do my photos live? Are they private?</summary>
+                <summary>Is an Android version coming?</summary>
                 <div class="faq__answer">
-                  On your phone. Recomp doesn't upload, doesn't share, doesn't
-                  publish a feed. Import and alignment happen on-device. If you
-                  back up to iCloud Photos, they go where your other photos go.
-                  Nothing else.
-                </div>
-              </details>
-              <details>
-                <summary>
-                  Do I need to keep taking photos after the import?
-                </summary>
-                <div class="faq__answer">
-                  No — the import alone is worth it. Your existing library
-                  becomes a proper timeline. Most people keep the cadence going
-                  once they've seen the compare; the
-                  <a href="track/">track variant</a> covers the weekly ritual.
-                </div>
-              </details>
-              <details>
-                <summary>
-                  I already use Hevy / MacroFactor / a spreadsheet. Do I need
-                  this?
-                </summary>
-                <div class="faq__answer">
-                  Probably yes — for a different reason. Those tools track
-                  inputs: training, food, numbers. Recomp tracks the outcome:
-                  the physique itself, over time. Missing piece, not a
-                  replacement.
-                </div>
-              </details>
-              <details>
-                <summary>iOS only?</summary>
-                <div class="faq__answer">
-                  For now, yes. Recomp is iOS-native — Photos, HealthKit, the
-                  Apple design system — because that's where our first users are
-                  and where the years of camera-roll history live. Android comes
-                  once iOS is where it needs to be.
+                  No. I use an iPhone, and I build this app for myself
                 </div>
               </details>
             </div>
