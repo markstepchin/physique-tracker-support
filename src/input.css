@@ -275,6 +275,51 @@ html[data-theme="dark"] .device__frame {
   object-fit: cover;
 }
 
+/* Official App Store badge — black on light, white on dark */
+.app-store-badge {
+  display: inline-flex;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+
+.app-store-badge:hover,
+.app-store-badge:focus-visible {
+  text-decoration: none;
+  opacity: 0.92;
+}
+
+.app-store-badge:active {
+  opacity: 0.85;
+}
+
+.app-store-badge__img {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+.app-store-badge__img--black {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme="system"] .app-store-badge__img--white {
+    display: none;
+  }
+
+  html[data-theme="system"] .app-store-badge__img--black {
+    display: block;
+  }
+}
+
+html[data-theme="light"] .app-store-badge__img--white {
+  display: none;
+}
+
+html[data-theme="light"] .app-store-badge__img--black {
+  display: block;
+}
+
 /* How it works — grid under phones, solid page ground under captions */
 .how-visual {
   --how-device-w: 256px;
@@ -288,7 +333,7 @@ html[data-theme="dark"] .device__frame {
   );
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .how-visual {
     --how-device-w: calc(80vw - 2rem);
   }
