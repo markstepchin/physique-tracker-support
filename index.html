@@ -2,12 +2,48 @@
 <html lang="en" data-theme="system">
   <head>
     <meta charset="utf-8" />
-    <title>Recomp — Your camera roll already holds years of progress</title>
+    <title>Recomp: progress photo tracker</title>
     <meta
       name="description"
       content="Import one Photos album. See two years of work, side by side, in minutes."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="canonical"
+      href="https://markstepchin.github.io/physique-tracker-support/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Recomp" />
+    <meta property="og:title" content="Recomp: progress photo tracker" />
+    <meta
+      property="og:description"
+      content="Import one Photos album. See two years of work, side by side, in minutes."
+    />
+    <meta
+      property="og:url"
+      content="https://markstepchin.github.io/physique-tracker-support/"
+    />
+    <meta
+      property="og:image"
+      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Recomp compare view with two dated physique photos side by side"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Recomp: progress photo tracker" />
+    <meta
+      name="twitter:description"
+      content="Import one Photos album. See two years of work, side by side, in minutes."
+    />
+    <meta
+      name="twitter:image"
+      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.png"
+    />
     <link rel="icon" href="assets/recomp-app-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/recomp-app-icon.png" />
     <link rel="stylesheet" href="src/output.css" />
@@ -57,7 +93,7 @@
                 class="relative w-full before:pointer-events-none before:absolute before:inset-[10%_5%_-8%] before:-z-1 before:bg-[radial-gradient(circle_at_50%_50%,rgba(10,132,255,0.18),transparent_70%)] before:blur-xl"
               >
                 <div
-                  class="device device--hero mx-auto w-[min(42vw,220px)] sm:w-[min(100%,280px)]"
+                  class="device device--hero mx-auto w-[calc(80vw-2rem)] md:w-[min(100%,280px)]"
                   role="img"
                   aria-label="iPhone showing Recomp compare view with two dated physique photos side by side"
                 >
@@ -71,6 +107,8 @@
                         playsinline
                         preload="metadata"
                         poster="assets/compare-preview-poster.png"
+                        width="370"
+                        height="720"
                         aria-hidden="true"
                       >
                         <source
@@ -111,10 +149,10 @@
                   tabindex="0"
                 >
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
+                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
                     <div
-                      class="device w-[min(100%,200px)] max-md:w-full"
+                      class="device w-[min(100%,var(--how-device-w))] max-md:w-full"
                       role="img"
                       aria-label="Recomp select-photos screen importing 475 photos from a Progress Photos album"
                     >
@@ -131,29 +169,30 @@
                       </div>
                     </div>
                     <div
-                      class="grid w-full justify-items-start gap-4 text-left"
+                      class="grid w-[min(100%,var(--how-device-w))] max-md:w-full justify-items-start gap-2 px-4 text-left"
                     >
-                      <div class="flex items-center gap-3">
+                      <div class="flex items-center gap-2">
                         <div
-                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
                           aria-hidden="true"
                         >
                           1
                         </div>
-                        <h3 class="text-h3 font-bold tracking-h3">
+                        <h4 class="text-h4 font-bold tracking-h4">
                           Import your data
-                        </h3>
+                        </h4>
                       </div>
-                      <p class="text-muted">
-                        Photo album, weight from CSV or Apple Health
+                      <p class="text-muted text-sm">
+                        Select photos or import an entire album. Apple Health
+                        support for weight coming soon!
                       </p>
                     </div>
                   </article>
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
+                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
                     <div
-                      class="device w-[min(100%,200px)] max-md:w-full"
+                      class="device w-[min(100%,var(--how-device-w))] max-md:w-full"
                       role="img"
                       aria-label="Recomp compare view: front photos from May 2024 at 198 lb and August 2025 at 159.4 lb, with a weight graph"
                     >
@@ -170,29 +209,29 @@
                       </div>
                     </div>
                     <div
-                      class="grid w-full justify-items-start gap-4 text-left"
+                      class="grid w-[min(100%,var(--how-device-w))] max-md:w-full justify-items-start gap-2 px-4 text-left"
                     >
-                      <div class="flex items-center gap-3">
+                      <div class="flex items-center gap-2">
                         <div
-                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
                           aria-hidden="true"
                         >
                           2
                         </div>
-                        <h3 class="text-h3 font-bold tracking-h3">
+                        <h4 class="text-h4 font-bold tracking-h4">
                           Compare your progress
-                        </h3>
+                        </h4>
                       </div>
-                      <p class="text-muted">
-                        Instantly compare any 2 dates side by side
+                      <p class="text-muted text-sm">
+                        Quickly navigate between photos & weights
                       </p>
                     </div>
                   </article>
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
+                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
                     <div
-                      class="device w-[min(100%,200px)] max-md:w-full"
+                      class="device w-[min(100%,var(--how-device-w))] max-md:w-full"
                       role="img"
                       aria-label="Recomp add-a-log screen with weight 158.5 lb and front, side, and back photos for August 4, 2025"
                     >
@@ -209,20 +248,22 @@
                       </div>
                     </div>
                     <div
-                      class="grid w-full justify-items-start gap-4 text-left"
+                      class="grid w-[min(100%,var(--how-device-w))] max-md:w-full justify-items-start gap-2 px-4 text-left"
                     >
-                      <div class="flex items-center gap-3">
+                      <div class="flex items-center gap-2">
                         <div
-                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          class="grid size-5 shrink-0 place-items-center rounded-full bg-black text-[10px] font-bold leading-none text-white"
                           aria-hidden="true"
                         >
                           3
                         </div>
-                        <h3 class="text-h3 font-bold tracking-h3">
+                        <h4 class="text-h4 font-bold tracking-h4">
                           Track going forward
-                        </h3>
+                        </h4>
                       </div>
-                      <p class="text-muted">Reminders for consistency</p>
+                      <p class="text-muted text-sm">
+                        Reminders for consistency
+                      </p>
                     </div>
                   </article>
                 </div>
@@ -238,12 +279,12 @@
           aria-labelledby="faq-heading"
         >
           <div class="mx-auto w-full max-w-[800px] px-gutter">
-            <h2
+            <h1
               id="faq-heading"
-              class="text-h2 font-bold tracking-h2 text-balance"
+              class="text-center text-h1 font-bold tracking-h1 text-balance"
             >
               FAQs
-            </h2>
+            </h1>
             <div class="faq mt-10 grid gap-3">
               <details>
                 <summary>When can I use it?</summary>
