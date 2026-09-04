@@ -13,40 +13,51 @@
     <link rel="stylesheet" href="src/output.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <div>
       <main>
-        <div class="page-grid">
+        <div class="page-grid relative isolate">
           <!-- Section 1: Hero -->
           <section
-            class="section hero"
+            class="pt-12 pb-section"
             id="hero"
             aria-labelledby="hero-heading"
           >
-            <div class="container container--hero hero__grid">
-              <div class="hero__copy stack">
-                <h1 id="hero-heading">
+            <div
+              class="mx-auto grid w-full max-w-[var(--max-width-hero)] justify-items-center gap-12 px-gutter text-center"
+            >
+              <div class="grid w-full max-w-[min(100%,var(--measure-lead))]">
+                <h1
+                  id="hero-heading"
+                  class="text-h1 font-bold tracking-h1 text-balance pb-6"
+                >
                   See the progress buried<br />
                   in your camera roll
                 </h1>
 
-                <p class="lead">
+                <p
+                  class="mx-auto max-w-[var(--measure-lead)] text-lead text-muted pb-16"
+                >
                   Turn your progress photos into a side-by-side timeline. See
                   changes you'd miss day to day.
                 </p>
                 <button
                   type="button"
-                  class="btn"
+                  class="mb-3 inline-flex min-h-11 cursor-pointer items-center justify-center justify-self-center rounded-full border-0 bg-accent px-[22px] py-3.5 text-base font-bold whitespace-nowrap text-white no-underline hover:bg-accent-hover hover:no-underline focus-visible:bg-accent-hover focus-visible:no-underline active:bg-accent-active"
                   data-waitlist-open
                   aria-haspopup="dialog"
                   aria-controls="waitlist-modal"
                 >
                   Get early access
                 </button>
-                <p class="micro text-center">By Lifters, For Lifters</p>
+                <p class="mx-auto text-center text-micro text-muted">
+                  By Lifters, For Lifters
+                </p>
               </div>
-              <div class="hero__visual">
+              <div
+                class="relative w-full before:pointer-events-none before:absolute before:inset-[10%_5%_-8%] before:-z-1 before:bg-[radial-gradient(circle_at_50%_50%,rgba(10,132,255,0.18),transparent_70%)] before:blur-xl"
+              >
                 <div
-                  class="device device--hero"
+                  class="device device--hero mx-auto w-[min(42vw,220px)] sm:w-[min(100%,280px)]"
                   role="img"
                   aria-label="iPhone showing Recomp compare view with two dated physique photos side by side"
                 >
@@ -76,122 +87,164 @@
           </section>
 
           <section
-            class="section"
-            id="problem"
-            aria-labelledby="problem-heading"
-          >
-            <div class="container">
-              <h2 id="problem-heading">Where alternatives fall short</h2>
-
-              <div>
-                Photos App - No side by side view - Difficult to align - No
-                weight
-              </div>
-
-              <div>Collage app, Canva, Photoshop, etc - Cumbersome</div>
-            </div>
-          </section>
-
-          <!-- Section 4a: How it works -->
-          <section
-            class="section"
+            class="pt-section"
             id="how-it-works"
             aria-labelledby="how-heading"
           >
-            <div class="container">
-              <h2 id="how-heading">How it works</h2>
-              <div
-                class="steps"
-                role="region"
-                aria-label="How it works steps"
-                tabindex="0"
+            <div class="mx-auto w-full max-w-[var(--max-width)] px-gutter">
+              <h1
+                id="how-heading"
+                class="text-center text-h1 font-bold tracking-h1 text-balance"
               >
-                <article class="step">
-                  <div class="step__header">
-                    <div class="step__number" aria-hidden="true">1</div>
-                    <h3>Import your data</h3>
-                  </div>
-                  <p>Photo album, weight from CSV or Apple Health</p>
-                  <div
-                    class="device"
-                    role="img"
-                    aria-label="Recomp select-photos screen importing 475 photos from a Progress Photos album"
+                How it works
+              </h1>
+            </div>
+
+            <div class="how-visual mt-10">
+              <div
+                class="mx-auto w-full max-w-[var(--max-width)] px-gutter pb-section"
+              >
+                <div
+                  class="steps flex w-[calc(100%+2*var(--spacing-gutter))] snap-x snap-mandatory gap-8 overflow-x-auto overscroll-x-contain [-webkit-overflow-scrolling:touch] [scrollbar-width:none] -mx-gutter px-[calc(10vw+1rem)] md:mx-0 md:grid md:w-auto md:grid-cols-3 md:items-start md:gap-6 md:overflow-visible md:px-0 md:snap-none [&::-webkit-scrollbar]:hidden"
+                  role="region"
+                  aria-label="How it works steps"
+                  tabindex="0"
+                >
+                  <article
+                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
-                    <div class="device__frame">
-                      <div class="device__screen">
-                        <img
-                          class="device__media"
-                          src="assets/step-import.jpg"
-                          alt=""
-                          width="472"
-                          height="1024"
-                        />
+                    <div
+                      class="device w-[min(100%,200px)] max-md:w-full"
+                      role="img"
+                      aria-label="Recomp select-photos screen importing 475 photos from a Progress Photos album"
+                    >
+                      <div class="device__frame">
+                        <div class="device__screen">
+                          <img
+                            class="device__media"
+                            src="assets/step-import.jpg"
+                            alt=""
+                            width="472"
+                            height="1024"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="step">
-                  <div class="step__header">
-                    <div class="step__number" aria-hidden="true">2</div>
-                    <h3>Compare your progress</h3>
-                  </div>
-                  <p>Instantly compare any 2 dates side by side</p>
-                  <div
-                    class="device"
-                    role="img"
-                    aria-label="Recomp compare view: front photos from May 2024 at 198 lb and August 2025 at 159.4 lb, with a weight graph"
+                    <div
+                      class="grid w-full justify-items-start gap-4 text-left"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          aria-hidden="true"
+                        >
+                          1
+                        </div>
+                        <h3 class="text-h3 font-bold tracking-h3">
+                          Import your data
+                        </h3>
+                      </div>
+                      <p class="text-muted">
+                        Photo album, weight from CSV or Apple Health
+                      </p>
+                    </div>
+                  </article>
+                  <article
+                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
-                    <div class="device__frame">
-                      <div class="device__screen">
-                        <img
-                          class="device__media"
-                          src="assets/step-compare.jpg"
-                          alt=""
-                          width="472"
-                          height="1024"
-                        />
+                    <div
+                      class="device w-[min(100%,200px)] max-md:w-full"
+                      role="img"
+                      aria-label="Recomp compare view: front photos from May 2024 at 198 lb and August 2025 at 159.4 lb, with a weight graph"
+                    >
+                      <div class="device__frame">
+                        <div class="device__screen">
+                          <img
+                            class="device__media"
+                            src="assets/step-compare.jpg"
+                            alt=""
+                            width="472"
+                            height="1024"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="step">
-                  <div class="step__header">
-                    <div class="step__number" aria-hidden="true">3</div>
-                    <h3>Track going forward</h3>
-                  </div>
-                  <p>Reminders for consistency</p>
-                  <div
-                    class="device"
-                    role="img"
-                    aria-label="Recomp add-a-log screen with weight 158.5 lb and front, side, and back photos for August 4, 2025"
+                    <div
+                      class="grid w-full justify-items-start gap-4 text-left"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          aria-hidden="true"
+                        >
+                          2
+                        </div>
+                        <h3 class="text-h3 font-bold tracking-h3">
+                          Compare your progress
+                        </h3>
+                      </div>
+                      <p class="text-muted">
+                        Instantly compare any 2 dates side by side
+                      </p>
+                    </div>
+                  </article>
+                  <article
+                    class="grid snap-center snap-always justify-items-start gap-4 text-left max-md:w-[calc(80vw-2rem)] max-md:shrink-0"
                   >
-                    <div class="device__frame">
-                      <div class="device__screen">
-                        <img
-                          class="device__media"
-                          src="assets/step-track.png"
-                          alt=""
-                          width="472"
-                          height="1024"
-                        />
+                    <div
+                      class="device w-[min(100%,200px)] max-md:w-full"
+                      role="img"
+                      aria-label="Recomp add-a-log screen with weight 158.5 lb and front, side, and back photos for August 4, 2025"
+                    >
+                      <div class="device__frame">
+                        <div class="device__screen">
+                          <img
+                            class="device__media"
+                            src="assets/step-track.png"
+                            alt=""
+                            width="472"
+                            height="1024"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
+                    <div
+                      class="grid w-full justify-items-start gap-4 text-left"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="grid size-8 place-items-center rounded-full bg-black text-micro font-bold leading-none text-white"
+                          aria-hidden="true"
+                        >
+                          3
+                        </div>
+                        <h3 class="text-h3 font-bold tracking-h3">
+                          Track going forward
+                        </h3>
+                      </div>
+                      <p class="text-muted">Reminders for consistency</p>
+                    </div>
+                  </article>
+                </div>
               </div>
-              <p class="closer">
-                That's it. No workouts to log. No macros. No "start fresh." Just
-                the photos you already took, finally laid out.
-              </p>
             </div>
           </section>
         </div>
 
         <!-- Section 7: FAQ -->
-        <section class="section" id="faq" aria-labelledby="faq-heading">
-          <div class="container container--narrow">
-            <h2 id="faq-heading">Answers to what you're probably thinking.</h2>
-            <div class="faq">
+        <section
+          class="relative bg-bg py-section"
+          id="faq"
+          aria-labelledby="faq-heading"
+        >
+          <div class="mx-auto w-full max-w-[800px] px-gutter">
+            <h2
+              id="faq-heading"
+              class="text-h2 font-bold tracking-h2 text-balance"
+            >
+              FAQs
+            </h2>
+            <div class="faq mt-10 grid gap-3">
               <details>
                 <summary>When can I use it?</summary>
                 <div class="faq__answer">
@@ -301,16 +354,38 @@
         </section>
       </main>
 
-      <footer class="footer">
-        <div class="container footer__inner">
-          <nav class="footer__links" aria-label="Footer">
-            <a href="privacy.html">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="support/">Support</a>
+      <footer class="pt-12 pb-3">
+        <div
+          class="mx-auto flex w-full max-w-[var(--max-width)] flex-wrap items-center justify-between gap-6 px-gutter"
+        >
+          <nav
+            class="flex flex-wrap gap-x-6 gap-y-4 text-micro"
+            aria-label="Footer"
+          >
+            <a
+              class="text-muted no-underline hover:text-fg hover:underline focus-visible:text-fg focus-visible:underline"
+              href="privacy.html"
+              >Privacy</a
+            >
+            <a
+              class="text-muted no-underline hover:text-fg hover:underline focus-visible:text-fg focus-visible:underline"
+              href="#"
+              >Terms</a
+            >
+            <a
+              class="text-muted no-underline hover:text-fg hover:underline focus-visible:text-fg focus-visible:underline"
+              href="support/"
+              >Support</a
+            >
           </nav>
-          <div class="theme-toggle" role="group" aria-label="Color theme">
+          <div
+            class="inline-flex items-center gap-1 rounded-full border border-card-border bg-card p-1.5"
+            role="group"
+            aria-label="Color theme"
+          >
             <button
               type="button"
+              class="min-h-8 cursor-pointer rounded-full border-0 bg-transparent px-2.5 py-1.5 text-xs font-medium text-muted transition-colors duration-200 aria-pressed:bg-accent aria-pressed:text-white"
               data-theme-choice="system"
               aria-pressed="true"
             >
@@ -318,12 +393,18 @@
             </button>
             <button
               type="button"
+              class="min-h-8 cursor-pointer rounded-full border-0 bg-transparent px-2.5 py-1.5 text-xs font-medium text-muted transition-colors duration-200 aria-pressed:bg-accent aria-pressed:text-white"
               data-theme-choice="light"
               aria-pressed="false"
             >
               Light
             </button>
-            <button type="button" data-theme-choice="dark" aria-pressed="false">
+            <button
+              type="button"
+              class="min-h-8 cursor-pointer rounded-full border-0 bg-transparent px-2.5 py-1.5 text-xs font-medium text-muted transition-colors duration-200 aria-pressed:bg-accent aria-pressed:text-white"
+              data-theme-choice="dark"
+              aria-pressed="false"
+            >
               Dark
             </button>
           </div>
@@ -332,34 +413,50 @@
     </div>
 
     <dialog
-      class="waitlist-modal"
+      class="m-0 h-dvh max-h-dvh w-screen max-w-[100vw] border-0 bg-transparent p-gutter text-fg backdrop:bg-[color-mix(in_srgb,#000_52%,transparent)] open:grid open:place-items-center"
       id="waitlist-modal"
       aria-labelledby="waitlist-modal-heading"
     >
-      <div class="waitlist-modal__panel">
+      <div
+        class="relative w-[min(100%,440px)] rounded-card border border-card-border bg-card px-6 pt-7 pb-6 shadow-card"
+      >
         <button
           type="button"
-          class="waitlist-modal__close"
+          class="absolute top-4 right-4 grid size-9 place-items-center rounded-full border-0 bg-transparent p-0 text-2xl leading-none text-muted hover:bg-accent-tint hover:text-fg focus-visible:bg-accent-tint focus-visible:text-fg"
           data-waitlist-close
           aria-label="Close"
         >
           <span aria-hidden="true">×</span>
         </button>
-        <h2 id="waitlist-modal-heading">Get early access</h2>
-        <blockquote class="waitlist-modal__lead">
+        <h2
+          id="waitlist-modal-heading"
+          class="pr-9 text-h3 font-bold tracking-h3"
+        >
+          Get early access
+        </h2>
+        <blockquote class="mt-3 mb-5 text-body leading-body text-muted">
           <p>
             This project is personal. I'm building the compare tool I always
             wanted as a lifter, and I'm genuinely excited to finally share it.
             I'm always open to feedback, and I appreciate anything you want to
             share.
           </p>
-          <footer>— Mark Stepchin, app developer</footer>
+          <footer class="mt-2.5 text-micro text-fg">
+            — Mark Stepchin, app developer
+          </footer>
         </blockquote>
-        <form class="waitlist" data-waitlist>
-          <label for="waitlist-email">Email</label>
-          <div class="waitlist__row">
+        <form class="grid w-full gap-2 text-left" data-waitlist>
+          <label
+            class="text-sm font-medium text-fg in-[.is-success]:hidden"
+            for="waitlist-email"
+            >Email</label
+          >
+          <div
+            class="grid gap-3 in-[.is-success]:hidden sm:grid-cols-[1fr_auto] sm:items-stretch"
+          >
             <input
               id="waitlist-email"
+              class="min-h-11 w-full rounded-xl border border-card-border bg-bg px-4 py-3 text-input text-fg placeholder:text-muted placeholder:opacity-100"
               type="email"
               name="email"
               inputmode="email"
@@ -367,9 +464,18 @@
               required
               placeholder="you@email.com"
             />
-            <button type="submit" class="btn">Get early access</button>
+            <button
+              type="submit"
+              class="inline-flex min-h-11 cursor-pointer items-center justify-center rounded-full border-0 bg-accent px-[22px] py-3.5 text-base font-bold whitespace-nowrap text-white no-underline hover:bg-accent-hover hover:no-underline focus-visible:bg-accent-hover focus-visible:no-underline active:bg-accent-active"
+            >
+              Get early access
+            </button>
           </div>
-          <p class="waitlist__status" role="status" aria-live="polite"></p>
+          <p
+            class="waitlist__status m-0 min-h-[1.2em] text-helper text-muted data-[state=error]:font-medium data-[state=error]:text-error data-[state=success]:text-success"
+            role="status"
+            aria-live="polite"
+          ></p>
         </form>
       </div>
     </dialog>
