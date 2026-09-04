@@ -279,12 +279,11 @@ html[data-theme="dark"] .device__frame {
 .how-visual {
   --how-device-w: 256px;
   --how-device-h: calc(var(--how-device-w) * (0.952 * 932 / 430 + 0.048));
-  --how-fade: 32px;
   background-image: linear-gradient(
     to bottom,
     transparent 0,
-    transparent calc(var(--how-device-h) * 0.5 - var(--how-fade)),
-    var(--color-bg) calc(var(--how-device-h) * 0.5),
+    transparent 4rem,
+    var(--color-bg) var(--how-device-h),
     var(--color-bg) 100%
   );
 }
