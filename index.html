@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="canonical"
-      href="https://markstepchin.github.io/physique-tracker-support/"
+      href="https://markstepchin.github.io/recomp/"
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Recomp" />
@@ -21,11 +21,11 @@
     />
     <meta
       property="og:url"
-      content="https://markstepchin.github.io/physique-tracker-support/"
+      content="https://markstepchin.github.io/recomp/"
     />
     <meta
       property="og:image"
-      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.jpg?v=3"
+      content="https://markstepchin.github.io/recomp/assets/og-preview.jpg?v=3"
     />
     <meta
       property="og:image:alt"
@@ -42,7 +42,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://markstepchin.github.io/physique-tracker-support/assets/og-preview.jpg?v=3"
+      content="https://markstepchin.github.io/recomp/assets/og-preview.jpg?v=3"
     />
     <link rel="icon" href="assets/recomp-app-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/recomp-app-icon.png" />
@@ -320,7 +320,7 @@
                         </h4>
                       </div>
                       <p class="text-muted text-sm">
-                        Reminders for consistency
+                        Optional reminders for consistency
                       </p>
                     </div>
                   </article>
@@ -366,7 +366,7 @@
                 <div class="faq__answer">
                   While you can add photos 1 check-in at a time, you can also
                   select many photos at the same time. The app will
-                  automatically group them by data. <br /><br />For a large
+                  automatically group them by date. <br /><br />For a large
                   number of photos, we recommend that you group your photos into
                   a Photos Collection. You can then import the entire collection
                   with 1 tap. <br /><br />Note: The app doesn't scan or do any
@@ -599,6 +599,21 @@
           });
         }
 
+        // Browsers pause media when the tab is hidden or restored from
+        // back-forward cache (App Store, back button). autoplay does not
+        // re-fire, so resume playback whenever the page is shown again.
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted && heroVideo && !motionQuery.matches) {
+            heroVideo.load();
+          }
+          syncHeroVideoMotion(motionQuery.matches);
+        });
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") {
+            syncHeroVideoMotion(motionQuery.matches);
+          }
+        });
+
         const faq = document.querySelector(".faq");
         const faqCssAnimates =
           typeof CSS !== "undefined" &&
@@ -614,18 +629,27 @@
             if (!summary || !answer) return;
 
             let cleanup = null;
+            const faqStyles = getComputedStyle(faq);
+            const padTop = faqStyles.getPropertyValue("--faq-answer-pad-top").trim() || "16px";
+            const padBottom = faqStyles.getPropertyValue("--faq-answer-pad-bottom").trim() || "20px";
 
             function finishHeight() {
               answer.style.height = "";
+              answer.style.paddingTop = "";
+              answer.style.paddingBottom = "";
               answer.style.overflow = "";
             }
 
-            function animateHeight(from, to, onDone) {
+            function animateAnswer(from, to, onDone) {
               if (cleanup) cleanup();
               answer.style.overflow = "hidden";
-              answer.style.height = from + "px";
+              answer.style.height = from.height;
+              answer.style.paddingTop = from.paddingTop;
+              answer.style.paddingBottom = from.paddingBottom;
               answer.getBoundingClientRect();
-              answer.style.height = to + "px";
+              answer.style.height = to.height;
+              answer.style.paddingTop = to.paddingTop;
+              answer.style.paddingBottom = to.paddingBottom;
 
               const done = (event) => {
                 if (event.propertyName !== "height") return;
@@ -648,11 +672,23 @@
 
               if (details.open) {
                 details.classList.add("is-closing");
-                animateHeight(answer.scrollHeight, 0, () => {
-                  details.open = false;
-                  details.classList.remove("is-expanded", "is-closing");
-                  finishHeight();
-                });
+                animateAnswer(
+                  {
+                    height: answer.scrollHeight + "px",
+                    paddingTop: padTop,
+                    paddingBottom: padBottom,
+                  },
+                  {
+                    height: "0px",
+                    paddingTop: "0px",
+                    paddingBottom: "0px",
+                  },
+                  () => {
+                    details.open = false;
+                    details.classList.remove("is-expanded", "is-closing");
+                    finishHeight();
+                  },
+                );
                 return;
               }
 
@@ -660,7 +696,19 @@
               details.classList.add("is-expanded");
               details.classList.remove("is-closing");
               const endHeight = answer.scrollHeight;
-              animateHeight(0, endHeight, finishHeight);
+              animateAnswer(
+                {
+                  height: "0px",
+                  paddingTop: "0px",
+                  paddingBottom: "0px",
+                },
+                {
+                  height: endHeight + "px",
+                  paddingTop: padTop,
+                  paddingBottom: padBottom,
+                },
+                finishHeight,
+              );
             });
           });
         }

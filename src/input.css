@@ -333,32 +333,6 @@ html[data-theme="light"] .app-store-badge__img--black {
   );
 }
 
-/* Step 1's screenshot already includes the iPhone home-indicator band.
-   Steps 2–4 sit flush to the bezel, so reserve the same 34pt of 932. */
-.how-visual .steps article:not(:first-child) .device__screen {
-  background: #fff;
-}
-
-.how-visual .steps article:not(:first-child) .device__media {
-  bottom: calc(100% * 34 / 932);
-  height: calc(100% * 898 / 932);
-}
-
-.how-visual .steps article:not(:first-child) .device__screen::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  bottom: calc(100% * 10 / 932);
-  width: calc(100% * 128 / 430);
-  height: calc(100% * 5 / 932);
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #000;
-  opacity: 0.28;
-  pointer-events: none;
-}
-
 @media (max-width: 1023px) {
   .how-visual {
     --how-device-w: calc(80vw - 2rem);
@@ -369,6 +343,8 @@ html[data-theme="light"] .app-store-badge__img--black {
 .faq {
   --faq-duration: 200ms;
   --faq-easing: ease-out;
+  --faq-answer-pad-top: 16px;
+  --faq-answer-pad-bottom: 20px;
   interpolate-size: allow-keywords;
 }
 
@@ -436,25 +412,44 @@ html[data-theme="light"] .app-store-badge__img--black {
 
 @supports (interpolate-size: allow-keywords) and selector(::details-content) {
   .faq details::details-content {
+    box-sizing: content-box;
     height: 0;
-    overflow: hidden;
+    padding-block: 0;
+    overflow: clip;
     transition:
       height var(--faq-duration) var(--faq-easing),
+      padding-block var(--faq-duration) var(--faq-easing),
       content-visibility var(--faq-duration) allow-discrete;
   }
 
   .faq details[open]::details-content {
     height: auto;
+    padding-block: var(--faq-answer-pad-top) var(--faq-answer-pad-bottom);
+  }
+
+  @starting-style {
+    .faq details[open]::details-content {
+      height: 0;
+      padding-block: 0;
+    }
+  }
+
+  /* Padding lives on ::details-content so it collapses with height.
+     Constant padding on the answer would clip as empty space at both ends. */
+  .faq__answer {
+    padding-block: 0;
   }
 }
 
 .faq[data-faq-js] .faq__answer {
   overflow: hidden;
-  transition: height var(--faq-duration) var(--faq-easing);
+  transition:
+    height var(--faq-duration) var(--faq-easing),
+    padding-block var(--faq-duration) var(--faq-easing);
 }
 
 .faq__answer {
-  padding: 16px 20px 20px;
+  padding: var(--faq-answer-pad-top) 20px var(--faq-answer-pad-bottom);
   font-size: 17px;
   line-height: var(--leading-body);
   color: var(--color-muted);
