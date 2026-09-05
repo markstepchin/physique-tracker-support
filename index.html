@@ -2,16 +2,13 @@
 <html lang="en" data-theme="system">
   <head>
     <meta charset="utf-8" />
-    <title>Recomp: progress photo tracker</title>
+    <title>Recomp: Progress Photo Tracker</title>
     <meta
       name="description"
       content="Import one Photos album. See two years of work, side by side, in minutes."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="canonical"
-      href="https://markstepchin.github.io/recomp/"
-    />
+    <link rel="canonical" href="https://markstepchin.github.io/recomp/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Recomp" />
     <meta property="og:title" content="Recomp: progress photo tracker" />
@@ -19,10 +16,7 @@
       property="og:description"
       content="Import one Photos album. See two years of work, side by side, in minutes."
     />
-    <meta
-      property="og:url"
-      content="https://markstepchin.github.io/recomp/"
-    />
+    <meta property="og:url" content="https://markstepchin.github.io/recomp/" />
     <meta
       property="og:image"
       content="https://markstepchin.github.io/recomp/assets/og-preview.jpg?v=3"
@@ -164,13 +158,13 @@
                 class="mx-auto w-full max-w-[var(--max-width)] px-gutter pb-section"
               >
                 <div
-                  class="steps flex w-[calc(100%+2*var(--spacing-gutter))] snap-x snap-mandatory gap-8 overflow-x-auto overscroll-x-contain [-webkit-overflow-scrolling:touch] [scrollbar-width:none] -mx-gutter px-[calc(10vw+1rem)] lg:mx-0 lg:grid lg:w-auto lg:grid-cols-4 lg:items-start lg:gap-6 lg:overflow-visible lg:px-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
+                  class="steps flex items-start w-[calc(100%+2*var(--spacing-gutter))] snap-x snap-mandatory gap-8 overflow-x-auto overscroll-x-contain [-webkit-overflow-scrolling:touch] [scrollbar-width:none] -mx-gutter px-[calc(10vw+1rem)] lg:mx-0 lg:grid lg:w-auto lg:grid-cols-4 lg:items-start lg:gap-6 lg:overflow-visible lg:px-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
                   role="region"
                   aria-label="How it works steps"
                   tabindex="0"
                 >
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
+                    class="grid content-start snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
                   >
                     <div
                       class="device w-[min(100%,var(--how-device-w))] max-lg:w-full"
@@ -210,7 +204,7 @@
                     </div>
                   </article>
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
+                    class="grid content-start snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
                   >
                     <div
                       class="device w-[min(100%,var(--how-device-w))] max-lg:w-full"
@@ -249,7 +243,7 @@
                     </div>
                   </article>
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
+                    class="grid content-start snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
                   >
                     <div
                       class="device w-[min(100%,var(--how-device-w))] max-lg:w-full"
@@ -286,7 +280,7 @@
                     </div>
                   </article>
                   <article
-                    class="grid snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
+                    class="grid content-start snap-center snap-always justify-items-start gap-8 text-left max-lg:w-[calc(80vw-2rem)] max-lg:shrink-0"
                   >
                     <div
                       class="device w-[min(100%,var(--how-device-w))] max-lg:w-full"
@@ -630,8 +624,12 @@
 
             let cleanup = null;
             const faqStyles = getComputedStyle(faq);
-            const padTop = faqStyles.getPropertyValue("--faq-answer-pad-top").trim() || "16px";
-            const padBottom = faqStyles.getPropertyValue("--faq-answer-pad-bottom").trim() || "20px";
+            const padTop =
+              faqStyles.getPropertyValue("--faq-answer-pad-top").trim() ||
+              "16px";
+            const padBottom =
+              faqStyles.getPropertyValue("--faq-answer-pad-bottom").trim() ||
+              "20px";
 
             function finishHeight() {
               answer.style.height = "";
