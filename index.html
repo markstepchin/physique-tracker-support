@@ -592,9 +592,71 @@
           "(prefers-reduced-motion: reduce)",
         );
 
+        const heroVideo = document.querySelector(
+          ".device--hero .device__media",
+        );
+
         const revealSections = document.querySelectorAll("[data-reveal]");
         function revealSection(el) {
           el.classList.add("is-revealed");
+        }
+
+        function whenImageReady(img) {
+          if (!img) return Promise.resolve();
+          if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+          if (typeof img.decode === "function") {
+            return img.decode().catch(
+              () =>
+                new Promise((resolve) => {
+                  img.addEventListener("load", resolve, { once: true });
+                  img.addEventListener("error", resolve, { once: true });
+                }),
+            );
+          }
+          return new Promise((resolve) => {
+            img.addEventListener("load", resolve, { once: true });
+            img.addEventListener("error", resolve, { once: true });
+          });
+        }
+
+        function whenHeroMediaReady(section) {
+          const badges = section.querySelectorAll(".app-store-badge__img");
+          const video = section.querySelector(".device--hero .device__media");
+          const waits = [...badges].map(whenImageReady);
+
+          if (video) {
+            const poster = video.getAttribute("poster");
+            if (poster) {
+              const posterImg = new Image();
+              posterImg.src = poster;
+              waits.push(whenImageReady(posterImg));
+            } else {
+              waits.push(
+                new Promise((resolve) => {
+                  if (video.readyState >= 2) {
+                    resolve();
+                    return;
+                  }
+                  video.addEventListener("loadeddata", resolve, {
+                    once: true,
+                  });
+                  video.addEventListener("error", resolve, { once: true });
+                }),
+              );
+            }
+          }
+
+          const timeoutMs = 2000;
+          return Promise.race([
+            Promise.all(waits),
+            new Promise((resolve) => setTimeout(resolve, timeoutMs)),
+          ]);
+        }
+
+        function revealAfterPaint(el) {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => revealSection(el));
+          });
         }
 
         if (motionQuery.matches) {
@@ -602,9 +664,7 @@
         } else {
           revealSections.forEach((el) => {
             if (el.getAttribute("data-reveal") === "load") {
-              requestAnimationFrame(() => {
-                requestAnimationFrame(() => revealSection(el));
-              });
+              whenHeroMediaReady(el).then(() => revealAfterPaint(el));
               return;
             }
             const observer = new IntersectionObserver(
@@ -620,10 +680,6 @@
             observer.observe(el);
           });
         }
-
-        const heroVideo = document.querySelector(
-          ".device--hero .device__media",
-        );
 
         function syncHeroVideoMotion(shouldReduce) {
           if (!heroVideo) return;
