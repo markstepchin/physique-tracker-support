@@ -2,7 +2,7 @@
 
 @source "../index.html";
 @source "../privacy.html";
-@source "../support/**/*.html";
+@source "../support.html";
 
 @theme {
   --color-bg: #0a0a0b;
