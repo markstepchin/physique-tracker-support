@@ -340,39 +340,47 @@
             <div class="faq mt-10 grid gap-3">
               <details>
                 <summary>Is my data private?</summary>
-                <div class="faq__answer">
-                  Your data never leaves your device. Recomp doesn't upload or
-                  share your data
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    Your data never leaves your device. Recomp doesn't upload or
+                    share your data
+                  </div>
                 </div>
               </details>
 
               <details>
                 <summary>Can I track my macros or workouts?</summary>
-                <div class="faq__answer">
-                  No, there many great alternatives for workout and calorie
-                  tracking. This is a no fluff tool focused on 1 job and 1 job
-                  only: Visually track your results over time.
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    No, there many great alternatives for workout and calorie
+                    tracking. This is a no fluff tool focused on 1 job and 1 job
+                    only: Visually track your results over time.
+                  </div>
                 </div>
               </details>
 
               <details>
                 <summary>How does the import work?</summary>
-                <div class="faq__answer">
-                  While you can add photos 1 check-in at a time, you can also
-                  select many photos at the same time. The app will
-                  automatically group them by date. <br /><br />For a large
-                  number of photos, we recommend that you group your photos into
-                  a Photos Collection. You can then import the entire collection
-                  with 1 tap. <br /><br />Note: The app doesn't scan or do any
-                  auto-detection.
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    While you can add photos 1 check-in at a time, you can also
+                    select many photos at the same time. The app will
+                    automatically group them by date. <br /><br />For a large
+                    number of photos, we recommend that you group your photos into
+                    a Photos Collection. You can then import the entire collection
+                    with 1 tap. <br /><br />Note: The app doesn't scan or do any
+                    auto-detection.
+                  </div>
                 </div>
               </details>
               <details>
                 <summary>Why not simply use a Photos Collection?</summary>
-                <div class="faq__answer">
-                  Your photos are associated to your weight, notes, and more.
-                  This is especially useful to see what your body composition
-                  was in the past at the same weight.
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    Your photos are associated to your weight, notes, and more.
+                    This is especially useful to see what your body composition
+                    was in the past at the same weight.
+                  </div>
                 </div>
               </details>
               <details>
@@ -380,23 +388,29 @@
                   Why not simply use a Collage app, or a tool like Canva or
                   Photoshop?
                 </summary>
-                <div class="faq__answer">
-                  While these tools are much more powerful for showing a single
-                  comparison between 2 photos, they're a poor fit for comparing
-                  hundreds of photos and their associated weights and other
-                  measurements.
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    While these tools are much more powerful for showing a single
+                    comparison between 2 photos, they're a poor fit for comparing
+                    hundreds of photos and their associated weights and other
+                    measurements.
+                  </div>
                 </div>
               </details>
 
               <details>
                 <summary>How much will it cost?</summary>
-                <div class="faq__answer">Completely free forever</div>
+                <div class="faq__panel">
+                  <div class="faq__answer">Completely free forever</div>
+                </div>
               </details>
 
               <details>
                 <summary>Is an Android version coming?</summary>
-                <div class="faq__answer">
-                  No. I use an iPhone, and I build this app for myself
+                <div class="faq__panel">
+                  <div class="faq__answer">
+                    No. I use an iPhone, and I build this app for myself
+                  </div>
                 </div>
               </details>
             </div>
@@ -605,104 +619,106 @@
         });
 
         const faq = document.querySelector(".faq");
-        const faqCssAnimates =
-          typeof CSS !== "undefined" &&
-          CSS.supports("interpolate-size", "allow-keywords") &&
-          CSS.supports("selector(::details-content)");
-
-        if (faq && !faqCssAnimates) {
+        // Always use the measured-height clip. interpolate-size is Chromium-
+        // only; Safari/iPhone snap height: auto and jump. One path everywhere
+        // keeps desktop and mobile in sync.
+        if (faq && !motionQuery.matches) {
           faq.dataset.faqJs = "";
+
+          function parseCssTime(value) {
+            const trimmed = String(value).trim();
+            if (trimmed.endsWith("ms")) return parseFloat(trimmed) || 0;
+            if (trimmed.endsWith("s")) return (parseFloat(trimmed) || 0) * 1000;
+            return parseFloat(trimmed) || 200;
+          }
+
+          const durationMs = parseCssTime(
+            getComputedStyle(faq).getPropertyValue("--faq-duration"),
+          );
 
           faq.querySelectorAll("details").forEach((details) => {
             const summary = details.querySelector("summary");
-            const answer = details.querySelector(".faq__answer");
-            if (!summary || !answer) return;
+            const panel = details.querySelector(".faq__panel");
+            if (!summary || !panel) return;
 
             let cleanup = null;
-            const faqStyles = getComputedStyle(faq);
-            const padTop =
-              faqStyles.getPropertyValue("--faq-answer-pad-top").trim() ||
-              "16px";
-            const padBottom =
-              faqStyles.getPropertyValue("--faq-answer-pad-bottom").trim() ||
-              "20px";
 
-            function finishHeight() {
-              answer.style.height = "";
-              answer.style.paddingTop = "";
-              answer.style.paddingBottom = "";
-              answer.style.overflow = "";
-            }
-
-            function animateAnswer(from, to, onDone) {
+            function afterHeightTransition(onDone) {
               if (cleanup) cleanup();
-              answer.style.overflow = "hidden";
-              answer.style.height = from.height;
-              answer.style.paddingTop = from.paddingTop;
-              answer.style.paddingBottom = from.paddingBottom;
-              answer.getBoundingClientRect();
-              answer.style.height = to.height;
-              answer.style.paddingTop = to.paddingTop;
-              answer.style.paddingBottom = to.paddingBottom;
-
-              const done = (event) => {
-                if (event.propertyName !== "height") return;
+              let settled = false;
+              const finish = () => {
+                if (settled) return;
+                settled = true;
+                panel.removeEventListener("transitionend", onEnd);
+                clearTimeout(fallback);
                 cleanup = null;
-                answer.removeEventListener("transitionend", done);
                 onDone();
               };
-
-              answer.addEventListener("transitionend", done);
+              const onEnd = (event) => {
+                if (event.target !== panel) return;
+                if (event.propertyName !== "height") return;
+                finish();
+              };
+              panel.addEventListener("transitionend", onEnd);
+              const fallback = setTimeout(finish, durationMs + 50);
               cleanup = () => {
-                answer.removeEventListener("transitionend", done);
+                settled = true;
+                clearTimeout(fallback);
+                panel.removeEventListener("transitionend", onEnd);
                 cleanup = null;
               };
+            }
+
+            function currentHeight() {
+              return panel.getBoundingClientRect().height;
+            }
+
+            function expandedHeight() {
+              const from = panel.style.height;
+              const transition = panel.style.transition;
+              panel.style.transition = "none";
+              panel.style.height = "auto";
+              const height = panel.scrollHeight;
+              panel.style.height = from;
+              panel.getBoundingClientRect();
+              panel.style.transition = transition;
+              return height;
             }
 
             summary.addEventListener("click", (event) => {
-              if (motionQuery.matches) return;
-
               event.preventDefault();
+              // Pointer taps: drop focus so iOS stops scroll-following the
+              // summary as the panel height changes.
+              if (event.detail !== 0) summary.blur();
 
-              if (details.open) {
+              panel.style.height = currentHeight() + "px";
+
+              const expanded =
+                details.classList.contains("is-expanded") &&
+                !details.classList.contains("is-closing");
+
+              if (expanded) {
                 details.classList.add("is-closing");
-                animateAnswer(
-                  {
-                    height: answer.scrollHeight + "px",
-                    paddingTop: padTop,
-                    paddingBottom: padBottom,
-                  },
-                  {
-                    height: "0px",
-                    paddingTop: "0px",
-                    paddingBottom: "0px",
-                  },
-                  () => {
-                    details.open = false;
-                    details.classList.remove("is-expanded", "is-closing");
-                    finishHeight();
-                  },
-                );
+                details.classList.remove("is-expanded");
+                panel.getBoundingClientRect();
+                panel.style.height = "0px";
+                afterHeightTransition(() => {
+                  details.open = false;
+                  details.classList.remove("is-closing");
+                  panel.style.height = "";
+                });
                 return;
               }
 
               details.open = true;
               details.classList.add("is-expanded");
               details.classList.remove("is-closing");
-              const endHeight = answer.scrollHeight;
-              animateAnswer(
-                {
-                  height: "0px",
-                  paddingTop: "0px",
-                  paddingBottom: "0px",
-                },
-                {
-                  height: endHeight + "px",
-                  paddingTop: padTop,
-                  paddingBottom: padBottom,
-                },
-                finishHeight,
-              );
+              const to = expandedHeight();
+              panel.getBoundingClientRect();
+              panel.style.height = to + "px";
+              afterHeightTransition(() => {
+                panel.style.height = "";
+              });
             });
           });
         }

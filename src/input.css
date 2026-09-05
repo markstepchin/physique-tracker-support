@@ -339,13 +339,14 @@ html[data-theme="light"] .app-store-badge__img--black {
   }
 }
 
-/* FAQ accordion — JS height animation + details-content */
+/* FAQ accordion — measured-height JS clip; CSS details-content if JS is off */
 .faq {
   --faq-duration: 200ms;
   --faq-easing: ease-out;
   --faq-answer-pad-top: 16px;
   --faq-answer-pad-bottom: 20px;
   interpolate-size: allow-keywords;
+  overflow-anchor: none;
 }
 
 .faq details {
@@ -411,7 +412,7 @@ html[data-theme="light"] .app-store-badge__img--black {
 }
 
 @supports (interpolate-size: allow-keywords) and selector(::details-content) {
-  .faq details::details-content {
+  .faq:not([data-faq-js]) details::details-content {
     box-sizing: content-box;
     height: 0;
     padding-block: 0;
@@ -422,30 +423,42 @@ html[data-theme="light"] .app-store-badge__img--black {
       content-visibility var(--faq-duration) allow-discrete;
   }
 
-  .faq details[open]::details-content {
+  .faq:not([data-faq-js]) details[open]::details-content {
     height: auto;
     padding-block: var(--faq-answer-pad-top) var(--faq-answer-pad-bottom);
   }
 
   @starting-style {
-    .faq details[open]::details-content {
+    .faq:not([data-faq-js]) details[open]::details-content {
       height: 0;
       padding-block: 0;
     }
   }
 
-  /* Padding lives on ::details-content so it collapses with height.
-     Constant padding on the answer would clip as empty space at both ends. */
-  .faq__answer {
+  .faq:not([data-faq-js]) .faq__answer {
     padding-block: 0;
   }
 }
 
-.faq[data-faq-js] .faq__answer {
+/* JS path: clip a padding-free wrapper so height can reach 0. Padding on
+   the answer itself cannot collapse below its padding box on WebKit. */
+.faq[data-faq-js] details[open]::details-content {
+  content-visibility: visible;
+  height: auto;
+}
+
+.faq[data-faq-js] .faq__panel {
   overflow: hidden;
-  transition:
-    height var(--faq-duration) var(--faq-easing),
-    padding-block var(--faq-duration) var(--faq-easing);
+  height: 0;
+  transition: height var(--faq-duration) var(--faq-easing);
+}
+
+.faq[data-faq-js] details.is-expanded:not(.is-closing) .faq__panel {
+  height: auto;
+}
+
+.faq:not([data-faq-js]) details[open] .faq__panel {
+  height: auto;
 }
 
 .faq__answer {
