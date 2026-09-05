@@ -55,8 +55,9 @@
         <div class="page-grid relative isolate">
           <!-- Section 1: Hero -->
           <section
-            class="pt-12 pb-section"
+            class="reveal-section pt-12 pb-section"
             id="hero"
+            data-reveal="load"
             aria-labelledby="hero-heading"
           >
             <div
@@ -148,8 +149,9 @@
           </section>
 
           <section
-            class="pt-section"
+            class="reveal-section pt-section"
             id="how-it-works"
+            data-reveal="scroll"
             aria-labelledby="how-heading"
           >
             <div class="mx-auto w-full max-w-[var(--max-width)] px-gutter">
@@ -342,8 +344,9 @@
 
         <!-- Section 7: FAQ -->
         <section
-          class="relative bg-bg py-section"
+          class="reveal-section relative bg-bg py-section"
           id="faq"
+          data-reveal="scroll"
           aria-labelledby="faq-heading"
         >
           <div class="mx-auto w-full max-w-[800px] px-gutter">
@@ -585,11 +588,41 @@
           });
         });
 
-        const heroVideo = document.querySelector(
-          ".device--hero .device__media",
-        );
         const motionQuery = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
+        );
+
+        const revealSections = document.querySelectorAll("[data-reveal]");
+        function revealSection(el) {
+          el.classList.add("is-revealed");
+        }
+
+        if (motionQuery.matches) {
+          revealSections.forEach(revealSection);
+        } else {
+          revealSections.forEach((el) => {
+            if (el.getAttribute("data-reveal") === "load") {
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => revealSection(el));
+              });
+              return;
+            }
+            const observer = new IntersectionObserver(
+              (entries, obs) => {
+                entries.forEach((entry) => {
+                  if (!entry.isIntersecting) return;
+                  revealSection(entry.target);
+                  obs.unobserve(entry.target);
+                });
+              },
+              { threshold: 0.16, rootMargin: "0px 0px -10% 0px" },
+            );
+            observer.observe(el);
+          });
+        }
+
+        const heroVideo = document.querySelector(
+          ".device--hero .device__media",
         );
 
         function syncHeroVideoMotion(shouldReduce) {

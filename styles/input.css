@@ -146,6 +146,11 @@ html[data-theme="light"] {
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }
+
+    .reveal-section {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   body {
@@ -155,7 +160,9 @@ html[data-theme="light"] {
     color: var(--color-fg);
     background-color: var(--color-bg);
     transition:
-      background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+      background-color 300ms ease,
+      color 300ms ease,
+      border-color 300ms ease;
   }
 
   a {
@@ -174,6 +181,20 @@ html[data-theme="light"] {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
+}
+
+/* Section enter — whole section as one unit */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal-section.is-revealed {
+  opacity: 1;
+  transform: none;
 }
 
 /* Graph-paper overlay — mask + theme tokens, not page spacing */
