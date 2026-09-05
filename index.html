@@ -2,12 +2,20 @@
 <html lang="en" data-theme="system">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recomp: Progress Photo Tracker</title>
     <meta
       name="description"
       content="Import one Photos album. See two years of work, side by side, in minutes."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/compare-preview-poster.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <link rel="canonical" href="https://markstepchin.github.io/recomp/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Recomp" />
@@ -19,15 +27,15 @@
     <meta property="og:url" content="https://markstepchin.github.io/recomp/" />
     <meta
       property="og:image"
-      content="https://markstepchin.github.io/recomp/assets/og-preview.jpg?v=3"
+      content="https://markstepchin.github.io/recomp/assets/step-compare.webp?v=5"
     />
     <meta
       property="og:image:alt"
       content="Recomp compare screen with two dated physique photos side by side"
     />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="2603" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="472" />
+    <meta property="og:image:height" content="1024" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Recomp: progress photo tracker" />
     <meta
@@ -36,11 +44,10 @@
     />
     <meta
       name="twitter:image"
-      content="https://markstepchin.github.io/recomp/assets/og-preview.jpg?v=3"
+      content="https://markstepchin.github.io/recomp/assets/step-compare.webp?v=5"
     />
     <link rel="icon" href="assets/recomp-app-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/recomp-app-icon.png" />
-    <link rel="stylesheet" href="src/output.css" />
   </head>
   <body>
     <div>
@@ -120,8 +127,9 @@
                         muted
                         loop
                         playsinline
-                        preload="metadata"
-                        poster="assets/compare-preview-poster.png"
+                        preload="auto"
+                        fetchpriority="high"
+                        poster="assets/compare-preview-poster.webp"
                         width="370"
                         height="720"
                         aria-hidden="true"
@@ -175,10 +183,12 @@
                         <div class="device__screen">
                           <img
                             class="device__media"
-                            src="assets/step-import.png"
+                            src="assets/step-import.webp"
                             alt=""
-                            width="1290"
-                            height="2796"
+                            width="472"
+                            height="1023"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>
@@ -215,10 +225,12 @@
                         <div class="device__screen">
                           <img
                             class="device__media"
-                            src="assets/step-compare.jpg"
+                            src="assets/step-compare.webp"
                             alt=""
                             width="472"
                             height="1024"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>
@@ -254,10 +266,12 @@
                         <div class="device__screen">
                           <img
                             class="device__media"
-                            src="assets/step-align.jpg"
+                            src="assets/step-align.webp"
                             alt=""
                             width="472"
                             height="1024"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>
@@ -291,10 +305,12 @@
                         <div class="device__screen">
                           <img
                             class="device__media"
-                            src="assets/step-track.jpg"
+                            src="assets/step-track.webp"
                             alt=""
                             width="472"
                             height="1024"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>
